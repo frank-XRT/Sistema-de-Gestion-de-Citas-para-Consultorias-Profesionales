@@ -3,32 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenuconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenuconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmbuscarprofesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmbuscarprofesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmeliminarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmeliminarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmbuscarprofesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\ccontrolador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\ccontrolador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmbuscarprofesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmbuscarprofesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmconsultarcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmconsultarcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmeliminarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmeliminarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|c:\\users\\personal\\onedrive - universidad peruana de ciencias\\escritorio\\sistema de gestion de citas\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenuconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenuconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,59 +70,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 350,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMenuConsultor.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuConsultor.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuConsultor.cs",
-              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuConsultor.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuConsultor.cs [Dise\u00F1o]",
+              "DocumentIndex": 3,
+              "Title": "frmMenuCliente.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T02:54:22.242Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmEliminarConsultor.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEliminarConsultor.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmEliminarConsultor.cs",
-              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEliminarConsultor.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema de Gestion de Citas\\frmEliminarConsultor.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T02:45:23.185Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-06T13:18:37.68Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmRegistrarConsultor.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistrarConsultor.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmRegistrarConsultor.cs",
-              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistrarConsultor.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema de Gestion de Citas\\frmRegistrarConsultor.cs [Dise\u00F1o]",
+              "Title": "frmMisCitas.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T02:39:53.231Z",
+              "WhenOpened": "2026-05-06T13:17:56.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMisCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMisCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMisCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:17:52.514Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmMenuAdministrador.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
-              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "frmBuscarProfesional.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T02:37:28.853Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-06T13:11:52.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "frmMenuCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuCliente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:10:01.32Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CControlador.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\CControlador.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\CControlador.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\CControlador.cs",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\CControlador.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAkwB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:00:52.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "frmBuscarProfesional.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
               "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
@@ -102,7 +162,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
+              "Title": "frmConsultarCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmConsultarCitas.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmConsultarCitas.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmConsultarCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmConsultarCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:07:15.416Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmMenuAdministrador.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:02:25.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmRegistrarConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistrarConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmRegistrarConsultor.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistrarConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmRegistrarConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T02:39:53.231Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmMenuAdministrador.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T02:37:28.853Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T02:32:19.221Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "frmLogin.cs",
               "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmLogin.cs",
               "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmLogin.cs",
@@ -115,14 +236,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmLogin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmLogin.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmLogin.cs",
-              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmLogin.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema de Gestion de Citas\\frmLogin.cs [Dise\u00F1o]",
+              "DocumentIndex": 13,
+              "Title": "frmEliminarConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEliminarConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmEliminarConsultor.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEliminarConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmEliminarConsultor.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T02:32:19.221Z",
+              "WhenOpened": "2026-05-06T02:45:23.185Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "frmMenuConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuConsultor.cs",
+              "ToolTip": "C:\\Users\\Personal\\OneDrive - Universidad Peruana de Ciencias\\Escritorio\\Sistema de gestion de citas\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T02:54:22.242Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

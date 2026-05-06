@@ -15,11 +15,13 @@ namespace Sistema_de_Gestion_de_Citas
         private CCliente clienteActual;
         CControlador controlador = new CControlador();
         public frmMisCitas(CCliente cliente)
-        {
+        {   
             InitializeComponent();
             clienteActual = cliente;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.FromArgb(236, 253, 245);
+
+            MostrarMisCitas();
         }
         private void MostrarMisCitas()
         {

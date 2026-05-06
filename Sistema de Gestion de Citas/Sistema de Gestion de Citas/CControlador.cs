@@ -25,6 +25,21 @@ namespace Sistema_de_Gestion_de_Citas
             {
                 ListaAdministradores.Add(new CAdministrador(1, "Administrador", "1", "1"));
             }
+
+            if (ListaClientes.Count == 0)
+            {
+                ListaClientes.Add(new CCliente(1, "Kevin", "1", "Masculino", "999111222", "kevin@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(2, "Guiso", "2", "Masculino", "999333444", "guiso@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(3, "Lucía", "3", "Femenino", "999555666", "lucia@gmail.com", "123"));
+            }
+
+            if (ListaConsultores.Count == 0)
+            {
+                ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "4", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "123"));
+                ListaConsultores.Add(new CConsultor(2, "María Torres", "5", "Femenino", "988333444", "maria@gmail.com", "Contable", "Contadora especializada en impuestos", "123"));
+                ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "6", "Masculino", "988555666", "carlos@gmail.com", "Psicologia", "Psicólogo clínico con experiencia en ansiedad", "123"));
+                ListaConsultores.Add(new CConsultor(4, "Ana Flores", "7", "Femenino", "988777888", "ana@gmail.com", "Tecnologico", "Consultora en sistemas y soporte técnico", "123"));
+            }
         }
 
         public object Login(string dni, string contraseña)

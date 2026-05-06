@@ -81,6 +81,7 @@
             this.dgvConsultores.RowTemplate.Height = 24;
             this.dgvConsultores.Size = new System.Drawing.Size(827, 150);
             this.dgvConsultores.TabIndex = 2;
+            this.dgvConsultores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultores_CellContentClick);
             this.dgvConsultores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultores_CellContentClick);
             // 
             // dgvHorarios

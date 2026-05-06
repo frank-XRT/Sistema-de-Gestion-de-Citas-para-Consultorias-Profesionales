@@ -33,20 +33,23 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(128, 51);
+            this.dtpFecha.Location = new System.Drawing.Point(170, 51);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(255, 22);
             this.dtpFecha.TabIndex = 0;
             // 
             // btnAtender
             // 
             this.btnAtender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtender.Location = new System.Drawing.Point(371, 87);
+            this.btnAtender.Location = new System.Drawing.Point(440, 96);
             this.btnAtender.Name = "btnAtender";
             this.btnAtender.Size = new System.Drawing.Size(280, 38);
             this.btnAtender.TabIndex = 8;
@@ -57,7 +60,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(371, 42);
+            this.btnBuscar.Location = new System.Drawing.Point(440, 42);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(280, 39);
             this.btnBuscar.TabIndex = 7;
@@ -68,7 +71,7 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(371, 165);
+            this.btnVolver.Location = new System.Drawing.Point(257, 400);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(280, 38);
             this.btnVolver.TabIndex = 9;
@@ -79,18 +82,51 @@
             // dgvCitas
             // 
             this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas.Location = new System.Drawing.Point(371, 251);
+            this.dgvCitas.Location = new System.Drawing.Point(86, 152);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.RowHeadersWidth = 51;
             this.dgvCitas.RowTemplate.Height = 24;
-            this.dgvCitas.Size = new System.Drawing.Size(240, 150);
+            this.dgvCitas.Size = new System.Drawing.Size(634, 228);
             this.dgvCitas.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(278, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(184, 25);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Consulta de Citas";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(334, 25);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Seleccione una Cita para atender";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(81, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 25);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Fecha";
             // 
             // frmConsultarCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAtender);
@@ -100,6 +136,7 @@
             this.Text = "frmConsultarCitas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,5 +147,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridView dgvCitas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
