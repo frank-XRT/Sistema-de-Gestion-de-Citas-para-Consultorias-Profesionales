@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas   
 {
     public partial class frmBuscarProfesional : Form
     {

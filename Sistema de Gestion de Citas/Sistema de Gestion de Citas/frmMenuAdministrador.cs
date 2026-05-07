@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Sistema_de_Gestion_de_Citas
 {
@@ -37,18 +38,47 @@ namespace Sistema_de_Gestion_de_Citas
         {
             CReporte reporte = new CReporte();
 
-            var datos = reporte.CitasPorServicio();
+            var datos = reporte.CitasPorServicio(
+                DateTime.Today.AddMonths(-1),
+                DateTime.Today
+            );
+
+            if (datos.Count == 0)
+            {
+                MessageBox.Show("No hay citas registradas para mostrar en el reporte.");
+                return;
+            }
 
             Form form = new Form();
             form.Text = "Reporte de citas por servicio";
-            form.Width = 600;
-            form.Height = 400;
+            form.Width = 800;
+            form.Height = 500;
+            form.StartPosition = FormStartPosition.CenterScreen;
 
-            DataGridView dgv = new DataGridView();
-            dgv.Dock = DockStyle.Fill;
-            dgv.DataSource = datos;
+            Chart chart = new Chart();
+            chart.Dock = DockStyle.Fill;
 
-            form.Controls.Add(dgv);
+            ChartArea area = new ChartArea("Area1");
+            chart.ChartAreas.Add(area);
+
+            Legend leyenda = new Legend("Leyenda1");
+            chart.Legends.Add(leyenda);
+
+            Series serie = new Series("CitasPorServicio");
+            serie.ChartType = SeriesChartType.Pie;
+            serie.IsValueShownAsLabel = true;
+            serie.Label = "#PERCENT{P0}";
+            serie.LegendText = "#VALX";
+
+            foreach (dynamic item in datos)
+            {
+                serie.Points.AddXY(item.Rubro, item.CantidadCitas);
+            }
+
+            chart.Series.Add(serie);
+            chart.Titles.Add("Distribución de citas por servicio");
+
+            form.Controls.Add(chart);
             form.ShowDialog();
         }
 
@@ -58,16 +88,44 @@ namespace Sistema_de_Gestion_de_Citas
 
             var datos = reporte.ConsultoresPorRubro();
 
+            if (datos.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar en el reporte.");
+                return;
+            }
+
             Form form = new Form();
             form.Text = "Reporte de consultores por rubro";
-            form.Width = 600;
-            form.Height = 400;
+            form.Width = 800;
+            form.Height = 500;
+            form.StartPosition = FormStartPosition.CenterScreen;
 
-            DataGridView dgv = new DataGridView();
-            dgv.Dock = DockStyle.Fill;
-            dgv.DataSource = datos;
+            Chart chart = new Chart();
+            chart.Dock = DockStyle.Fill;
 
-            form.Controls.Add(dgv);
+            ChartArea area = new ChartArea("Area1");
+            area.AxisX.Title = "Tipo de asesoría";
+            area.AxisY.Title = "Número de consultores";
+            area.AxisX.Interval = 1;
+            chart.ChartAreas.Add(area);
+
+            Legend leyenda = new Legend("Leyenda1");
+            chart.Legends.Add(leyenda);
+
+            Series serie = new Series("ConsultoresPorRubro");
+            serie.ChartType = SeriesChartType.Column; // gráfico de barras verticales
+            serie.IsValueShownAsLabel = true;
+            serie.LegendText = "Consultores";
+
+            foreach (dynamic item in datos)
+            {
+                serie.Points.AddXY(item.Rubro, item.CantidadConsultores);
+            }
+
+            chart.Series.Add(serie);
+            chart.Titles.Add("Reporte de consultores por tipo de asesoría");
+
+            form.Controls.Add(chart);
             form.ShowDialog();
         }
 

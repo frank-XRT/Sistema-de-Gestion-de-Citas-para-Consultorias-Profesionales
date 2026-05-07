@@ -21,24 +21,62 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void CargarAdministradorInicial()
         {
+            // ADMINISTRADOR
             if (ListaAdministradores.Count == 0)
             {
-                ListaAdministradores.Add(new CAdministrador(1, "Administrador", "1", "1"));
+                ListaAdministradores.Add(new CAdministrador(
+                    1,
+                    "Administrador",
+                    "1",
+                    "1"
+                ));
             }
 
+            // CLIENTES
             if (ListaClientes.Count == 0)
             {
-                ListaClientes.Add(new CCliente(1, "Kevin", "1", "Masculino", "999111222", "kevin@gmail.com", "123"));
-                ListaClientes.Add(new CCliente(2, "Guiso", "2", "Masculino", "999333444", "guiso@gmail.com", "123"));
-                ListaClientes.Add(new CCliente(3, "Lucía", "3", "Femenino", "999555666", "lucia@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(1, "Kevin", "11111111", "Masculino", "999111222", "kevin@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(2, "Guiso", "22222222", "Masculino", "999333444", "guiso@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(3, "Lucía", "33333333", "Femenino", "999555666", "lucia@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(4, "María", "44441111", "Femenino", "999777888", "maria@gmail.com", "123"));
             }
 
+            // CONSULTORES
             if (ListaConsultores.Count == 0)
             {
-                ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "4", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "123"));
-                ListaConsultores.Add(new CConsultor(2, "María Torres", "5", "Femenino", "988333444", "maria@gmail.com", "Contable", "Contadora especializada en impuestos", "123"));
-                ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "6", "Masculino", "988555666", "carlos@gmail.com", "Psicologia", "Psicólogo clínico con experiencia en ansiedad", "123"));
-                ListaConsultores.Add(new CConsultor(4, "Ana Flores", "7", "Femenino", "988777888", "ana@gmail.com", "Tecnologico", "Consultora en sistemas y soporte técnico", "123"));
+                ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "44444444", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "123"));
+                ListaConsultores.Add(new CConsultor(2, "Ana Torres", "55555555", "Femenino", "988333444", "ana@gmail.com", "Contable", "Contadora especializada en impuestos", "123"));
+                ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "66666666", "Masculino", "988555666", "carlos@gmail.com", "Psicología", "Psicólogo clínico", "123"));
+                ListaConsultores.Add(new CConsultor(4, "Rosa Flores", "77777777", "Femenino", "988777888", "rosa@gmail.com", "Tecnológico", "Consultora en sistemas", "123"));
+                ListaConsultores.Add(new CConsultor(5, "Luis Peña", "88888888", "Masculino", "988999000", "luis@gmail.com", "Legal", "Asesor legal empresarial", "123"));
+            }
+
+            // HORARIOS
+            if (ListaHorarios.Count == 0)
+            {
+                foreach (CConsultor consultor in ListaConsultores)
+                {
+                    GenerarHorarios(consultor.Codigo, DateTime.Today);
+                    GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(-1));
+                    GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(-2));
+                }
+            }
+
+            // CITAS FICTICIAS PARA REPORTES
+            if (ListaCitas.Count == 0)
+            {
+                AgregarCitaFicticiaPorConsultor(1, 1, 100, "Asesoría legal civil", "Atendido");
+                AgregarCitaFicticiaPorConsultor(2, 2, 150, "Consulta contable", "Atendido");
+                AgregarCitaFicticiaPorConsultor(3, 3, 120, "Orientación psicológica", "Atendido");
+                AgregarCitaFicticiaPorConsultor(4, 4, 200, "Soporte tecnológico", "Atendido");
+
+                AgregarCitaFicticiaPorConsultor(1, 1, 100, "Contrato empresarial", "Pendiente");
+                AgregarCitaFicticiaPorConsultor(2, 2, 150, "Declaración de impuestos", "Atendido");
+                AgregarCitaFicticiaPorConsultor(3, 3, 120, "Consulta de ansiedad", "Pendiente");
+                AgregarCitaFicticiaPorConsultor(4, 4, 200, "Configuración de software", "Atendido");
+
+                AgregarCitaFicticiaPorConsultor(1, 5, 100, "Problema legal familiar", "Atendido");
+                AgregarCitaFicticiaPorConsultor(2, 2, 150, "Revisión de balances", "Cancelado");
             }
         }
 
@@ -294,6 +332,30 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             return ListaCitas.Max(c => c.Codigo) + 1;
+        }
+        private void AgregarCitaFicticiaPorConsultor(int codigoCliente, int codigoConsultor, decimal monto, string descripcion, string estado)
+        {
+            CHorarioConsultor horario = ListaHorarios.FirstOrDefault(h =>
+                h.CodigoConsultor == codigoConsultor &&
+                h.Estado == "Libre");
+
+            if (horario == null)
+            {
+                return;
+            }
+
+            CCita cita = new CCita();
+
+            cita.Codigo = GenerarCodigoCita();
+            cita.CodigoCliente = codigoCliente;
+            cita.CodigoHorario = horario.Codigo;
+            cita.Monto = monto;
+            cita.Descripcion = descripcion;
+            cita.Estado = estado;
+
+            ListaCitas.Add(cita);
+
+            horario.Estado = "Reservado";
         }
     }
 }

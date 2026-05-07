@@ -8,13 +8,15 @@ namespace Sistema_de_Gestion_de_Citas
 {
     public class CReporte
     {
-        public List<object> CitasPorServicio()
+        public List<object> CitasPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
             var reporte = from cita in CControlador.ListaCitas
                           join horario in CControlador.ListaHorarios
                           on cita.CodigoHorario equals horario.Codigo
                           join consultor in CControlador.ListaConsultores
                           on horario.CodigoConsultor equals consultor.Codigo
+                          where horario.FechaHoraInicio.Date >= fechaInicio.Date
+                                && horario.FechaHoraInicio.Date <= fechaFin.Date
                           group cita by consultor.Rubro into grupo
                           select new
                           {
