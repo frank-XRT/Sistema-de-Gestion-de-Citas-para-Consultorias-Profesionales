@@ -34,20 +34,57 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnReporteCitas_Click(object sender, EventArgs e)
         {
-            CControlador controlador = new CControlador();
-
-            var datos = controlador.ListarCitasPorConsultor(consultorActual.Codigo);
+            CReporte reporte = new CReporte();
+            var resumen = reporte.ObtenerResumenCitas(consultorActual.Codigo);
 
             Form form = new Form();
-            form.Text = "Reporte de citas";
-            form.Width = 600;
-            form.Height = 400;
+            form.Text = "Reporte de Citas";
+            form.Size = new Size(600, 450);
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.BackColor = Color.FromArgb(236, 253, 245); // Color del menú consultor (verde menta claro)
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.MaximizeBox = false;
 
-            DataGridView dgv = new DataGridView();
-            dgv.Dock = DockStyle.Fill;
-            dgv.DataSource = datos;
+            Panel pnlContenedor = new Panel();
+            pnlContenedor.Dock = DockStyle.Fill;
+            pnlContenedor.Padding = new Padding(40);
+            form.Controls.Add(pnlContenedor);
 
-            form.Controls.Add(dgv);
+            // Estilos de fuente
+            Font fontTitulo = new Font("Segoe UI", 24, FontStyle.Bold);
+            Font fontValor = new Font("Segoe UI", 24, FontStyle.Bold);
+            Color colorTexto = Color.Black;
+
+            // Fila 1: Hoy
+            Label lblHoyTitulo = new Label { Text = "Citas atendidas Hoy", Font = fontTitulo, AutoSize = true, Location = new Point(40, 60), ForeColor = colorTexto };
+            Label lblHoyValor = new Label { Text = resumen.Hoy.ToString(), Font = fontValor, Size = new Size(100, 50), Location = new Point(450, 60), ForeColor = colorTexto, TextAlign = ContentAlignment.TopRight };
+
+            // Fila 2: Mes
+            Label lblMesTitulo = new Label { Text = "Citas atendidas durante el mes", Font = fontTitulo, AutoSize = true, Location = new Point(40, 140), ForeColor = colorTexto };
+            Label lblMesValor = new Label { Text = resumen.Mes.ToString(), Font = fontValor, Size = new Size(100, 50), Location = new Point(450, 140), ForeColor = colorTexto, TextAlign = ContentAlignment.TopRight };
+
+            // Fila 3: Total
+            Label lblTotalTitulo = new Label { Text = "Total de Citas atendidas", Font = fontTitulo, AutoSize = true, Location = new Point(40, 220), ForeColor = colorTexto };
+            Label lblTotalValor = new Label { Text = resumen.Total.ToString(), Font = fontValor, Size = new Size(100, 50), Location = new Point(450, 220), ForeColor = colorTexto, TextAlign = ContentAlignment.TopRight };
+
+            // Botón Volver
+            Button btnVolver = new Button();
+            btnVolver.Text = "Volver";
+            btnVolver.Font = new Font("Segoe UI", 18, FontStyle.Bold);
+            btnVolver.Size = new Size(300, 60);
+            btnVolver.Location = new Point(150, 320);
+            btnVolver.BackColor = Color.White;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Click += (s, ev) => form.Close();
+
+            pnlContenedor.Controls.Add(lblHoyTitulo);
+            pnlContenedor.Controls.Add(lblHoyValor);
+            pnlContenedor.Controls.Add(lblMesTitulo);
+            pnlContenedor.Controls.Add(lblMesValor);
+            pnlContenedor.Controls.Add(lblTotalTitulo);
+            pnlContenedor.Controls.Add(lblTotalValor);
+            pnlContenedor.Controls.Add(btnVolver);
+
             form.ShowDialog();
         }
 

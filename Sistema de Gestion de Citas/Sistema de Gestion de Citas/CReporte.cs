@@ -124,6 +124,41 @@ namespace Sistema_de_Gestion_de_Citas
             return reporte.Cast<object>().ToList();
         }
 
+        public dynamic ObtenerResumenCitas(int codigoConsultor)
+        {
+            var hoy = DateTime.Today;
+            var esteMes = hoy.Month;
+            var esteAño = hoy.Year;
+
+            var horariosConsultor = CControlador.ListaHorarios
+                .Where(h => h.CodigoConsultor == codigoConsultor)
+                .Select(h => h.Codigo)
+                .ToList();
+
+            var citasAtendidas = CControlador.ListaCitas
+                .Where(c => horariosConsultor.Contains(c.CodigoHorario) && c.Estado == "Atendido")
+                .ToList();
+
+            int hoyCount = (from cita in citasAtendidas
+                            join horario in CControlador.ListaHorarios on cita.CodigoHorario equals horario.Codigo
+                            where horario.FechaHoraInicio.Date == hoy
+                            select cita).Count();
+
+            int mesCount = (from cita in citasAtendidas
+                            join horario in CControlador.ListaHorarios on cita.CodigoHorario equals horario.Codigo
+                            where horario.FechaHoraInicio.Month == esteMes && horario.FechaHoraInicio.Year == esteAño
+                            select cita).Count();
+
+            int totalCount = citasAtendidas.Count;
+
+            return new
+            {
+                Hoy = hoyCount,
+                Mes = mesCount,
+                Total = totalCount
+            };
+        }
+
         private string ObtenerNombreCliente(int codigoCliente)
         {
             CCliente cliente = CControlador.ListaClientes

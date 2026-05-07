@@ -42,9 +42,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 32);
+            this.label2.Location = new System.Drawing.Point(187, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 25);
+            this.label2.Size = new System.Drawing.Size(155, 20);
             this.label2.TabIndex = 29;
             this.label2.Text = "Eliminar Consultor";
             // 
@@ -52,18 +53,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 85);
+            this.label1.Location = new System.Drawing.Point(40, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 25);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 30;
             this.label1.Text = "Codigo";
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(510, 78);
+            this.btnBuscar.Location = new System.Drawing.Point(454, 70);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(102, 38);
+            this.btnBuscar.Size = new System.Drawing.Size(76, 31);
             this.btnBuscar.TabIndex = 32;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -72,27 +75,30 @@
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(197, 86);
+            this.txtCodigo.Location = new System.Drawing.Point(148, 70);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(240, 30);
+            this.txtCodigo.Size = new System.Drawing.Size(258, 26);
             this.txtCodigo.TabIndex = 33;
             // 
             // dgvConsultores
             // 
             this.dgvConsultores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultores.Location = new System.Drawing.Point(59, 149);
+            this.dgvConsultores.Location = new System.Drawing.Point(21, 120);
+            this.dgvConsultores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvConsultores.Name = "dgvConsultores";
             this.dgvConsultores.RowHeadersWidth = 51;
             this.dgvConsultores.RowTemplate.Height = 24;
-            this.dgvConsultores.Size = new System.Drawing.Size(553, 231);
+            this.dgvConsultores.Size = new System.Drawing.Size(547, 188);
             this.dgvConsultores.TabIndex = 34;
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(219, 400);
+            this.btnEliminar.Location = new System.Drawing.Point(191, 324);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(102, 38);
+            this.btnEliminar.Size = new System.Drawing.Size(76, 31);
             this.btnEliminar.TabIndex = 35;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -101,9 +107,10 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(355, 400);
+            this.btnVolver.Location = new System.Drawing.Point(306, 324);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(102, 38);
+            this.btnVolver.Size = new System.Drawing.Size(76, 31);
             this.btnVolver.TabIndex = 36;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -111,9 +118,9 @@
             // 
             // frmEliminarConsultor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvConsultores);
@@ -121,6 +128,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmEliminarConsultor";
             this.Text = "frmEliminarConsultor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultores)).EndInit();

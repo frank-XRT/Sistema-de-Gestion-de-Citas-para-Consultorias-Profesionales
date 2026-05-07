@@ -29,29 +29,31 @@ namespace Sistema_de_Gestion_de_Citas
             consultorActual = consultor;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.FromArgb(236, 253, 245);
+            MostrarCitas();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DateTime fecha = dtpFecha.Value.Date;
 
-            var citas = controlador.ListarCitasPorConsultor(consultorActual.Codigo)
-                .Where(c =>
-                {
-                    CHorarioConsultor horario = CControlador.ListaHorarios
-                        .Find(h => h.Codigo == c.CodigoHorario);
-
-                    if (horario == null)
-                    {
-                        return false;
-                    }
-
-                    return horario.FechaHoraInicio.Date == fecha;
-                })
-                .ToList();
+            var citas = (from c in controlador.ListarCitasPorConsultor(consultorActual.Codigo)
+                        join cl in CControlador.ListaClientes on c.CodigoCliente equals cl.Codigo
+                        join h in CControlador.ListaHorarios on c.CodigoHorario equals h.Codigo
+                        where h.FechaHoraInicio.Date == fecha
+                        select new
+                        {
+                            Codigo = c.Codigo,
+                            Cliente = cl.Nombre,
+                            Fecha = h.FechaHoraInicio.ToString("dd/MM/yyyy"),
+                            Hora = h.FechaHoraInicio.ToString("HH:mm") + " - " + h.FechaHoraFin.ToString("HH:mm"),
+                            Monto = c.Monto,
+                            Descripcion = c.Descripcion,
+                            Estado = c.Estado
+                        }).ToList();
 
             dgvCitas.DataSource = null;
             dgvCitas.DataSource = citas;
+            if (dgvCitas.Columns["Codigo"] != null) dgvCitas.Columns["Codigo"].Visible = false;
         }
 
         private void btnAtender_Click(object sender, EventArgs e)
@@ -62,14 +64,15 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
-            CCita cita = (CCita)dgvCitas.CurrentRow.DataBoundItem;
+            // Al usar un objeto anónimo, obtenemos el código para buscar la cita real
+            int codigoCita = (int)dgvCitas.CurrentRow.Cells["Codigo"].Value;
 
-            bool atendida = controlador.MarcarCitaComoAtendida(cita.Codigo);
+            bool atendida = controlador.MarcarCitaComoAtendida(codigoCita);
 
             if (atendida)
             {
                 MessageBox.Show("Cita marcada como atendida");
-                MostrarCitas();
+                btnBuscar_Click(null, null); // Refrescar la búsqueda actual
             }
             else
             {
@@ -79,8 +82,7 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void MostrarCitas()
         {
-            dgvCitas.DataSource = null;
-            dgvCitas.DataSource = controlador.ListarCitasPorConsultor(consultorActual.Codigo);
+            btnBuscar_Click(null, null);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

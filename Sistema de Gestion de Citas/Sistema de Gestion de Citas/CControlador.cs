@@ -37,11 +37,12 @@ namespace Sistema_de_Gestion_de_Citas
             // CLIENTES
             if (ListaClientes.Count == 0)
             {
-                ListaClientes.Add(new CCliente(1, "Kevin", "11111111", "Masculino", "999111222", "kevin@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(1, "Kevin", "111", "Masculino", "999111222", "kevin@gmail.com", "123"));
                 ListaClientes.Add(new CCliente(2, "Guiso", "22222222", "Masculino", "999333444", "guiso@gmail.com", "123"));
                 ListaClientes.Add(new CCliente(3, "Lucía", "33333333", "Femenino", "999555666", "lucia@gmail.com", "123"));
                 ListaClientes.Add(new CCliente(4, "María", "44441111", "Femenino", "999777888", "maria@gmail.com", "123"));
             }
+            
 
             // CONSULTORES
             if (ListaConsultores.Count == 0)
@@ -403,6 +404,7 @@ namespace Sistema_de_Gestion_de_Citas
             {
                 return;
             }
+
 
             CCita cita = new CCita();
 
