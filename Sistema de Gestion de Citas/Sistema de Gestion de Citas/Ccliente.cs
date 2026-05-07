@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +16,11 @@ namespace Sistema_de_Gestion_de_Citas
         public string Correo { get; set; }
         public string Contraseña { get; set; }
 
+        public List<CCita> ListaCitas { get; set; }
+
         public CCliente()
         {
+            ListaCitas = new List<CCita>();
         }
 
         public CCliente(int codigo, string nombre, string dni, string sexo,
@@ -30,6 +33,20 @@ namespace Sistema_de_Gestion_de_Citas
             Telefono = telefono;
             Correo = correo;
             Contraseña = contraseña;
+            ListaCitas = new List<CCita>();
+        }
+
+        public List<CCita> ListarCitas()
+        {
+            return ListaCitas;
+        }
+
+        public void AgregarCita(CCita cita)
+        {
+            if (!ListaCitas.Contains(cita))
+            {
+                ListaCitas.Add(cita);
+            }
         }
     }
 }

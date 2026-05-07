@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +28,16 @@ namespace Sistema_de_Gestion_de_Citas
             Monto = monto;
             Descripcion = descripcion;
             Estado = estado;
+        }
+
+        public void Atender()
+        {
+            Estado = "Atendido";
+        }
+
+        public void Cancelar()
+        {
+            Estado = "Cancelado";
         }
     }
 }

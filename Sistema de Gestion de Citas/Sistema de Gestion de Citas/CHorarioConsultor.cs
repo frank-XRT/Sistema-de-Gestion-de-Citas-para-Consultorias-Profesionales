@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,8 @@ namespace Sistema_de_Gestion_de_Citas
         public DateTime FechaHoraInicio { get; set; }
         public DateTime FechaHoraFin { get; set; }
         public string Estado { get; set; }
+        public CCita Cita { get; set; }
+        public CCliente Cliente { get; set; }
 
         public CHorarioConsultor()
         {
@@ -26,6 +28,20 @@ namespace Sistema_de_Gestion_de_Citas
             FechaHoraInicio = fechaHoraInicio;
             FechaHoraFin = fechaHoraFin;
             Estado = estado;
+        }
+
+        public void Reservar(CCita cita, CCliente cliente)
+        {
+            Estado = "Reservado";
+            Cita = cita;
+            Cliente = cliente;
+        }
+
+        public void Liberar()
+        {
+            Estado = "Libre";
+            Cita = null;
+            Cliente = null;
         }
     }
 }

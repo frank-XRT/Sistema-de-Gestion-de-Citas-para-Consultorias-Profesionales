@@ -18,9 +18,11 @@ namespace Sistema_de_Gestion_de_Citas
         public string Descripcion { get; set; }
         public string Contraseña { get; set; }
         public decimal Monto { get; set; }
+        public List<CHorarioConsultor> ListaHorarios { get; set; }
 
         public CConsultor()
         {
+            ListaHorarios = new List<CHorarioConsultor>();
         }
 
         public CConsultor(int codigo, string nombre, string dni, string sexo, string telefono,
@@ -36,6 +38,56 @@ namespace Sistema_de_Gestion_de_Citas
             Descripcion = descripcion;
             Contraseña = contraseña;
             Monto = monto;
+            ListaHorarios = new List<CHorarioConsultor>();
+        }
+
+        public void GenerarHorarios(DateTime fecha, ref int ultimoCodigoHorario)
+        {
+            DateTime[] inicios = {
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 8, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 10, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 12, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 14, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 16, 0, 0)
+            };
+
+            DateTime[] fines = {
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 10, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 12, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 14, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 16, 0, 0),
+                new DateTime(fecha.Year, fecha.Month, fecha.Day, 17, 0, 0)
+            };
+
+            for (int i = 0; i < inicios.Length; i++)
+            {
+                AgregarHorarioSiNoExiste(ultimoCodigoHorario++, inicios[i], fines[i]);
+            }
+        }
+
+        private void AgregarHorarioSiNoExiste(int codigo, DateTime inicio, DateTime fin)
+        {
+            bool existe = ListaHorarios.Any(h => h.FechaHoraInicio == inicio && h.FechaHoraFin == fin);
+
+            if (!existe)
+            {
+                ListaHorarios.Add(new CHorarioConsultor(codigo, this.Codigo, inicio, fin, "Libre"));
+            }
+        }
+
+        public List<CHorarioConsultor> ListarHorariosLibres()
+        {
+            return ListaHorarios.Where(h => h.Estado == "Libre").ToList();
+        }
+
+        public List<CHorarioConsultor> ListarHorariosLibres(DateTime fecha)
+        {
+            return ListaHorarios.Where(h => h.Estado == "Libre" && h.FechaHoraInicio.Date == fecha.Date).ToList();
+        }
+
+        public List<CCita> ListarCitas()
+        {
+            return ListaHorarios.Where(h => h.Cita != null).Select(h => h.Cita).ToList();
         }
     }
 }

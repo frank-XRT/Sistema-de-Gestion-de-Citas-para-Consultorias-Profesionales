@@ -13,6 +13,7 @@ namespace Sistema_de_Gestion_de_Citas
         public static List<CCliente> ListaClientes = new List<CCliente>();
         public static List<CHorarioConsultor> ListaHorarios = new List<CHorarioConsultor>();
         public static List<CCita> ListaCitas = new List<CCita>();
+        public static List<CRubro> ListaRubros = new List<CRubro>();
 
         public CControlador()
         {
@@ -58,17 +59,24 @@ namespace Sistema_de_Gestion_de_Citas
             // HORARIOS
             if (ListaHorarios.Count == 0)
             {
+                int ultimoCodigo = GenerarCodigoHorario();
                 foreach (CConsultor consultor in ListaConsultores)
                 {
                     // Generar horarios para los próximos 30 días
                     for (int i = 0; i < 30; i++)
                     {
-                        GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(i));
+                        consultor.GenerarHorarios(DateTime.Today.AddDays(i), ref ultimoCodigo);
                     }
                     
                     // También generar para un par de días pasados por si acaso hay citas registradas ahí
-                    GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(-1));
-                    GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(-2));
+                    consultor.GenerarHorarios(DateTime.Today.AddDays(-1), ref ultimoCodigo);
+                    consultor.GenerarHorarios(DateTime.Today.AddDays(-2), ref ultimoCodigo);
+
+                    // Sincronizar con la lista global (para compatibilidad)
+                    foreach (var h in consultor.ListaHorarios)
+                    {
+                        if (!ListaHorarios.Contains(h)) ListaHorarios.Add(h);
+                    }
                 }
             }
 
@@ -87,6 +95,27 @@ namespace Sistema_de_Gestion_de_Citas
 
                 AgregarCitaFicticiaPorConsultor(1, 5, 100, "Problema legal familiar", "Atendido");
                 AgregarCitaFicticiaPorConsultor(2, 2, 150, "Revisión de balances", "Cancelado");
+            }
+
+            // MULTILISTA: Organizar rubros e inicializar sus listas
+            ActualizarListaRubros();
+        }
+
+        private void ActualizarListaRubros()
+        {
+            ListaRubros.Clear();
+            foreach (var consultor in ListaConsultores)
+            {
+                CRubro rubro = ListaRubros.Find(r => r.Nombre == consultor.Rubro);
+                if (rubro == null)
+                {
+                    rubro = new CRubro(consultor.Rubro);
+                    ListaRubros.Add(rubro);
+                }
+                if (!rubro.ListaConsultores.Contains(consultor))
+                {
+                    rubro.ListaConsultores.Add(consultor);
+                }
             }
         }
 
@@ -140,6 +169,16 @@ namespace Sistema_de_Gestion_de_Citas
 
             consultor.Codigo = GenerarCodigoConsultor();
             ListaConsultores.Add(consultor);
+
+            // MULTILISTA: Agregar al rubro correspondiente
+            CRubro rubro = ListaRubros.Find(r => r.Nombre == consultor.Rubro);
+            if (rubro == null)
+            {
+                rubro = new CRubro(consultor.Rubro);
+                ListaRubros.Add(rubro);
+            }
+            rubro.AgregarConsultor(consultor);
+
             return true;
         }
 
@@ -154,62 +193,42 @@ namespace Sistema_de_Gestion_de_Citas
 
             ListaConsultores.Remove(consultor);
 
+            // MULTILISTA: Eliminar del rubro
+            CRubro rubro = ListaRubros.Find(r => r.Nombre == consultor.Rubro);
+            if (rubro != null)
+            {
+                rubro.ListaConsultores.Remove(consultor);
+            }
+
             ListaHorarios.RemoveAll(h => h.CodigoConsultor == codigo);
 
             return true;
         }
 
-        public List<CConsultor> BuscarConsultoresPorRubro(string rubro)
+        public List<CConsultor> BuscarConsultoresPorRubro(string nombreRubro)
         {
-            return ListaConsultores
-                .Where(c => c.Rubro.ToLower().Contains(rubro.ToLower()))
-                .ToList();
+            // MULTILISTA: Buscar directamente en la lista del rubro
+            CRubro rubro = ListaRubros.Find(r => r.Nombre.ToLower().Contains(nombreRubro.ToLower()));
+            return rubro != null ? rubro.ListaConsultores : new List<CConsultor>();
         }
 
         public void GenerarHorarios(int codigoConsultor, DateTime fecha)
         {
-            int codigoHorario = GenerarCodigoHorario();
-
-            DateTime bloque1Inicio = new DateTime(fecha.Year, fecha.Month, fecha.Day, 8, 0, 0);
-            DateTime bloque1Fin = new DateTime(fecha.Year, fecha.Month, fecha.Day, 10, 0, 0);
-
-            DateTime bloque2Inicio = new DateTime(fecha.Year, fecha.Month, fecha.Day, 10, 0, 0);
-            DateTime bloque2Fin = new DateTime(fecha.Year, fecha.Month, fecha.Day, 12, 0, 0);
-
-            DateTime bloque3Inicio = new DateTime(fecha.Year, fecha.Month, fecha.Day, 12, 0, 0);
-            DateTime bloque3Fin = new DateTime(fecha.Year, fecha.Month, fecha.Day, 14, 0, 0);
-
-            DateTime bloque4Inicio = new DateTime(fecha.Year, fecha.Month, fecha.Day, 14, 0, 0);
-            DateTime bloque4Fin = new DateTime(fecha.Year, fecha.Month, fecha.Day, 16, 0, 0);
-
-            DateTime bloque5Inicio = new DateTime(fecha.Year, fecha.Month, fecha.Day, 16, 0, 0);
-            DateTime bloque5Fin = new DateTime(fecha.Year, fecha.Month, fecha.Day, 17, 0, 0);
-
-            AgregarHorarioSiNoExiste(codigoHorario++, codigoConsultor, bloque1Inicio, bloque1Fin);
-            AgregarHorarioSiNoExiste(codigoHorario++, codigoConsultor, bloque2Inicio, bloque2Fin);
-            AgregarHorarioSiNoExiste(codigoHorario++, codigoConsultor, bloque3Inicio, bloque3Fin);
-            AgregarHorarioSiNoExiste(codigoHorario++, codigoConsultor, bloque4Inicio, bloque4Fin);
-            AgregarHorarioSiNoExiste(codigoHorario++, codigoConsultor, bloque5Inicio, bloque5Fin);
-        }
-
-        private void AgregarHorarioSiNoExiste(int codigo, int codigoConsultor, DateTime inicio, DateTime fin)
-        {
-            bool existe = ListaHorarios.Any(h =>
-                h.CodigoConsultor == codigoConsultor &&
-                h.FechaHoraInicio == inicio &&
-                h.FechaHoraFin == fin);
-
-            if (!existe)
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            if (consultor != null)
             {
-                ListaHorarios.Add(new CHorarioConsultor(
-                    codigo,
-                    codigoConsultor,
-                    inicio,
-                    fin,
-                    "Libre"
-                ));
+                int ultimoCodigo = GenerarCodigoHorario();
+                consultor.GenerarHorarios(fecha, ref ultimoCodigo);
+                
+                // Sincronizar lista global
+                foreach (var h in consultor.ListaHorarios)
+                {
+                    if (!ListaHorarios.Contains(h)) ListaHorarios.Add(h);
+                }
             }
         }
+
+
 
         public bool ReservarCita(CCita cita)
         {
@@ -230,7 +249,13 @@ namespace Sistema_de_Gestion_de_Citas
 
             ListaCitas.Add(cita);
 
-            horario.Estado = "Reservado";
+            // MULTILISTA y DELEGACIÓN: Agregar a la lista del cliente y vincular
+            CCliente cliente = ListaClientes.Find(c => c.Codigo == cita.CodigoCliente);
+            if (cliente != null)
+            {
+                cliente.AgregarCita(cita);
+                horario.Reservar(cita, cliente);
+            }
 
             return true;
         }
@@ -244,7 +269,8 @@ namespace Sistema_de_Gestion_de_Citas
                 return false;
             }
 
-            cita.Estado = "Atendido";
+            // DELEGACIÓN: La cita sabe cómo marcarse como atendida
+            cita.Atender();
             return true;
         }
 
@@ -257,13 +283,15 @@ namespace Sistema_de_Gestion_de_Citas
                 return false;
             }
 
-            cita.Estado = "Cancelado";
+            // DELEGACIÓN: La cita sabe cancelarse
+            cita.Cancelar();
 
             CHorarioConsultor horario = ListaHorarios.Find(h => h.Codigo == cita.CodigoHorario);
 
             if (horario != null)
             {
-                horario.Estado = "Libre";
+                // DELEGACIÓN: El horario sabe liberarse
+                horario.Liberar();
             }
 
             return true;
@@ -271,9 +299,9 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CCita> ListarCitasPorCliente(int codigoCliente)
         {
-            return ListaCitas
-                .Where(c => c.CodigoCliente == codigoCliente)
-                .ToList();
+            // DELEGACIÓN: El cliente sabe listar sus citas
+            CCliente cliente = ListaClientes.Find(c => c.Codigo == codigoCliente);
+            return cliente != null ? cliente.ListarCitas() : new List<CCita>();
         }
 
         public List<object> ListarCitasDetalladasPorCliente(int codigoCliente)
@@ -298,31 +326,24 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CCita> ListarCitasPorConsultor(int codigoConsultor)
         {
-            var horariosDelConsultor = ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor)
-                .Select(h => h.Codigo)
-                .ToList();
-
-            return ListaCitas
-                .Where(c => horariosDelConsultor.Contains(c.CodigoHorario))
-                .ToList();
+            // DELEGACIÓN: El consultor sabe listar sus citas
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            return consultor != null ? consultor.ListarCitas() : new List<CCita>();
         }
 
         public List<CHorarioConsultor> ListarHorariosLibres(int codigoConsultor)
         {
-            return ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor && h.Estado == "Libre")
-                .ToList();
+            // DELEGACIÓN: El consultor sabe listar sus horarios libres
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            return consultor != null ? consultor.ListarHorariosLibres() : new List<CHorarioConsultor>();
         }
 
 
         public List<CHorarioConsultor> ListarHorariosLibres(int codigoConsultor, DateTime fecha)
         {
-            return ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor 
-                         && h.Estado == "Libre" 
-                         && h.FechaHoraInicio.Date == fecha.Date)
-                .ToList();
+            // DELEGACIÓN: El consultor sabe listar sus horarios libres por fecha
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            return consultor != null ? consultor.ListarHorariosLibres(fecha) : new List<CHorarioConsultor>();
         }
 
 
@@ -331,16 +352,19 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CHorarioConsultor> ListarTodosLosHorarios(int codigoConsultor)
         {
-            return ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor)
-                .ToList();
+            // MULTILISTA: Obtener de la lista del consultor
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            return consultor != null ? consultor.ListaHorarios : new List<CHorarioConsultor>();
         }
 
         public List<CHorarioConsultor> ListarTodosLosHorarios(int codigoConsultor, DateTime fecha)
         {
-            return ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor 
-                         && h.FechaHoraInicio.Date == fecha.Date)
+            // MULTILISTA: Obtener de la lista del consultor
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            if (consultor == null) return new List<CHorarioConsultor>();
+
+            return consultor.ListaHorarios
+                .Where(h => h.FechaHoraInicio.Date == fecha.Date)
                 .ToList();
         }
 
@@ -418,7 +442,13 @@ namespace Sistema_de_Gestion_de_Citas
 
             ListaCitas.Add(cita);
 
-            horario.Estado = "Reservado";
+            // MULTILISTA y DELEGACIÓN: Vincular cita con el horario y el cliente
+            CCliente cliente = ListaClientes.Find(c => c.Codigo == codigoCliente);
+            if (cliente != null)
+            {
+                cliente.AgregarCita(cita);
+                horario.Reservar(cita, cliente);
+            }
         }
     }
 }

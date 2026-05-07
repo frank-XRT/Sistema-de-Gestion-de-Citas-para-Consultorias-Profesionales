@@ -10,18 +10,15 @@ namespace Sistema_de_Gestion_de_Citas
     {
         public List<object> CitasPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
-            var reporte = from cita in CControlador.ListaCitas
-                          join horario in CControlador.ListaHorarios
-                          on cita.CodigoHorario equals horario.Codigo
-                          join consultor in CControlador.ListaConsultores
-                          on horario.CodigoConsultor equals consultor.Codigo
-                          where horario.FechaHoraInicio.Date >= fechaInicio.Date
-                                && horario.FechaHoraInicio.Date <= fechaFin.Date
-                          group cita by consultor.Rubro into grupo
+            // MULTILISTA: Navegamos Rubro -> Consultores -> Horarios -> Citas
+            var reporte = from rubro in CControlador.ListaRubros
                           select new
                           {
-                              Rubro = grupo.Key,
-                              CantidadCitas = grupo.Count()
+                              Rubro = rubro.Nombre,
+                              CantidadCitas = rubro.ListaConsultores.Sum(con =>
+                                  con.ListaHorarios.Count(h => h.Cita != null
+                                      && h.FechaHoraInicio.Date >= fechaInicio.Date
+                                      && h.FechaHoraInicio.Date <= fechaFin.Date))
                           };
 
             return reporte.Cast<object>().ToList();
@@ -29,18 +26,16 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<object> IngresosPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
-            var reporte = from cita in CControlador.ListaCitas
-                          join horario in CControlador.ListaHorarios
-                          on cita.CodigoHorario equals horario.Codigo
-                          join consultor in CControlador.ListaConsultores
-                          on horario.CodigoConsultor equals consultor.Codigo
-                          where horario.FechaHoraInicio.Date >= fechaInicio.Date
-                                && horario.FechaHoraInicio.Date <= fechaFin.Date
-                          group cita by consultor.Rubro into grupo
+            // MULTILISTA: Navegamos Rubro -> Consultores -> Horarios -> Citas
+            var reporte = from rubro in CControlador.ListaRubros
                           select new
                           {
-                              Rubro = grupo.Key,
-                              TotalIngresos = grupo.Sum(c => c.Monto)
+                              Rubro = rubro.Nombre,
+                              TotalIngresos = rubro.ListaConsultores.Sum(con =>
+                                  con.ListaHorarios.Where(h => h.Cita != null
+                                      && h.FechaHoraInicio.Date >= fechaInicio.Date
+                                      && h.FechaHoraInicio.Date <= fechaFin.Date)
+                                  .Sum(h => h.Cita.Monto))
                           };
 
             return reporte.Cast<object>().ToList();
@@ -48,12 +43,12 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<object> ConsultoresPorRubro()
         {
-            var reporte = from consultor in CControlador.ListaConsultores
-                          group consultor by consultor.Rubro into grupo
+            // MULTILISTA: Directamente de la lista de rubros
+            var reporte = from rubro in CControlador.ListaRubros
                           select new
                           {
-                              Rubro = grupo.Key,
-                              CantidadConsultores = grupo.Count()
+                              Rubro = rubro.Nombre,
+                              CantidadConsultores = rubro.ListaConsultores.Count
                           };
 
             return reporte.Cast<object>().ToList();
@@ -61,38 +56,19 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<object> IngresosMensualesPorTrimestre(int codigoConsultor, int trimestre)
         {
-            int mesInicio = 1;
-            int mesFin = 3;
+            int mesInicio = (trimestre - 1) * 3 + 1;
+            int mesFin = mesInicio + 2;
 
-            if (trimestre == 1)
-            {
-                mesInicio = 1;
-                mesFin = 3;
-            }
-            else if (trimestre == 2)
-            {
-                mesInicio = 4;
-                mesFin = 6;
-            }
-            else if (trimestre == 3)
-            {
-                mesInicio = 7;
-                mesFin = 9;
-            }
-            else if (trimestre == 4)
-            {
-                mesInicio = 10;
-                mesFin = 12;
-            }
+            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            if (consultor == null) return new List<object>();
 
-            var reporte = from cita in CControlador.ListaCitas
-                          join horario in CControlador.ListaHorarios
-                          on cita.CodigoHorario equals horario.Codigo
-                          where horario.CodigoConsultor == codigoConsultor
-                                && cita.Estado == "Atendido"
+            // MULTILISTA: Navegamos Consultor -> Horarios -> Citas
+            var reporte = from horario in consultor.ListaHorarios
+                          where horario.Cita != null
+                                && horario.Cita.Estado == "Atendido"
                                 && horario.FechaHoraInicio.Month >= mesInicio
                                 && horario.FechaHoraInicio.Month <= mesFin
-                          group cita by horario.FechaHoraInicio.Month into grupo
+                          group horario.Cita by horario.FechaHoraInicio.Month into grupo
                           orderby grupo.Key
                           select new
                           {
@@ -105,18 +81,17 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<object> ClientesMasFrecuentes(int codigoConsultor)
         {
-            var horariosConsultor = CControlador.ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor)
-                .Select(h => h.Codigo)
-                .ToList();
+            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            if (consultor == null) return new List<object>();
 
-            var reporte = from cita in CControlador.ListaCitas
-                          where horariosConsultor.Contains(cita.CodigoHorario)
-                          group cita by cita.CodigoCliente into grupo
+            // MULTILISTA: Navegamos Consultor -> Horarios -> Cliente (vía Cita o directo)
+            var reporte = from horario in consultor.ListaHorarios
+                          where horario.Cita != null && horario.Cliente != null
+                          group horario by horario.Cliente into grupo
                           orderby grupo.Count() descending
                           select new
                           {
-                              NombreCliente = ObtenerNombreCliente(grupo.Key),
+                              NombreCliente = grupo.Key.Nombre,
                               NumeroCitas = grupo.Count()
                           };
 
@@ -129,26 +104,17 @@ namespace Sistema_de_Gestion_de_Citas
             var esteMes = hoy.Month;
             var esteAño = hoy.Year;
 
-            var horariosConsultor = CControlador.ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor)
-                .Select(h => h.Codigo)
-                .ToList();
+            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            if (consultor == null) return new { Hoy = 0, Mes = 0, Total = 0 };
 
-            var citasAtendidas = CControlador.ListaCitas
-                .Where(c => horariosConsultor.Contains(c.CodigoHorario) && c.Estado == "Atendido")
-                .ToList();
+            // MULTILISTA: Navegamos directamente por los horarios del consultor
+            int hoyCount = consultor.ListaHorarios.Count(h => h.Cita != null 
+                && h.Cita.Estado == "Atendido" && h.FechaHoraInicio.Date == hoy);
 
-            int hoyCount = (from cita in citasAtendidas
-                            join horario in CControlador.ListaHorarios on cita.CodigoHorario equals horario.Codigo
-                            where horario.FechaHoraInicio.Date == hoy
-                            select cita).Count();
+            int mesCount = consultor.ListaHorarios.Count(h => h.Cita != null 
+                && h.Cita.Estado == "Atendido" && h.FechaHoraInicio.Month == esteMes && h.FechaHoraInicio.Year == esteAño);
 
-            int mesCount = (from cita in citasAtendidas
-                            join horario in CControlador.ListaHorarios on cita.CodigoHorario equals horario.Codigo
-                            where horario.FechaHoraInicio.Month == esteMes && horario.FechaHoraInicio.Year == esteAño
-                            select cita).Count();
-
-            int totalCount = citasAtendidas.Count;
+            int totalCount = consultor.ListaHorarios.Count(h => h.Cita != null && h.Cita.Estado == "Atendido");
 
             return new
             {

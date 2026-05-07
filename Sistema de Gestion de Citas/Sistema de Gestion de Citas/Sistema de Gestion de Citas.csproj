@@ -54,6 +54,7 @@
     <Compile Include="CControlador.cs" />
     <Compile Include="CHorarioConsultor.cs" />
     <Compile Include="CReporte.cs" />
+    <Compile Include="CRubro.cs" />
     <Compile Include="frmBuscarProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
