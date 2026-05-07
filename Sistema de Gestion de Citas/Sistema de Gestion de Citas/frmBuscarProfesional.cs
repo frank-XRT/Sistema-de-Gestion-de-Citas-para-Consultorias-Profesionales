@@ -33,6 +33,8 @@ namespace Sistema_de_Gestion_de_Citas
             // Ocultar columnas internas
             if (dgvHorarios.Columns["Codigo"] != null) dgvHorarios.Columns["Codigo"].Visible = false;
             if (dgvHorarios.Columns["CodigoConsultor"] != null) dgvHorarios.Columns["CodigoConsultor"].Visible = false;
+            if (dgvHorarios.Columns["Cita"] != null) dgvHorarios.Columns["Cita"].Visible = false;
+            if (dgvHorarios.Columns["Cliente"] != null) dgvHorarios.Columns["Cliente"].Visible = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
