@@ -44,8 +44,8 @@ namespace Sistema_de_Gestion_de_Citas
             // CONSULTORES
             if (ListaConsultores.Count == 0)
             {
-                ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "44444444", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "123"));
-                ListaConsultores.Add(new CConsultor(2, "Ana Torres", "55555555", "Femenino", "988333444", "ana@gmail.com", "Contable", "Contadora especializada en impuestos", "123"));
+                ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "4", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "4"));
+                ListaConsultores.Add(new CConsultor(2, "Ana Torres", "5", "Femenino", "988333444", "ana@gmail.com", "Contable", "Contadora especializada en impuestos", "5"));
                 ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "66666666", "Masculino", "988555666", "carlos@gmail.com", "Psicología", "Psicólogo clínico", "123"));
                 ListaConsultores.Add(new CConsultor(4, "Rosa Flores", "77777777", "Femenino", "988777888", "rosa@gmail.com", "Tecnológico", "Consultora en sistemas", "123"));
                 ListaConsultores.Add(new CConsultor(5, "Luis Peña", "88888888", "Masculino", "988999000", "luis@gmail.com", "Legal", "Asesor legal empresarial", "123"));

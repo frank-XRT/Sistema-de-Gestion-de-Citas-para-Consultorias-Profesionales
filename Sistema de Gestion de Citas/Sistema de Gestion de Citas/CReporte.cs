@@ -40,7 +40,7 @@ namespace Sistema_de_Gestion_de_Citas
             return reporte.Cast<object>().ToList();
         }
 
-        public decimal IngresosPorTrimestre(int codigoConsultor, int trimestre)
+        public List<object> IngresosMensualesPorTrimestre(int codigoConsultor, int trimestre)
         {
             int mesInicio = 1;
             int mesFin = 3;
@@ -66,30 +66,22 @@ namespace Sistema_de_Gestion_de_Citas
                 mesFin = 12;
             }
 
-            var horariosConsultor = CControlador.ListaHorarios
-                .Where(h => h.CodigoConsultor == codigoConsultor)
-                .ToList();
+            var reporte = from cita in CControlador.ListaCitas
+                          join horario in CControlador.ListaHorarios
+                          on cita.CodigoHorario equals horario.Codigo
+                          where horario.CodigoConsultor == codigoConsultor
+                                && cita.Estado == "Atendido"
+                                && horario.FechaHoraInicio.Month >= mesInicio
+                                && horario.FechaHoraInicio.Month <= mesFin
+                          group cita by horario.FechaHoraInicio.Month into grupo
+                          orderby grupo.Key
+                          select new
+                          {
+                              Mes = NombreMes(grupo.Key),
+                              Ingreso = grupo.Sum(c => c.Monto)
+                          };
 
-            decimal total = 0;
-
-            foreach (CHorarioConsultor horario in horariosConsultor)
-            {
-                if (horario.FechaHoraInicio.Month >= mesInicio &&
-                    horario.FechaHoraInicio.Month <= mesFin)
-                {
-                    List<CCita> citas = CControlador.ListaCitas
-                        .Where(c => c.CodigoHorario == horario.Codigo &&
-                                    c.Estado == "Atendido")
-                        .ToList();
-
-                    foreach (CCita cita in citas)
-                    {
-                        total += cita.Monto;
-                    }
-                }
-            }
-
-            return total;
+            return reporte.Cast<object>().ToList();
         }
 
         public List<object> ClientesMasFrecuentes(int codigoConsultor)
@@ -124,6 +116,23 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             return cliente.Nombre;
+        }
+        private string NombreMes(int mes)
+        {
+            if (mes == 1) return "Enero";
+            if (mes == 2) return "Febrero";
+            if (mes == 3) return "Marzo";
+            if (mes == 4) return "Abril";
+            if (mes == 5) return "Mayo";
+            if (mes == 6) return "Junio";
+            if (mes == 7) return "Julio";
+            if (mes == 8) return "Agosto";
+            if (mes == 9) return "Septiembre";
+            if (mes == 10) return "Octubre";
+            if (mes == 11) return "Noviembre";
+            if (mes == 12) return "Diciembre";
+
+            return "";
         }
     }
 }
