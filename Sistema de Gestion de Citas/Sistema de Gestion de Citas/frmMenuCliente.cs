@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +13,9 @@ namespace Sistema_de_Gestion_de_Citas
     public partial class frmMenuCliente : Form
     {
         private CCliente clienteActual;
+        // Constructor requerido por el diseñador de Visual Studio
+        public frmMenuCliente() { InitializeComponent(); }
+
         public frmMenuCliente(CCliente cliente)
         {
             InitializeComponent();

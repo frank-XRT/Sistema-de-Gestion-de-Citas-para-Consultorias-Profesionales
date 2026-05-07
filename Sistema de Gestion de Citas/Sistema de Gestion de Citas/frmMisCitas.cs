@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,19 +14,21 @@ namespace Sistema_de_Gestion_de_Citas
     {
         private CCliente clienteActual;
         CControlador controlador = new CControlador();
+        // Constructor requerido por el diseñador de Visual Studio
+        public frmMisCitas() { InitializeComponent(); }
+
         public frmMisCitas(CCliente cliente)
         {   
             InitializeComponent();
             clienteActual = cliente;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.FromArgb(236, 253, 245);
-
             MostrarMisCitas();
         }
         private void MostrarMisCitas()
         {
             dgvMisCitas.DataSource = null;
-            dgvMisCitas.DataSource = controlador.ListarCitasPorCliente(clienteActual.Codigo);
+            dgvMisCitas.DataSource = controlador.ListarCitasDetalladasPorCliente(clienteActual.Codigo);
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {

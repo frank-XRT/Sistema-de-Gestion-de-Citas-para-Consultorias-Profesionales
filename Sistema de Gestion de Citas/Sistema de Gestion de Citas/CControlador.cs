@@ -32,6 +32,7 @@ namespace Sistema_de_Gestion_de_Citas
                 ));
             }
             
+            
 
             // CLIENTES
             if (ListaClientes.Count == 0)
@@ -57,7 +58,13 @@ namespace Sistema_de_Gestion_de_Citas
             {
                 foreach (CConsultor consultor in ListaConsultores)
                 {
-                    GenerarHorarios(consultor.Codigo, DateTime.Today);
+                    // Generar horarios para los próximos 30 días
+                    for (int i = 0; i < 30; i++)
+                    {
+                        GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(i));
+                    }
+                    
+                    // También generar para un par de días pasados por si acaso hay citas registradas ahí
                     GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(-1));
                     GenerarHorarios(consultor.Codigo, DateTime.Today.AddDays(-2));
                 }
@@ -267,6 +274,26 @@ namespace Sistema_de_Gestion_de_Citas
                 .ToList();
         }
 
+        public List<object> ListarCitasDetalladasPorCliente(int codigoCliente)
+        {
+            var reporte = from cita in ListaCitas
+                          join horario in ListaHorarios
+                          on cita.CodigoHorario equals horario.Codigo
+                          join consultor in ListaConsultores
+                          on horario.CodigoConsultor equals consultor.Codigo
+                          where cita.CodigoCliente == codigoCliente
+                          select new
+                          {
+                              Fecha = horario.FechaHoraInicio,
+                              Consultor = consultor.Nombre,
+                              Monto = cita.Monto,
+                              Descripcion = cita.Descripcion,
+                              Estado = cita.Estado
+                          };
+
+            return reporte.Cast<object>().ToList();
+        }
+
         public List<CCita> ListarCitasPorConsultor(int codigoConsultor)
         {
             var horariosDelConsultor = ListaHorarios
@@ -283,6 +310,35 @@ namespace Sistema_de_Gestion_de_Citas
         {
             return ListaHorarios
                 .Where(h => h.CodigoConsultor == codigoConsultor && h.Estado == "Libre")
+                .ToList();
+        }
+
+
+        public List<CHorarioConsultor> ListarHorariosLibres(int codigoConsultor, DateTime fecha)
+        {
+            return ListaHorarios
+                .Where(h => h.CodigoConsultor == codigoConsultor 
+                         && h.Estado == "Libre" 
+                         && h.FechaHoraInicio.Date == fecha.Date)
+                .ToList();
+        }
+
+
+
+
+
+        public List<CHorarioConsultor> ListarTodosLosHorarios(int codigoConsultor)
+        {
+            return ListaHorarios
+                .Where(h => h.CodigoConsultor == codigoConsultor)
+                .ToList();
+        }
+
+        public List<CHorarioConsultor> ListarTodosLosHorarios(int codigoConsultor, DateTime fecha)
+        {
+            return ListaHorarios
+                .Where(h => h.CodigoConsultor == codigoConsultor 
+                         && h.FechaHoraInicio.Date == fecha.Date)
                 .ToList();
         }
 

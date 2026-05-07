@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +14,18 @@ namespace Sistema_de_Gestion_de_Citas
     {
         private CConsultor consultorActual;
         CControlador controlador = new CControlador();
+        // Constructor requerido por el diseñador de Visual Studio
+        public frmConsultarCitas()
+        {
+            InitializeComponent();
+        }
+
         public frmConsultarCitas(CConsultor consultor)
         {
             InitializeComponent();
+
+            if (this.DesignMode) return;
+
             consultorActual = consultor;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.FromArgb(236, 253, 245);
