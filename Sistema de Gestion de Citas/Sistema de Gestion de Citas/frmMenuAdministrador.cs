@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -124,6 +124,53 @@ namespace Sistema_de_Gestion_de_Citas
 
             chart.Series.Add(serie);
             chart.Titles.Add("Reporte de consultores por tipo de asesoría");
+
+            form.Controls.Add(chart);
+            form.ShowDialog();
+        }
+
+        private void btnReporteIngresosRubro_Click(object sender, EventArgs e)
+        {
+            CReporte reporte = new CReporte();
+
+            var datos = reporte.IngresosPorServicio(
+                DateTime.Today.AddMonths(-1),
+                DateTime.Today
+            );
+
+            if (datos.Count == 0)
+            {
+                MessageBox.Show("No hay ingresos registrados para mostrar en el reporte.");
+                return;
+            }
+
+            Form form = new Form();
+            form.Text = "Reporte de ingresos por rubro";
+            form.Width = 800;
+            form.Height = 500;
+            form.StartPosition = FormStartPosition.CenterScreen;
+
+            Chart chart = new Chart();
+            chart.Dock = DockStyle.Fill;
+
+            ChartArea area = new ChartArea("Area1");
+            area.AxisX.Title = "Rubro";
+            area.AxisY.Title = "Total Ingresos (S/)";
+            area.AxisX.Interval = 1;
+            chart.ChartAreas.Add(area);
+
+            Series serie = new Series("IngresosPorRubro");
+            serie.ChartType = SeriesChartType.Column;
+            serie.IsValueShownAsLabel = true;
+            serie.Label = "S/ #VALY";
+
+            foreach (dynamic item in datos)
+            {
+                serie.Points.AddXY(item.Rubro, item.TotalIngresos);
+            }
+
+            chart.Series.Add(serie);
+            chart.Titles.Add("Distribución de ingresos por rubro");
 
             form.Controls.Add(chart);
             form.ShowDialog();

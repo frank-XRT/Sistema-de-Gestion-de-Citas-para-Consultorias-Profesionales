@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,25 @@ namespace Sistema_de_Gestion_de_Citas
                           {
                               Rubro = grupo.Key,
                               CantidadCitas = grupo.Count()
+                          };
+
+            return reporte.Cast<object>().ToList();
+        }
+
+        public List<object> IngresosPorServicio(DateTime fechaInicio, DateTime fechaFin)
+        {
+            var reporte = from cita in CControlador.ListaCitas
+                          join horario in CControlador.ListaHorarios
+                          on cita.CodigoHorario equals horario.Codigo
+                          join consultor in CControlador.ListaConsultores
+                          on horario.CodigoConsultor equals consultor.Codigo
+                          where horario.FechaHoraInicio.Date >= fechaInicio.Date
+                                && horario.FechaHoraInicio.Date <= fechaFin.Date
+                          group cita by consultor.Rubro into grupo
+                          select new
+                          {
+                              Rubro = grupo.Key,
+                              TotalIngresos = grupo.Sum(c => c.Monto)
                           };
 
             return reporte.Cast<object>().ToList();

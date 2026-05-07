@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +31,7 @@ namespace Sistema_de_Gestion_de_Citas
                     "1"
                 ));
             }
+            
 
             // CLIENTES
             if (ListaClientes.Count == 0)
@@ -44,11 +45,11 @@ namespace Sistema_de_Gestion_de_Citas
             // CONSULTORES
             if (ListaConsultores.Count == 0)
             {
-                ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "4", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "4"));
-                ListaConsultores.Add(new CConsultor(2, "Ana Torres", "5", "Femenino", "988333444", "ana@gmail.com", "Contable", "Contadora especializada en impuestos", "5"));
-                ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "66666666", "Masculino", "988555666", "carlos@gmail.com", "Psicología", "Psicólogo clínico", "123"));
-                ListaConsultores.Add(new CConsultor(4, "Rosa Flores", "77777777", "Femenino", "988777888", "rosa@gmail.com", "Tecnológico", "Consultora en sistemas", "123"));
-                ListaConsultores.Add(new CConsultor(5, "Luis Peña", "88888888", "Masculino", "988999000", "luis@gmail.com", "Legal", "Asesor legal empresarial", "123"));
+                ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "4", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "4", 100));
+                ListaConsultores.Add(new CConsultor(2, "Ana Torres", "5", "Femenino", "988333444", "ana@gmail.com", "Contable", "Contadora especializada en impuestos", "5", 150));
+                ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "66666666", "Masculino", "988555666", "carlos@gmail.com", "Psicología", "Psicólogo clínico", "123", 120));
+                ListaConsultores.Add(new CConsultor(4, "Rosa Flores", "77777777", "Femenino", "988777888", "rosa@gmail.com", "Tecnológico", "Consultora en sistemas", "123", 200));
+                ListaConsultores.Add(new CConsultor(5, "Luis Peña", "88888888", "Masculino", "988999000", "luis@gmail.com", "Legal", "Asesor legal empresarial", "123", 100));
             }
 
             // HORARIOS
@@ -335,6 +336,9 @@ namespace Sistema_de_Gestion_de_Citas
         }
         private void AgregarCitaFicticiaPorConsultor(int codigoCliente, int codigoConsultor, decimal monto, string descripcion, string estado)
         {
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            if (consultor == null) return;
+
             CHorarioConsultor horario = ListaHorarios.FirstOrDefault(h =>
                 h.CodigoConsultor == codigoConsultor &&
                 h.Estado == "Libre");
@@ -349,7 +353,7 @@ namespace Sistema_de_Gestion_de_Citas
             cita.Codigo = GenerarCodigoCita();
             cita.CodigoCliente = codigoCliente;
             cita.CodigoHorario = horario.Codigo;
-            cita.Monto = monto;
+            cita.Monto = consultor.Monto; // Usar el monto del consultor
             cita.Descripcion = descripcion;
             cita.Estado = estado;
 

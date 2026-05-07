@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmBuscarProfesional
     {
@@ -32,12 +32,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvConsultores = new System.Windows.Forms.DataGridView();
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
-            this.txtMonto = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnReservar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -94,13 +92,6 @@
             this.dgvHorarios.Size = new System.Drawing.Size(1120, 343);
             this.dgvHorarios.TabIndex = 3;
             // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(176, 96);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(127, 22);
-            this.txtMonto.TabIndex = 4;
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(176, 143);
@@ -140,16 +131,6 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Rubro";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Monto";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -188,12 +169,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.dgvHorarios);
             this.Controls.Add(this.dgvConsultores);
             this.Controls.Add(this.btnBuscar);
@@ -213,12 +192,10 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvConsultores;
         private System.Windows.Forms.DataGridView dgvHorarios;
-        private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnReservar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

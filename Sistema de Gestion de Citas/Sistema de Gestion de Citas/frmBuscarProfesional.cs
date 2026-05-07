@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,11 +59,19 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
-            if (txtMonto.Text.Trim() == "")
+            if (dgvHorarios.CurrentRow == null)
             {
-                MessageBox.Show("Ingrese el monto");
+                MessageBox.Show("Seleccione un horario");
                 return;
             }
+
+            if (dgvConsultores.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un consultor");
+                return;
+            }
+
+            CConsultor consultor = (CConsultor)dgvConsultores.CurrentRow.DataBoundItem;
 
             CHorarioConsultor horario = (CHorarioConsultor)dgvHorarios.CurrentRow.DataBoundItem;
 
@@ -71,7 +79,7 @@ namespace Sistema_de_Gestion_de_Citas
 
             cita.CodigoCliente = clienteActual.Codigo;
             cita.CodigoHorario = horario.Codigo;
-            cita.Monto = decimal.Parse(txtMonto.Text);
+            cita.Monto = consultor.Monto;
             cita.Descripcion = txtDescripcion.Text.Trim();
 
             bool reservado = controlador.ReservarCita(cita);

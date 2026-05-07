@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmMenuAdministrador
     {
@@ -32,6 +32,7 @@
             this.btnRegistrarConsultor = new System.Windows.Forms.Button();
             this.btnReporteConsultoresRubro = new System.Windows.Forms.Button();
             this.btnReporteCitasServicio = new System.Windows.Forms.Button();
+            this.btnReporteIngresosRubro = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -80,13 +81,24 @@
             this.btnReporteCitasServicio.UseVisualStyleBackColor = true;
             this.btnReporteCitasServicio.Click += new System.EventHandler(this.btnReporteCitasServicio_Click);
             // 
+            // btnReporteIngresosRubro
+            // 
+            this.btnReporteIngresosRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteIngresosRubro.Location = new System.Drawing.Point(199, 298);
+            this.btnReporteIngresosRubro.Name = "btnReporteIngresosRubro";
+            this.btnReporteIngresosRubro.Size = new System.Drawing.Size(407, 39);
+            this.btnReporteIngresosRubro.TabIndex = 11;
+            this.btnReporteIngresosRubro.Text = "Reporte de ingresos por rubro";
+            this.btnReporteIngresosRubro.UseVisualStyleBackColor = true;
+            this.btnReporteIngresosRubro.Click += new System.EventHandler(this.btnReporteIngresosRubro_Click);
+            // 
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(199, 298);
+            this.btnSalir.Location = new System.Drawing.Point(199, 343);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(407, 38);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -110,6 +122,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReporteConsultoresRubro);
             this.Controls.Add(this.btnReporteCitasServicio);
+            this.Controls.Add(this.btnReporteIngresosRubro);
             this.Controls.Add(this.btnEliminarConsultor);
             this.Controls.Add(this.btnRegistrarConsultor);
             this.Name = "frmMenuAdministrador";
@@ -125,6 +138,7 @@
         private System.Windows.Forms.Button btnRegistrarConsultor;
         private System.Windows.Forms.Button btnReporteConsultoresRubro;
         private System.Windows.Forms.Button btnReporteCitasServicio;
+        private System.Windows.Forms.Button btnReporteIngresosRubro;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
     }

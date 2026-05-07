@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmRegistrarConsultor
     {
@@ -51,6 +51,8 @@
             this.cboxRubro = new System.Windows.Forms.ComboBox();
             this.dgvConsultores = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMonto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -278,12 +280,33 @@
             this.label11.Size = new System.Drawing.Size(248, 25);
             this.label11.TabIndex = 49;
             this.label11.Text = "Consultores Registrados";
+            this.label11.Text = "Consultores Registrados";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(65, 376);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 25);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Monto";
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonto.Location = new System.Drawing.Point(341, 371);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(240, 30);
+            this.txtMonto.TabIndex = 51;
             // 
             // frmRegistrarConsultor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1296, 544);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dgvConsultores);
             this.Controls.Add(this.cboxRubro);
@@ -309,10 +332,10 @@
             this.Controls.Add(this.label1);
             this.Name = "frmRegistrarConsultor";
             this.Text = "frmRegistrarConsultor";
+            this.Load += new System.EventHandler(this.frmRegistrarConsultor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -340,5 +363,7 @@
         private System.Windows.Forms.ComboBox cboxRubro;
         private System.Windows.Forms.DataGridView dgvConsultores;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtMonto;
     }
 }

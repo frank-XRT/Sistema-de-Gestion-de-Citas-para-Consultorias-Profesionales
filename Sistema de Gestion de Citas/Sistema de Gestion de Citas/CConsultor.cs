@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,13 +17,14 @@ namespace Sistema_de_Gestion_de_Citas
         public string Rubro { get; set; }
         public string Descripcion { get; set; }
         public string Contraseña { get; set; }
+        public decimal Monto { get; set; }
 
         public CConsultor()
         {
         }
 
         public CConsultor(int codigo, string nombre, string dni, string sexo, string telefono,
-                          string correo, string rubro, string descripcion, string contraseña)
+                          string correo, string rubro, string descripcion, string contraseña, decimal monto)
         {
             Codigo = codigo;
             Nombre = nombre;
@@ -34,6 +35,7 @@ namespace Sistema_de_Gestion_de_Citas
             Rubro = rubro;
             Descripcion = descripcion;
             Contraseña = contraseña;
+            Monto = monto;
         }
     }
 }
