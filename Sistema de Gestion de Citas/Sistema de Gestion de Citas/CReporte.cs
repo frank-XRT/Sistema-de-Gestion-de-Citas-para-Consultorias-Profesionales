@@ -116,7 +116,6 @@ namespace Sistema_de_Gestion_de_Citas
                           orderby grupo.Count() descending
                           select new
                           {
-                              CodigoCliente = grupo.Key,
                               NombreCliente = ObtenerNombreCliente(grupo.Key),
                               NumeroCitas = grupo.Count()
                           };

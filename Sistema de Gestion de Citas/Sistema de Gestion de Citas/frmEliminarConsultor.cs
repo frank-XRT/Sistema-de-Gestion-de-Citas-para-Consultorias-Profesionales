@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +37,8 @@ namespace Sistema_de_Gestion_de_Citas
 
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = resultado;
+
+            if (dgvConsultores.Columns["Codigo"] != null) dgvConsultores.Columns["Codigo"].Visible = false;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -66,6 +68,8 @@ namespace Sistema_de_Gestion_de_Citas
         {
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = CControlador.ListaConsultores;
+
+            if (dgvConsultores.Columns["Codigo"] != null) dgvConsultores.Columns["Codigo"].Visible = false;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

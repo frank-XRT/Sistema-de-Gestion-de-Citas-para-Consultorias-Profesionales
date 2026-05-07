@@ -73,6 +73,8 @@ namespace Sistema_de_Gestion_de_Citas
         {
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = CControlador.ListaConsultores;
+
+            if (dgvConsultores.Columns["Codigo"] != null) dgvConsultores.Columns["Codigo"].Visible = false;
         }
 
         private void Limpiar()
@@ -93,6 +95,16 @@ namespace Sistema_de_Gestion_de_Citas
             frmMenuAdministrador form = new frmMenuAdministrador();
             form.Show();
             this.Hide();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
