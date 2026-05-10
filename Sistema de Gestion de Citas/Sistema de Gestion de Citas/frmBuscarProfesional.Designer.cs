@@ -28,6 +28,7 @@ namespace Sistema_de_Gestion_de_Citas
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboxRubro = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvConsultores = new System.Windows.Forms.DataGridView();
@@ -47,6 +48,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             // cboxRubro
             // 
+            this.cboxRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxRubro.FormattingEnabled = true;
             this.cboxRubro.Items.AddRange(new object[] {
             "Legal",
@@ -57,18 +59,18 @@ namespace Sistema_de_Gestion_de_Citas
             "Salud",
             "Educacion"});
             this.cboxRubro.Location = new System.Drawing.Point(147, 39);
-            this.cboxRubro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxRubro.Margin = new System.Windows.Forms.Padding(2);
             this.cboxRubro.Name = "cboxRubro";
-            this.cboxRubro.Size = new System.Drawing.Size(147, 21);
+            this.cboxRubro.Size = new System.Drawing.Size(147, 28);
             this.cboxRubro.TabIndex = 0;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(44, 107);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(311, 39);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(80, 32);
+            this.btnBuscar.Size = new System.Drawing.Size(80, 28);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -76,13 +78,16 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             // dgvConsultores
             // 
+            this.dgvConsultores.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvConsultores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvConsultores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultores.Location = new System.Drawing.Point(6, 148);
-            this.dgvConsultores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvConsultores.Location = new System.Drawing.Point(0, 80);
+            this.dgvConsultores.Margin = new System.Windows.Forms.Padding(2);
             this.dgvConsultores.Name = "dgvConsultores";
             this.dgvConsultores.RowHeadersWidth = 51;
             this.dgvConsultores.RowTemplate.Height = 24;
-            this.dgvConsultores.Size = new System.Drawing.Size(652, 122);
+            this.dgvConsultores.Size = new System.Drawing.Size(669, 122);
             this.dgvConsultores.TabIndex = 2;
             this.dgvConsultores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultores_CellClick);
             this.dgvConsultores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultores_CellClick);
@@ -90,8 +95,8 @@ namespace Sistema_de_Gestion_de_Citas
             // dgvHorarios
             // 
             this.dgvHorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHorarios.Location = new System.Drawing.Point(33, 319);
-            this.dgvHorarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvHorarios.Location = new System.Drawing.Point(34, 262);
+            this.dgvHorarios.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHorarios.Name = "dgvHorarios";
             this.dgvHorarios.RowHeadersWidth = 51;
             this.dgvHorarios.RowTemplate.Height = 24;
@@ -100,17 +105,18 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(147, 74);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(147, 564);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(484, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(484, 26);
             this.txtDescripcion.TabIndex = 5;
             // 
             // btnReservar
             // 
             this.btnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservar.Location = new System.Drawing.Point(147, 617);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReservar.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(86, 32);
             this.btnReservar.TabIndex = 6;
@@ -121,8 +127,8 @@ namespace Sistema_de_Gestion_de_Citas
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(267, 617);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Location = new System.Drawing.Point(253, 617);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(86, 32);
             this.btnVolver.TabIndex = 7;
@@ -134,7 +140,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 39);
+            this.label2.Location = new System.Drawing.Point(41, 40);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 20);
@@ -145,7 +151,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 72);
+            this.label3.Location = new System.Drawing.Point(30, 567);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 20);
@@ -156,7 +162,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(313, 7);
+            this.label4.Location = new System.Drawing.Point(249, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 20);
@@ -167,7 +173,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 277);
+            this.label5.Location = new System.Drawing.Point(41, 223);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(178, 20);
@@ -176,20 +182,22 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             // dtpFecha
             // 
+            this.dtpFecha.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(203, 278);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFecha.Location = new System.Drawing.Point(238, 223);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(91, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(91, 26);
             this.dtpFecha.TabIndex = 24;
             // 
             // btnFiltrarFecha
             // 
-            this.btnFiltrarFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrarFecha.Location = new System.Drawing.Point(305, 274);
-            this.btnFiltrarFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrarFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrarFecha.Location = new System.Drawing.Point(351, 222);
+            this.btnFiltrarFecha.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrarFecha.Name = "btnFiltrarFecha";
-            this.btnFiltrarFecha.Size = new System.Drawing.Size(60, 26);
+            this.btnFiltrarFecha.Size = new System.Drawing.Size(79, 32);
             this.btnFiltrarFecha.TabIndex = 25;
             this.btnFiltrarFecha.Text = "Filtrar";
             this.btnFiltrarFecha.UseVisualStyleBackColor = true;
@@ -199,7 +207,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 680);
+            this.ClientSize = new System.Drawing.Size(671, 680);
             this.Controls.Add(this.btnFiltrarFecha);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label5);
@@ -213,7 +221,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.dgvConsultores);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cboxRubro);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBuscarProfesional";
             this.Text = "frmBuscarProfesional";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultores)).EndInit();

@@ -35,14 +35,16 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteIngresosRubro = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEliminarConsultor
             // 
             this.btnEliminarConsultor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarConsultor.Location = new System.Drawing.Point(199, 165);
+            this.btnEliminarConsultor.Location = new System.Drawing.Point(149, 134);
+            this.btnEliminarConsultor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarConsultor.Name = "btnEliminarConsultor";
-            this.btnEliminarConsultor.Size = new System.Drawing.Size(407, 38);
+            this.btnEliminarConsultor.Size = new System.Drawing.Size(305, 31);
             this.btnEliminarConsultor.TabIndex = 8;
             this.btnEliminarConsultor.Text = "Elminar Consultor";
             this.btnEliminarConsultor.UseVisualStyleBackColor = true;
@@ -51,9 +53,10 @@ namespace Sistema_de_Gestion_de_Citas
             // btnRegistrarConsultor
             // 
             this.btnRegistrarConsultor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarConsultor.Location = new System.Drawing.Point(199, 120);
+            this.btnRegistrarConsultor.Location = new System.Drawing.Point(149, 98);
+            this.btnRegistrarConsultor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistrarConsultor.Name = "btnRegistrarConsultor";
-            this.btnRegistrarConsultor.Size = new System.Drawing.Size(407, 39);
+            this.btnRegistrarConsultor.Size = new System.Drawing.Size(305, 32);
             this.btnRegistrarConsultor.TabIndex = 7;
             this.btnRegistrarConsultor.Text = "Registrar Consultor";
             this.btnRegistrarConsultor.UseVisualStyleBackColor = true;
@@ -62,9 +65,10 @@ namespace Sistema_de_Gestion_de_Citas
             // btnReporteConsultoresRubro
             // 
             this.btnReporteConsultoresRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteConsultoresRubro.Location = new System.Drawing.Point(199, 254);
+            this.btnReporteConsultoresRubro.Location = new System.Drawing.Point(149, 289);
+            this.btnReporteConsultoresRubro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteConsultoresRubro.Name = "btnReporteConsultoresRubro";
-            this.btnReporteConsultoresRubro.Size = new System.Drawing.Size(407, 38);
+            this.btnReporteConsultoresRubro.Size = new System.Drawing.Size(305, 31);
             this.btnReporteConsultoresRubro.TabIndex = 10;
             this.btnReporteConsultoresRubro.Text = "Reporte Consultores por Rubro";
             this.btnReporteConsultoresRubro.UseVisualStyleBackColor = true;
@@ -73,31 +77,34 @@ namespace Sistema_de_Gestion_de_Citas
             // btnReporteCitasServicio
             // 
             this.btnReporteCitasServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteCitasServicio.Location = new System.Drawing.Point(199, 209);
+            this.btnReporteCitasServicio.Location = new System.Drawing.Point(149, 170);
+            this.btnReporteCitasServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteCitasServicio.Name = "btnReporteCitasServicio";
-            this.btnReporteCitasServicio.Size = new System.Drawing.Size(407, 39);
+            this.btnReporteCitasServicio.Size = new System.Drawing.Size(305, 32);
             this.btnReporteCitasServicio.TabIndex = 9;
-            this.btnReporteCitasServicio.Text = "Reporte de citas por servicio";
+            this.btnReporteCitasServicio.Text = "Reporte de citas por area";
             this.btnReporteCitasServicio.UseVisualStyleBackColor = true;
             this.btnReporteCitasServicio.Click += new System.EventHandler(this.btnReporteCitasServicio_Click);
             // 
             // btnReporteIngresosRubro
             // 
             this.btnReporteIngresosRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteIngresosRubro.Location = new System.Drawing.Point(199, 298);
+            this.btnReporteIngresosRubro.Location = new System.Drawing.Point(149, 206);
+            this.btnReporteIngresosRubro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteIngresosRubro.Name = "btnReporteIngresosRubro";
-            this.btnReporteIngresosRubro.Size = new System.Drawing.Size(407, 39);
+            this.btnReporteIngresosRubro.Size = new System.Drawing.Size(305, 32);
             this.btnReporteIngresosRubro.TabIndex = 11;
-            this.btnReporteIngresosRubro.Text = "Reporte de ingresos por rubro";
+            this.btnReporteIngresosRubro.Text = "Reporte de ingresos por area";
             this.btnReporteIngresosRubro.UseVisualStyleBackColor = true;
             this.btnReporteIngresosRubro.Click += new System.EventHandler(this.btnReporteIngresosRubro_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(199, 343);
+            this.btnSalir.Location = new System.Drawing.Point(149, 324);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(407, 38);
+            this.btnSalir.Size = new System.Drawing.Size(305, 31);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -107,17 +114,31 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(279, 63);
+            this.label2.Location = new System.Drawing.Point(209, 51);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 25);
+            this.label2.Size = new System.Drawing.Size(201, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Menu de Administracion";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(149, 242);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(305, 32);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Reporte de estados por area";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnReporteEstadosPorArea_Click);
+            // 
             // frmMenuAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReporteConsultoresRubro);
@@ -125,6 +146,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.btnReporteIngresosRubro);
             this.Controls.Add(this.btnEliminarConsultor);
             this.Controls.Add(this.btnRegistrarConsultor);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMenuAdministrador";
             this.Text = "frmMenuAdministrador";
             this.ResumeLayout(false);
@@ -141,5 +163,6 @@ namespace Sistema_de_Gestion_de_Citas
         private System.Windows.Forms.Button btnReporteIngresosRubro;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

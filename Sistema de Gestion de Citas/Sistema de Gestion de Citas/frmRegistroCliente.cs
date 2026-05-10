@@ -17,7 +17,6 @@ namespace Sistema_de_Gestion_de_Citas
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
             txtDni.UseSystemPasswordChar = true;
         }
 
@@ -62,7 +61,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
             else
             {
-                MessageBox.Show("El DNI ya está registrado");
+                MessageBox.Show("El DNI ya esta registrado");
             }
         }
 
@@ -74,3 +73,4 @@ namespace Sistema_de_Gestion_de_Citas
         }
     }
 }
+

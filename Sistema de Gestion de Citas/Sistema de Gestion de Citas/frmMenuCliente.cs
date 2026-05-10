@@ -21,7 +21,6 @@ namespace Sistema_de_Gestion_de_Citas
             InitializeComponent();
             clienteActual = cliente;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
         }
 
         private void btnBuscarProfesional_Click(object sender, EventArgs e)

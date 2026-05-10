@@ -30,41 +30,58 @@
         {
             this.dgvMisCitas = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMisCitas
             // 
             this.dgvMisCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMisCitas.Location = new System.Drawing.Point(58, 35);
+            this.dgvMisCitas.Location = new System.Drawing.Point(11, 71);
+            this.dgvMisCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvMisCitas.Name = "dgvMisCitas";
             this.dgvMisCitas.RowHeadersWidth = 51;
             this.dgvMisCitas.RowTemplate.Height = 24;
-            this.dgvMisCitas.Size = new System.Drawing.Size(697, 281);
+            this.dgvMisCitas.Size = new System.Drawing.Size(578, 228);
             this.dgvMisCitas.TabIndex = 0;
             // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(335, 346);
+            this.btnVolver.Location = new System.Drawing.Point(252, 313);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(102, 38);
+            this.btnVolver.Size = new System.Drawing.Size(76, 31);
             this.btnVolver.TabIndex = 37;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(248, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Mis citas";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // frmMisCitas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvMisCitas);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMisCitas";
             this.Text = "frmMisCitas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisCitas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -72,5 +89,6 @@
 
         private System.Windows.Forms.DataGridView dgvMisCitas;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label label1;
     }
 }

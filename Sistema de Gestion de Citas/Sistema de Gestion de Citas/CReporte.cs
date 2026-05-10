@@ -8,50 +8,136 @@ namespace Sistema_de_Gestion_de_Citas
 {
     public class CReporte
     {
+        // Mapea cualquier rubro especifico a una de las 4 Grandes areas Maestro
+        private string ObtenerAreaPrincipal(string rubro)
+        {
+            string r = rubro.ToLower();
+
+            // 1. AREA DE SALUD
+            if (r.Contains("medic") || r.Contains("psicolog") || r.Contains("nutri") || 
+                r.Contains("odonto") || r.Contains("veterinar") || r.Contains("salud") || 
+                r.Contains("terapia") || r.Contains("enfermer") || r.Contains("clinica"))
+                return "Area de Salud";
+
+            // 2. AREA DE NEGOCIOS Y LEYES
+            if (r.Contains("derecho") || r.Contains("legal") || r.Contains("contab") || 
+                r.Contains("administr") || r.Contains("finanz") || r.Contains("marketing") || 
+                r.Contains("negocio") || r.Contains("econom") || r.Contains("audit") || 
+                r.Contains("ley") || r.Contains("tributar"))
+                return "Area de Negocios y Leyes";
+
+            // 3. AREA DE TECNOLOGIA Y DISENO
+            if (r.Contains("tecnolog") || r.Contains("sistem") || r.Contains("software") || 
+                r.Contains("ingenier") || r.Contains("civil") || r.Contains("arquitect") || 
+                r.Contains("diseno") || r.Contains("diseño") || r.Contains("digital") || 
+                r.Contains("computa") || r.Contains("grafic"))
+                return "Area de Tecnologia y Diseno";
+
+            // 4. AREA DE EDUCACION Y SOCIEDAD
+            if (r.Contains("docen") || r.Contains("educa") || r.Contains("social") || 
+                r.Contains("idioma") || r.Contains("sociolog") || r.Contains("pedago") || 
+                r.Contains("clase") || r.Contains("tutor") || r.Contains("humanid"))
+                return "Area de Educacion y Sociedad";
+
+            return "Otras Areas";
+        }
+
         public List<object> CitasPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
-            // MULTILISTA: Navegamos Rubro -> Consultores -> Horarios -> Citas
-            var reporte = from rubro in CControlador.ListaRubros
-                          select new
-                          {
-                              Rubro = rubro.Nombre,
-                              CantidadCitas = rubro.ListaConsultores.Sum(con =>
-                                  con.ListaHorarios.Count(h => h.Cita != null
-                                      && h.FechaHoraInicio.Date >= fechaInicio.Date
-                                      && h.FechaHoraInicio.Date <= fechaFin.Date))
-                          };
+            // Inicializamos el diccionario con las 4 areas en 0 para asegurar que siempre aparezcan
+            var totalesPorArea = new Dictionary<string, int>
+            {
+                { "Area de Salud", 0 },
+                { "Area de Negocios y Leyes", 0 },
+                { "Area de Tecnologia y Diseno", 0 },
+                { "Area de Educacion y Sociedad", 0 }
+            };
 
-            return reporte.Cast<object>().ToList();
+            // Procesamos los datos existentes
+            foreach (var rubro in CControlador.ListaRubros)
+            {
+                string areaPrincipal = ObtenerAreaPrincipal(rubro.Nombre);
+                
+                // Solo sumamos si es una de nuestras 4 areas principales
+                if (totalesPorArea.ContainsKey(areaPrincipal))
+                {
+                    int citas = rubro.ListaConsultores.Sum(con =>
+                        con.ListaHorarios.Count(h => h.Cita != null
+                            && h.FechaHoraInicio.Date >= fechaInicio.Date
+                            && h.FechaHoraInicio.Date <= fechaFin.Date));
+                    
+                    totalesPorArea[areaPrincipal] += citas;
+                }
+            }
+
+            // Convertimos a la lista de objetos que espera el grafico
+            return totalesPorArea.Select(kvp => (object)new
+            {
+                Rubro = kvp.Key,
+                CantidadCitas = kvp.Value
+            }).ToList();
+        
         }
 
         public List<object> IngresosPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
-            // MULTILISTA: Navegamos Rubro -> Consultores -> Horarios -> Citas
-            var reporte = from rubro in CControlador.ListaRubros
-                          select new
-                          {
-                              Rubro = rubro.Nombre,
-                              TotalIngresos = rubro.ListaConsultores.Sum(con =>
-                                  con.ListaHorarios.Where(h => h.Cita != null
-                                      && h.FechaHoraInicio.Date >= fechaInicio.Date
-                                      && h.FechaHoraInicio.Date <= fechaFin.Date)
-                                  .Sum(h => h.Cita.Monto))
-                          };
+            // Inicializamos las 4 areas con 0 para que siempre aparezcan las 4 barras
+            var totalesPorArea = new Dictionary<string, decimal>
+            {
+                { "Area de Salud", 0 },
+                { "Area de Negocios y Leyes", 0 },
+                { "Area de Tecnologia y Diseno", 0 },
+                { "Area de Educacion y Sociedad", 0 }
+            };
 
-            return reporte.Cast<object>().ToList();
+            // Sumamos los ingresos de cada rubro en su area correspondiente
+            foreach (var rubro in CControlador.ListaRubros)
+            {
+                string area = ObtenerAreaPrincipal(rubro.Nombre);
+
+                if (totalesPorArea.ContainsKey(area))
+                {
+                    decimal ingresos = rubro.ListaConsultores.Sum(con =>
+                        con.ListaHorarios
+                            .Where(h => h.Cita != null
+                                && h.FechaHoraInicio.Date >= fechaInicio.Date
+                                && h.FechaHoraInicio.Date <= fechaFin.Date)
+                            .Sum(h => h.Cita.Monto));
+
+                    totalesPorArea[area] += ingresos;
+                }
+            }
+
+            return totalesPorArea.Select(kvp => (object)new
+            {
+                Rubro = kvp.Key,
+                TotalIngresos = kvp.Value
+            }).ToList();
         }
 
         public List<object> ConsultoresPorRubro()
         {
-            // MULTILISTA: Directamente de la lista de rubros
-            var reporte = from rubro in CControlador.ListaRubros
-                          select new
-                          {
-                              Rubro = rubro.Nombre,
-                              CantidadConsultores = rubro.ListaConsultores.Count
-                          };
+            // Inicializamos las 4 areas con 0 para que siempre aparezcan las 4 barras
+            var totalesPorArea = new Dictionary<string, int>
+            {
+                { "Area de Salud", 0 },
+                { "Area de Negocios y Leyes", 0 },
+                { "Area de Tecnologia y Diseno", 0 },
+                { "Area de Educacion y Sociedad", 0 }
+            };
 
-            return reporte.Cast<object>().ToList();
+            foreach (var rubro in CControlador.ListaRubros)
+            {
+                string area = ObtenerAreaPrincipal(rubro.Nombre);
+                if (totalesPorArea.ContainsKey(area))
+                    totalesPorArea[area] += rubro.ListaConsultores.Count;
+            }
+
+            return totalesPorArea.Select(kvp => (object)new
+            {
+                Rubro = kvp.Key,
+                CantidadConsultores = kvp.Value
+            }).ToList();
         }
 
         public List<object> IngresosMensualesPorTrimestre(int codigoConsultor, int trimestre)
@@ -84,7 +170,7 @@ namespace Sistema_de_Gestion_de_Citas
             CConsultor consultor = CControlador.ListaConsultores.Find(c => c.Codigo == codigoConsultor);
             if (consultor == null) return new List<object>();
 
-            // MULTILISTA: Navegamos Consultor -> Horarios -> Cliente (vía Cita o directo)
+            // MULTILISTA: Navegamos Consultor -> Horarios -> Cliente (via Cita o directo)
             var reporte = from horario in consultor.ListaHorarios
                           where horario.Cita != null && horario.Cliente != null
                           group horario by horario.Cliente into grupo
@@ -153,5 +239,36 @@ namespace Sistema_de_Gestion_de_Citas
 
             return "";
         }
+
+        public dynamic EstadisticasPorArea(string areaNombre, DateTime inicio, DateTime fin)
+        {
+            int asistidas = 0;
+            int canceladas = 0;
+            int noAsistidas = 0;
+
+            foreach (var rubro in CControlador.ListaRubros)
+            {
+                if (ObtenerAreaPrincipal(rubro.Nombre) == areaNombre)
+                {
+                    foreach (var con in rubro.ListaConsultores)
+                    {
+                        var horariosEnRango = con.ListaHorarios.Where(h => 
+                            h.FechaHoraInicio.Date >= inicio.Date && 
+                            h.FechaHoraInicio.Date <= fin.Date && 
+                            h.Cita != null);
+
+                        foreach (var h in horariosEnRango)
+                        {
+                            if (h.Cita.Estado == "Atendido") asistidas++;
+                            else if (h.Cita.Estado == "Cancelado") canceladas++;
+                            else noAsistidas++;
+                        }
+                    }
+                }
+            }
+
+            return new { Asistidas = asistidas, Canceladas = canceladas, NoAsistidas = noAsistidas };
+        }
     }
 }
+

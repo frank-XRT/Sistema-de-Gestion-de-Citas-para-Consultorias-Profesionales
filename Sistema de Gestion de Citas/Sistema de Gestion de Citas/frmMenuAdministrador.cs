@@ -17,7 +17,6 @@ namespace Sistema_de_Gestion_de_Citas
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
         }
 
         private void btnRegistrarConsultor_Click(object sender, EventArgs e)
@@ -76,7 +75,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             chart.Series.Add(serie);
-            chart.Titles.Add("Distribución de citas por servicio");
+            chart.Titles.Add("Distribucion de citas por servicio");
 
             form.Controls.Add(chart);
             form.ShowDialog();
@@ -104,8 +103,8 @@ namespace Sistema_de_Gestion_de_Citas
             chart.Dock = DockStyle.Fill;
 
             ChartArea area = new ChartArea("Area1");
-            area.AxisX.Title = "Tipo de asesoría";
-            area.AxisY.Title = "Número de consultores";
+            area.AxisX.Title = "Tipo de asesoria";
+            area.AxisY.Title = "Numero de consultores";
             area.AxisX.Interval = 1;
             chart.ChartAreas.Add(area);
 
@@ -113,7 +112,7 @@ namespace Sistema_de_Gestion_de_Citas
             chart.Legends.Add(leyenda);
 
             Series serie = new Series("ConsultoresPorRubro");
-            serie.ChartType = SeriesChartType.Column; // gráfico de barras verticales
+            serie.ChartType = SeriesChartType.Column; // grafico de barras verticales
             serie.IsValueShownAsLabel = true;
             serie.LegendText = "Consultores";
 
@@ -123,7 +122,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             chart.Series.Add(serie);
-            chart.Titles.Add("Reporte de consultores por tipo de asesoría");
+            chart.Titles.Add("Reporte de consultores por tipo de asesoria");
 
             form.Controls.Add(chart);
             form.ShowDialog();
@@ -170,9 +169,15 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             chart.Series.Add(serie);
-            chart.Titles.Add("Distribución de ingresos por rubro");
+            chart.Titles.Add("Distribucion de ingresos por rubro");
 
             form.Controls.Add(chart);
+            form.ShowDialog();
+        }
+
+        private void btnReporteEstadosPorArea_Click(object sender, EventArgs e)
+        {
+            frmReporteEstados form = new frmReporteEstados();
             form.ShowDialog();
         }
 
@@ -184,3 +189,4 @@ namespace Sistema_de_Gestion_de_Citas
         }
     }
 }
+

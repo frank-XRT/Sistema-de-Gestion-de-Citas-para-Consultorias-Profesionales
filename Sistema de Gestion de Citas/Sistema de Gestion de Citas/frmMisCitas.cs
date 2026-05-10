@@ -22,7 +22,6 @@ namespace Sistema_de_Gestion_de_Citas
             InitializeComponent();
             clienteActual = cliente;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
             MostrarMisCitas();
         }
         private void MostrarMisCitas()
@@ -35,6 +34,11 @@ namespace Sistema_de_Gestion_de_Citas
             frmMenuCliente form = new frmMenuCliente(clienteActual);
             form.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

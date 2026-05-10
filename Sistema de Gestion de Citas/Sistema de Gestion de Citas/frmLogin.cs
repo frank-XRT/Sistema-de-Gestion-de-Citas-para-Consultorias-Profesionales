@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +18,6 @@ namespace Sistema_de_Gestion_de_Citas
             InitializeComponent();
 
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
             txtContrasenia.UseSystemPasswordChar = true;
         }
 

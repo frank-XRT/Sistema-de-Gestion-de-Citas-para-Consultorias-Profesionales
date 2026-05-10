@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +28,6 @@ namespace Sistema_de_Gestion_de_Citas
 
             consultorActual = consultor;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
             MostrarCitas();
         }
 
@@ -64,7 +63,7 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
-            // Al usar un objeto anónimo, obtenemos el código para buscar la cita real
+            // Al usar un objeto anonimo, obtenemos el codigo para buscar la cita real
             int codigoCita = (int)dgvCitas.CurrentRow.Cells["Codigo"].Value;
 
             bool atendida = controlador.MarcarCitaComoAtendida(codigoCita);
@@ -72,7 +71,7 @@ namespace Sistema_de_Gestion_de_Citas
             if (atendida)
             {
                 MessageBox.Show("Cita marcada como atendida");
-                btnBuscar_Click(null, null); // Refrescar la búsqueda actual
+                btnBuscar_Click(null, null); // Refrescar la busqueda actual
             }
             else
             {
@@ -93,3 +92,4 @@ namespace Sistema_de_Gestion_de_Citas
         }
     }
 }
+

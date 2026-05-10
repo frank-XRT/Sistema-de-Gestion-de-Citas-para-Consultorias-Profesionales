@@ -41,8 +41,8 @@ namespace Sistema_de_Gestion_de_Citas
             {
                 ListaClientes.Add(new CCliente(1, "Kevin", "111", "Masculino", "999111222", "kevin@gmail.com", "123"));
                 ListaClientes.Add(new CCliente(2, "Guiso", "22222222", "Masculino", "999333444", "guiso@gmail.com", "123"));
-                ListaClientes.Add(new CCliente(3, "Lucía", "33333333", "Femenino", "999555666", "lucia@gmail.com", "123"));
-                ListaClientes.Add(new CCliente(4, "María", "44441111", "Femenino", "999777888", "maria@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(3, "Lucia", "33333333", "Femenino", "999555666", "lucia@gmail.com", "123"));
+                ListaClientes.Add(new CCliente(4, "Maria", "44441111", "Femenino", "999777888", "maria@gmail.com", "123"));
             }
             
 
@@ -51,9 +51,10 @@ namespace Sistema_de_Gestion_de_Citas
             {
                 ListaConsultores.Add(new CConsultor(1, "Pedro Ramos", "4", "Masculino", "988111222", "pedro@gmail.com", "Legal", "Abogado especialista en derecho civil", "4", 100));
                 ListaConsultores.Add(new CConsultor(2, "Ana Torres", "5", "Femenino", "988333444", "ana@gmail.com", "Contable", "Contadora especializada en impuestos", "5", 150));
-                ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "66666666", "Masculino", "988555666", "carlos@gmail.com", "Psicología", "Psicólogo clínico", "123", 120));
-                ListaConsultores.Add(new CConsultor(4, "Rosa Flores", "77777777", "Femenino", "988777888", "rosa@gmail.com", "Tecnológico", "Consultora en sistemas", "123", 200));
-                ListaConsultores.Add(new CConsultor(5, "Luis Peña", "88888888", "Masculino", "988999000", "luis@gmail.com", "Legal", "Asesor legal empresarial", "123", 100));
+                ListaConsultores.Add(new CConsultor(3, "Carlos Vega", "66666666", "Masculino", "988555666", "carlos@gmail.com", "Psicologia", "Psicologo clinico", "123", 120));
+                ListaConsultores.Add(new CConsultor(4, "Rosa Flores", "77777777", "Femenino", "988777888", "rosa@gmail.com", "Tecnologico", "Consultora en sistemas", "123", 200));
+                ListaConsultores.Add(new CConsultor(5, "Luis Pena", "88888888", "Masculino", "988999000", "luis@gmail.com", "Legal", "Asesor legal empresarial", "123", 100));
+                ListaConsultores.Add(new CConsultor(6, "Maria Gutierrez", "99999999", "Femenino", "987654321", "maria.g@gmail.com", "Docencia", "Tutora y docente universitaria", "123", 80));
             }
 
             // HORARIOS
@@ -62,13 +63,13 @@ namespace Sistema_de_Gestion_de_Citas
                 int ultimoCodigo = GenerarCodigoHorario();
                 foreach (CConsultor consultor in ListaConsultores)
                 {
-                    // Generar horarios para los próximos 30 días
+                    // Generar horarios para los proximos 30 dias
                     for (int i = 0; i < 30; i++)
                     {
                         consultor.GenerarHorarios(DateTime.Today.AddDays(i), ref ultimoCodigo);
                     }
                     
-                    // También generar para un par de días pasados por si acaso hay citas registradas ahí
+                    // Tambien generar para un par de dias pasados por si acaso hay citas registradas ahi
                     consultor.GenerarHorarios(DateTime.Today.AddDays(-1), ref ultimoCodigo);
                     consultor.GenerarHorarios(DateTime.Today.AddDays(-2), ref ultimoCodigo);
 
@@ -83,22 +84,57 @@ namespace Sistema_de_Gestion_de_Citas
             // CITAS FICTICIAS PARA REPORTES
             if (ListaCitas.Count == 0)
             {
-                AgregarCitaFicticiaPorConsultor(1, 1, 100, "Asesoría legal civil", "Atendido");
+                // Trimestre 1: Marzo (3 citas)
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Marzo 1", new DateTime(2026, 3, 10, 10, 0, 0));
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Marzo 2", new DateTime(2026, 3, 15, 11, 0, 0));
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Marzo 3", new DateTime(2026, 3, 20, 12, 0, 0));
+
+                // Trimestre 2: Abril, Mayo, Junio (5 citas)
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Abril", new DateTime(2026, 4, 10, 10, 0, 0));
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Mayo 1", new DateTime(2026, 5, 5, 11, 0, 0));
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Mayo 2", new DateTime(2026, 5, 15, 12, 0, 0));
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Junio 1", new DateTime(2026, 6, 1, 10, 0, 0));
+                AgregarCitaHistorica(1, 1, 100, "Asesoria Junio 2", new DateTime(2026, 6, 10, 11, 0, 0));
+
+                // Otras citas base
                 AgregarCitaFicticiaPorConsultor(2, 2, 150, "Consulta contable", "Atendido");
-                AgregarCitaFicticiaPorConsultor(3, 3, 120, "Orientación psicológica", "Atendido");
-                AgregarCitaFicticiaPorConsultor(4, 4, 200, "Soporte tecnológico", "Atendido");
+                AgregarCitaFicticiaPorConsultor(3, 3, 120, "Orientacion psicologica", "Atendido");
 
-                AgregarCitaFicticiaPorConsultor(1, 1, 100, "Contrato empresarial", "Pendiente");
-                AgregarCitaFicticiaPorConsultor(2, 2, 150, "Declaración de impuestos", "Atendido");
-                AgregarCitaFicticiaPorConsultor(3, 3, 120, "Consulta de ansiedad", "Pendiente");
-                AgregarCitaFicticiaPorConsultor(4, 4, 200, "Configuración de software", "Atendido");
-
-                AgregarCitaFicticiaPorConsultor(1, 5, 100, "Problema legal familiar", "Atendido");
-                AgregarCitaFicticiaPorConsultor(2, 2, 150, "Revisión de balances", "Cancelado");
+                // Area de Educacion y Sociedad (3 citas para Maria Gutierrez)
+                AgregarCitaHistorica(1, 6, 80, "Tutoria academica 1", new DateTime(2026, 3, 5, 9, 0, 0));
+                AgregarCitaHistorica(2, 6, 80, "Tutoria academica 2", new DateTime(2026, 4, 12, 10, 0, 0));
+                AgregarCitaHistorica(3, 6, 80, "Tutoria academica 3", new DateTime(2026, 5, 20, 11, 0, 0));
+                AgregarCitaFicticiaPorConsultor(4, 4, 200, "Soporte tecnologico", "Atendido");
             }
 
             // MULTILISTA: Organizar rubros e inicializar sus listas
             ActualizarListaRubros();
+        }
+
+        private void AgregarCitaHistorica(int codigoCliente, int codigoConsultor, decimal monto, string descripcion, DateTime fecha)
+        {
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            CCliente cliente = ListaClientes.Find(c => c.Codigo == codigoCliente);
+            if (consultor == null || cliente == null) return;
+
+            // Crear horario en el pasado
+            int codHorario = GenerarCodigoHorario();
+            CHorarioConsultor horario = new CHorarioConsultor(codHorario, codigoConsultor, fecha, fecha.AddHours(1), "Ocupado");
+            ListaHorarios.Add(horario);
+            consultor.ListaHorarios.Add(horario);
+
+            // Crear cita atendida
+            CCita cita = new CCita();
+            cita.Codigo = GenerarCodigoCita();
+            cita.CodigoCliente = codigoCliente;
+            cita.CodigoHorario = horario.Codigo;
+            cita.Monto = monto;
+            cita.Descripcion = descripcion;
+            cita.Estado = "Atendido";
+            
+            ListaCitas.Add(cita);
+            cliente.AgregarCita(cita);
+            horario.Reservar(cita, cliente);
         }
 
         private void ActualizarListaRubros()
@@ -249,7 +285,7 @@ namespace Sistema_de_Gestion_de_Citas
 
             ListaCitas.Add(cita);
 
-            // MULTILISTA y DELEGACIÓN: Agregar a la lista del cliente y vincular
+            // MULTILISTA y DELEGACIoN: Agregar a la lista del cliente y vincular
             CCliente cliente = ListaClientes.Find(c => c.Codigo == cita.CodigoCliente);
             if (cliente != null)
             {
@@ -269,7 +305,7 @@ namespace Sistema_de_Gestion_de_Citas
                 return false;
             }
 
-            // DELEGACIÓN: La cita sabe cómo marcarse como atendida
+            // DELEGACIoN: La cita sabe como marcarse como atendida
             cita.Atender();
             return true;
         }
@@ -283,14 +319,14 @@ namespace Sistema_de_Gestion_de_Citas
                 return false;
             }
 
-            // DELEGACIÓN: La cita sabe cancelarse
+            // DELEGACIoN: La cita sabe cancelarse
             cita.Cancelar();
 
             CHorarioConsultor horario = ListaHorarios.Find(h => h.Codigo == cita.CodigoHorario);
 
             if (horario != null)
             {
-                // DELEGACIÓN: El horario sabe liberarse
+                // DELEGACIoN: El horario sabe liberarse
                 horario.Liberar();
             }
 
@@ -299,7 +335,7 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CCita> ListarCitasPorCliente(int codigoCliente)
         {
-            // DELEGACIÓN: El cliente sabe listar sus citas
+            // DELEGACIoN: El cliente sabe listar sus citas
             CCliente cliente = ListaClientes.Find(c => c.Codigo == codigoCliente);
             return cliente != null ? cliente.ListarCitas() : new List<CCita>();
         }
@@ -326,14 +362,14 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CCita> ListarCitasPorConsultor(int codigoConsultor)
         {
-            // DELEGACIÓN: El consultor sabe listar sus citas
+            // DELEGACIoN: El consultor sabe listar sus citas
             CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
             return consultor != null ? consultor.ListarCitas() : new List<CCita>();
         }
 
         public List<CHorarioConsultor> ListarHorariosLibres(int codigoConsultor)
         {
-            // DELEGACIÓN: El consultor sabe listar sus horarios libres
+            // DELEGACIoN: El consultor sabe listar sus horarios libres
             CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
             return consultor != null ? consultor.ListarHorariosLibres() : new List<CHorarioConsultor>();
         }
@@ -341,7 +377,7 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CHorarioConsultor> ListarHorariosLibres(int codigoConsultor, DateTime fecha)
         {
-            // DELEGACIÓN: El consultor sabe listar sus horarios libres por fecha
+            // DELEGACIoN: El consultor sabe listar sus horarios libres por fecha
             CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
             return consultor != null ? consultor.ListarHorariosLibres(fecha) : new List<CHorarioConsultor>();
         }
@@ -442,7 +478,7 @@ namespace Sistema_de_Gestion_de_Citas
 
             ListaCitas.Add(cita);
 
-            // MULTILISTA y DELEGACIÓN: Vincular cita con el horario y el cliente
+            // MULTILISTA y DELEGACIoN: Vincular cita con el horario y el cliente
             CCliente cliente = ListaClientes.Find(c => c.Codigo == codigoCliente);
             if (cliente != null)
             {
@@ -452,3 +488,4 @@ namespace Sistema_de_Gestion_de_Citas
         }
     }
 }
+

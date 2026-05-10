@@ -22,7 +22,6 @@ namespace Sistema_de_Gestion_de_Citas
             InitializeComponent();
             consultorActual = consultor;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
         }
 
         private void btnConsultarCitas_Click(object sender, EventArgs e)
@@ -37,73 +36,34 @@ namespace Sistema_de_Gestion_de_Citas
             CReporte reporte = new CReporte();
             var resumen = reporte.ObtenerResumenCitas(consultorActual.Codigo);
 
-            Form form = new Form();
-            form.Text = "Reporte de Citas";
-            form.Size = new Size(600, 450);
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.BackColor = Color.FromArgb(236, 253, 245); // Color del menú consultor (verde menta claro)
-            form.FormBorderStyle = FormBorderStyle.FixedDialog;
-            form.MaximizeBox = false;
-
-            Panel pnlContenedor = new Panel();
-            pnlContenedor.Dock = DockStyle.Fill;
-            pnlContenedor.Padding = new Padding(40);
-            form.Controls.Add(pnlContenedor);
-
-            // Estilos de fuente
-            Font fontTitulo = new Font("Segoe UI", 24, FontStyle.Bold);
-            Font fontValor = new Font("Segoe UI", 24, FontStyle.Bold);
-            Color colorTexto = Color.Black;
-
-            // Fila 1: Hoy
-            Label lblHoyTitulo = new Label { Text = "Citas atendidas Hoy", Font = fontTitulo, AutoSize = true, Location = new Point(40, 60), ForeColor = colorTexto };
-            Label lblHoyValor = new Label { Text = resumen.Hoy.ToString(), Font = fontValor, Size = new Size(100, 50), Location = new Point(450, 60), ForeColor = colorTexto, TextAlign = ContentAlignment.TopRight };
-
-            // Fila 2: Mes
-            Label lblMesTitulo = new Label { Text = "Citas atendidas durante el mes", Font = fontTitulo, AutoSize = true, Location = new Point(40, 140), ForeColor = colorTexto };
-            Label lblMesValor = new Label { Text = resumen.Mes.ToString(), Font = fontValor, Size = new Size(100, 50), Location = new Point(450, 140), ForeColor = colorTexto, TextAlign = ContentAlignment.TopRight };
-
-            // Fila 3: Total
-            Label lblTotalTitulo = new Label { Text = "Total de Citas atendidas", Font = fontTitulo, AutoSize = true, Location = new Point(40, 220), ForeColor = colorTexto };
-            Label lblTotalValor = new Label { Text = resumen.Total.ToString(), Font = fontValor, Size = new Size(100, 50), Location = new Point(450, 220), ForeColor = colorTexto, TextAlign = ContentAlignment.TopRight };
-
-            // Botón Volver
-            Button btnVolver = new Button();
-            btnVolver.Text = "Volver";
-            btnVolver.Font = new Font("Segoe UI", 18, FontStyle.Bold);
-            btnVolver.Size = new Size(300, 60);
-            btnVolver.Location = new Point(150, 320);
-            btnVolver.BackColor = Color.White;
-            btnVolver.FlatStyle = FlatStyle.Flat;
-            btnVolver.Click += (s, ev) => form.Close();
-
-            pnlContenedor.Controls.Add(lblHoyTitulo);
-            pnlContenedor.Controls.Add(lblHoyValor);
-            pnlContenedor.Controls.Add(lblMesTitulo);
-            pnlContenedor.Controls.Add(lblMesValor);
-            pnlContenedor.Controls.Add(lblTotalTitulo);
-            pnlContenedor.Controls.Add(lblTotalValor);
-            pnlContenedor.Controls.Add(btnVolver);
-
+            // Ahora usamos la ventana independiente que creamos
+            frmReporteCitas form = new frmReporteCitas(resumen);
             form.ShowDialog();
         }
 
         private void btnReporteIngresos_Click(object sender, EventArgs e)
         {
-            int trimestre = 2; // Por ahora primer trimestre
-
             CReporte reporte = new CReporte();
 
-            var datos = reporte.IngresosMensualesPorTrimestre(consultorActual.Codigo, trimestre);
+            // Obtenemos datos para ambos trimestres
+            var datosT1 = reporte.IngresosMensualesPorTrimestre(consultorActual.Codigo, 1);
+            var datosT2 = reporte.IngresosMensualesPorTrimestre(consultorActual.Codigo, 2);
 
-            if (datos.Count == 0)
+            // Sumamos los totales de cada trimestre para tener una sola barra por cada uno
+            decimal totalT1 = 0;
+            foreach (dynamic item in datosT1) totalT1 += item.Ingreso;
+
+            decimal totalT2 = 0;
+            foreach (dynamic item in datosT2) totalT2 += item.Ingreso;
+
+            if (totalT1 == 0 && totalT2 == 0)
             {   
-                MessageBox.Show("No hay ingresos registrados para este trimestre.");
+                MessageBox.Show("No hay ingresos registrados en el primer semestre.");
                 return;
             }
 
             Form form = new Form();
-            form.Text = "Reporte de ingresos por trimestre";
+            form.Text = "Reporte de ingresos por trimestres";
             form.Width = 800;
             form.Height = 500;
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -112,26 +72,25 @@ namespace Sistema_de_Gestion_de_Citas
             chart.Dock = DockStyle.Fill;
 
             ChartArea area = new ChartArea("Area1");
-            area.AxisX.Title = "Mes";
-            area.AxisY.Title = "Ingresos";
-            area.AxisX.Interval = 1;
+            area.AxisX.Title = "Trimestres";
+            area.AxisY.Title = "Ingresos Totales (S/)";
             chart.ChartAreas.Add(area);
 
+            // Serie de datos
             Series serie = new Series("Ingresos");
             serie.ChartType = SeriesChartType.Column;
             serie.IsValueShownAsLabel = true;
             serie.Label = "S/ #VALY";
 
-            decimal total = 0;
+            // Barra 1: Trimestre 1
+            serie.Points.AddXY("Trimestre 1 (ENE-FEB-MAR)", totalT1);
 
-            foreach (dynamic item in datos)
-            {
-                serie.Points.AddXY(item.Mes, item.Ingreso);
-                total += item.Ingreso;
-            }
+            // Barra 2: Trimestre 2
+            serie.Points.AddXY("Trimestre 2 (ABR-MAY-JUN)", totalT2);
 
             chart.Series.Add(serie);
-            chart.Titles.Add("Ingresos por trimestre - Total: S/ " + total.ToString("0.00"));
+            
+            chart.Titles.Add("Comparativa de Ingresos por Trimestre");
 
             form.Controls.Add(chart);
             form.ShowDialog();
@@ -139,20 +98,7 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnReporteClientesFrecuentes_Click(object sender, EventArgs e)
         {
-            CReporte reporte = new CReporte();
-
-            var datos = reporte.ClientesMasFrecuentes(consultorActual.Codigo);
-
-            Form form = new Form();
-            form.Text = "Clientes más frecuentes";
-            form.Width = 600;
-            form.Height = 400;
-
-            DataGridView dgv = new DataGridView();
-            dgv.Dock = DockStyle.Fill;
-            dgv.DataSource = datos;
-
-            form.Controls.Add(dgv);
+            frmClientesFrecuentes form = new frmClientesFrecuentes(consultorActual.Codigo);
             form.ShowDialog();
         }
 

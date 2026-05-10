@@ -40,18 +40,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(287, 67);
+            this.label2.Location = new System.Drawing.Point(215, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 25);
+            this.label2.Size = new System.Drawing.Size(160, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Menu de Consultor";
             // 
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(244, 316);
+            this.btnSalir.Location = new System.Drawing.Point(144, 257);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(280, 38);
+            this.btnSalir.Size = new System.Drawing.Size(274, 31);
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // btnReporteClientesFrecuentes
             // 
             this.btnReporteClientesFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteClientesFrecuentes.Location = new System.Drawing.Point(192, 272);
+            this.btnReporteClientesFrecuentes.Location = new System.Drawing.Point(144, 221);
+            this.btnReporteClientesFrecuentes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteClientesFrecuentes.Name = "btnReporteClientesFrecuentes";
-            this.btnReporteClientesFrecuentes.Size = new System.Drawing.Size(365, 38);
+            this.btnReporteClientesFrecuentes.Size = new System.Drawing.Size(274, 31);
             this.btnReporteClientesFrecuentes.TabIndex = 16;
             this.btnReporteClientesFrecuentes.Text = "Reporte de Clientes Frecuentes";
             this.btnReporteClientesFrecuentes.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // btnReporteIngresos
             // 
             this.btnReporteIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteIngresos.Location = new System.Drawing.Point(244, 227);
+            this.btnReporteIngresos.Location = new System.Drawing.Point(144, 184);
+            this.btnReporteIngresos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteIngresos.Name = "btnReporteIngresos";
-            this.btnReporteIngresos.Size = new System.Drawing.Size(280, 39);
+            this.btnReporteIngresos.Size = new System.Drawing.Size(274, 32);
             this.btnReporteIngresos.TabIndex = 15;
             this.btnReporteIngresos.Text = "Reporte de Ingresos";
             this.btnReporteIngresos.UseVisualStyleBackColor = true;
@@ -82,9 +86,10 @@
             // btnReporteCitas
             // 
             this.btnReporteCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteCitas.Location = new System.Drawing.Point(244, 184);
+            this.btnReporteCitas.Location = new System.Drawing.Point(144, 150);
+            this.btnReporteCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteCitas.Name = "btnReporteCitas";
-            this.btnReporteCitas.Size = new System.Drawing.Size(280, 38);
+            this.btnReporteCitas.Size = new System.Drawing.Size(274, 31);
             this.btnReporteCitas.TabIndex = 14;
             this.btnReporteCitas.Text = "Reporte de Citas";
             this.btnReporteCitas.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@
             // btnConsultarCitas
             // 
             this.btnConsultarCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarCitas.Location = new System.Drawing.Point(244, 139);
+            this.btnConsultarCitas.Location = new System.Drawing.Point(144, 113);
+            this.btnConsultarCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultarCitas.Name = "btnConsultarCitas";
-            this.btnConsultarCitas.Size = new System.Drawing.Size(280, 39);
+            this.btnConsultarCitas.Size = new System.Drawing.Size(274, 32);
             this.btnConsultarCitas.TabIndex = 13;
             this.btnConsultarCitas.Text = "Consultar Citas";
             this.btnConsultarCitas.UseVisualStyleBackColor = true;
@@ -103,15 +109,16 @@
             // 
             // frmMenuConsultor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReporteClientesFrecuentes);
             this.Controls.Add(this.btnReporteIngresos);
             this.Controls.Add(this.btnReporteCitas);
             this.Controls.Add(this.btnConsultarCitas);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMenuConsultor";
             this.Text = "frmMenuConsultor";
             this.ResumeLayout(false);

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,40 +18,50 @@ namespace Sistema_de_Gestion_de_Citas
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(236, 253, 245);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtCodigo.Text.Trim() == "")
             {
-                MessageBox.Show("Ingrese el código del consultor");
+                MessageBox.Show("Ingrese el DNI del consultor");
                 return;
             }
 
-            int codigo = int.Parse(txtCodigo.Text);
+            string dni = txtCodigo.Text.Trim();
 
             var resultado = CControlador.ListaConsultores
-                .Where(c => c.Codigo == codigo)
+                .Where(c => c.Dni == dni)
                 .ToList();
 
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = resultado;
 
             if (dgvConsultores.Columns["Codigo"] != null) dgvConsultores.Columns["Codigo"].Visible = false;
+
+            if (resultado.Count == 0)
+                MessageBox.Show("No se encontro ningun consultor con ese DNI");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (txtCodigo.Text.Trim() == "")
             {
-                MessageBox.Show("Ingrese el código del consultor");
+                MessageBox.Show("Ingrese el DNI del consultor");
                 return;
             }
 
-            int codigo = int.Parse(txtCodigo.Text);
+            string dni = txtCodigo.Text.Trim();
 
-            bool eliminado = controlador.EliminarConsultor(codigo);
+            var consultor = CControlador.ListaConsultores.FirstOrDefault(c => c.Dni == dni);
+
+            if (consultor == null)
+            {
+                MessageBox.Show("No se encontro el consultor con ese DNI");
+                return;
+            }
+
+            bool eliminado = controlador.EliminarConsultor(consultor.Codigo);
 
             if (eliminado)
             {
@@ -61,7 +71,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
             else
             {
-                MessageBox.Show("No se encontró el consultor");
+                MessageBox.Show("No se pudo eliminar el consultor");
             }
         }
         private void MostrarConsultores()
@@ -80,3 +90,4 @@ namespace Sistema_de_Gestion_de_Citas
         }
     }
 }
+
