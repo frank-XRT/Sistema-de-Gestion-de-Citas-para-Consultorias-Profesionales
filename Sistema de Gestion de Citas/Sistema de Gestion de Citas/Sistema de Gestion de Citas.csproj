@@ -70,8 +70,38 @@
     <Compile Include="frmConsultarCitas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSubmenuModificarConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubmenuModificarConsultor.Designer.cs">
+      <DependentUpon>frmSubmenuModificarConsultor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubmenuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubmenuReportes.Designer.cs">
+      <DependentUpon>frmSubmenuReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminEditarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminEditarContrasena.Designer.cs">
+      <DependentUpon>frmAdminEditarContrasena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpcionesEditarConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpcionesEditarConsultor.Designer.cs">
+      <DependentUpon>frmOpcionesEditarConsultor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultarCitas.Designer.cs">
       <DependentUpon>frmConsultarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarConsultor.Designer.cs">
+      <DependentUpon>frmEditarConsultor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEliminarConsultor.cs">
       <SubType>Form</SubType>
@@ -133,6 +163,12 @@
     <Compile Include="frmReporteEstados.Designer.cs">
       <DependentUpon>frmReporteEstados.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarContrasena.Designer.cs">
+      <DependentUpon>frmModificarContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBuscarProfesional.resx">
@@ -143,6 +179,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarCitas.resx">
       <DependentUpon>frmConsultarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubmenuModificarConsultor.resx">
+      <DependentUpon>frmSubmenuModificarConsultor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubmenuReportes.resx">
+      <DependentUpon>frmSubmenuReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminEditarContrasena.resx">
+      <DependentUpon>frmAdminEditarContrasena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpcionesEditarConsultor.resx">
+      <DependentUpon>frmOpcionesEditarConsultor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarConsultor.resx">
+      <DependentUpon>frmEditarConsultor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminarConsultor.resx">
       <DependentUpon>frmEliminarConsultor.cs</DependentUpon>
@@ -173,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteEstados.resx">
       <DependentUpon>frmReporteEstados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarContrasena.resx">
+      <DependentUpon>frmModificarContrasena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -8,6 +8,9 @@ namespace Sistema_de_Gestion_de_Citas
 {
     public class CConsultor
     {
+        // ===========================================================================
+        // SECCION: PROPIEDADES DEL CONSULTOR
+        // ===========================================================================
         public int Codigo { get; set; }
         public string Nombre { get; set; }
         public string Dni { get; set; }
@@ -20,6 +23,9 @@ namespace Sistema_de_Gestion_de_Citas
         public decimal Monto { get; set; }
         public List<CHorarioConsultor> ListaHorarios { get; set; }
 
+        // ===========================================================================
+        // SECCION: CONSTRUCTORES
+        // ===========================================================================
         public CConsultor()
         {
             ListaHorarios = new List<CHorarioConsultor>();
@@ -41,6 +47,10 @@ namespace Sistema_de_Gestion_de_Citas
             ListaHorarios = new List<CHorarioConsultor>();
         }
 
+        // ===========================================================================
+        // SECCION: GENERACION DE HORARIOS
+        // Usado por CControlador en la carga inicial y al generar horarios nuevos
+        // ===========================================================================
         public void GenerarHorarios(DateTime fecha, ref int ultimoCodigoHorario)
         {
             DateTime[] inicios = {
@@ -75,6 +85,10 @@ namespace Sistema_de_Gestion_de_Citas
             }
         }
 
+        // ===========================================================================
+        // SECCION: METODOS DE CONSULTA DEL CONSULTOR
+        // Usados desde frmConsultarCitas y frmMenuConsultor (reportes)
+        // ===========================================================================
         public List<CHorarioConsultor> ListarHorariosLibres()
         {
             return ListaHorarios.Where(h => h.Estado == "Libre").ToList();

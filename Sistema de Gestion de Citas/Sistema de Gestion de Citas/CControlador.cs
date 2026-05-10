@@ -20,6 +20,9 @@ namespace Sistema_de_Gestion_de_Citas
             CargarAdministradorInicial();
         }
 
+        // ===========================================================================
+        // SECCION: CARGA DE DATOS FICTICIOS (solo para pruebas y demostracion)
+        // ===========================================================================
         private void CargarAdministradorInicial()
         {
             // ADMINISTRADOR
@@ -111,6 +114,10 @@ namespace Sistema_de_Gestion_de_Citas
             ActualizarListaRubros();
         }
 
+        // ===========================================================================
+        // SECCION: METODOS AUXILIARES PARA DATOS FICTICIOS
+        // Solo se usan en CargarAdministradorInicial() para crear datos de prueba
+        // ===========================================================================
         private void AgregarCitaHistorica(int codigoCliente, int codigoConsultor, decimal monto, string descripcion, DateTime fecha)
         {
             CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);
@@ -137,6 +144,10 @@ namespace Sistema_de_Gestion_de_Citas
             horario.Reservar(cita, cliente);
         }
 
+        // ===========================================================================
+        // SECCION: MULTILISTA - Organizacion de rubros
+        // Se usa en la carga inicial y al registrar/eliminar consultores
+        // ===========================================================================
         private void ActualizarListaRubros()
         {
             ListaRubros.Clear();
@@ -155,6 +166,9 @@ namespace Sistema_de_Gestion_de_Citas
             }
         }
 
+        // ===========================================================================
+        // SECCION: LOGIN (usado por Administrador, Consultor y Cliente)
+        // ===========================================================================
         public object Login(string dni, string contraseña)
         {
             CAdministrador admin = ListaAdministradores.Find(a =>
@@ -184,6 +198,9 @@ namespace Sistema_de_Gestion_de_Citas
             return null;
         }
 
+        // ===========================================================================
+        // SECCION: ADMINISTRADOR - Registro, eliminacion y busqueda
+        // ===========================================================================
         public bool RegistrarCliente(CCliente cliente)
         {
             if (ExisteDni(cliente.Dni))
@@ -266,6 +283,9 @@ namespace Sistema_de_Gestion_de_Citas
 
 
 
+        // ===========================================================================
+        // SECCION: CLIENTE - Reservar y cancelar citas
+        // ===========================================================================
         public bool ReservarCita(CCita cita)
         {
             CHorarioConsultor horario = ListaHorarios.Find(h => h.Codigo == cita.CodigoHorario);
@@ -296,6 +316,9 @@ namespace Sistema_de_Gestion_de_Citas
             return true;
         }
 
+        // ===========================================================================
+        // SECCION: CONSULTOR - Marcar citas y listar sus citas/horarios
+        // ===========================================================================
         public bool MarcarCitaComoAtendida(int codigoCita)
         {
             CCita cita = ListaCitas.Find(c => c.Codigo == codigoCita);
@@ -333,6 +356,9 @@ namespace Sistema_de_Gestion_de_Citas
             return true;
         }
 
+        // ===========================================================================
+        // SECCION: CLIENTE - Listar citas del cliente
+        // ===========================================================================
         public List<CCita> ListarCitasPorCliente(int codigoCliente)
         {
             // DELEGACIoN: El cliente sabe listar sus citas
@@ -360,6 +386,9 @@ namespace Sistema_de_Gestion_de_Citas
             return reporte.Cast<object>().ToList();
         }
 
+        // ===========================================================================
+        // SECCION: CONSULTOR - Listar citas y horarios del consultor
+        // ===========================================================================
         public List<CCita> ListarCitasPorConsultor(int codigoConsultor)
         {
             // DELEGACIoN: El consultor sabe listar sus citas
@@ -404,6 +433,9 @@ namespace Sistema_de_Gestion_de_Citas
                 .ToList();
         }
 
+        // ===========================================================================
+        // SECCION: METODOS PRIVADOS INTERNOS (generadores de codigos y validacion)
+        // ===========================================================================
         private bool ExisteDni(string dni)
         {
             bool existeAdmin = ListaAdministradores.Any(a => a.Dni == dni);
@@ -452,6 +484,10 @@ namespace Sistema_de_Gestion_de_Citas
 
             return ListaCitas.Max(c => c.Codigo) + 1;
         }
+        // ===========================================================================
+        // SECCION: METODO AUXILIAR PARA DATOS FICTICIOS
+        // Solo se usa en CargarAdministradorInicial() para crear citas de prueba
+        // ===========================================================================
         private void AgregarCitaFicticiaPorConsultor(int codigoCliente, int codigoConsultor, decimal monto, string descripcion, string estado)
         {
             CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigoConsultor);

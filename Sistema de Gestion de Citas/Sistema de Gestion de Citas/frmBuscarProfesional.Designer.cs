@@ -100,13 +100,13 @@ namespace Sistema_de_Gestion_de_Citas
             this.dgvHorarios.Name = "dgvHorarios";
             this.dgvHorarios.RowHeadersWidth = 51;
             this.dgvHorarios.RowTemplate.Height = 24;
-            this.dgvHorarios.Size = new System.Drawing.Size(366, 279);
+            this.dgvHorarios.Size = new System.Drawing.Size(366, 162);
             this.dgvHorarios.TabIndex = 3;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(147, 564);
+            this.txtDescripcion.Location = new System.Drawing.Point(147, 445);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(484, 26);
@@ -115,7 +115,7 @@ namespace Sistema_de_Gestion_de_Citas
             // btnReservar
             // 
             this.btnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservar.Location = new System.Drawing.Point(147, 617);
+            this.btnReservar.Location = new System.Drawing.Point(147, 486);
             this.btnReservar.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(86, 32);
@@ -127,7 +127,7 @@ namespace Sistema_de_Gestion_de_Citas
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(253, 617);
+            this.btnVolver.Location = new System.Drawing.Point(491, 486);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(86, 32);
@@ -151,7 +151,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 567);
+            this.label3.Location = new System.Drawing.Point(30, 448);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 20);
@@ -207,7 +207,7 @@ namespace Sistema_de_Gestion_de_Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 680);
+            this.ClientSize = new System.Drawing.Size(671, 543);
             this.Controls.Add(this.btnFiltrarFecha);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label5);

@@ -20,3 +20,9 @@ M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Siste
 M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.pdb
 M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmClientesFrecuentes.resources
 M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmReporteEstados.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmModificarContrasena.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmEditarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmAdminEditarContrasena.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmOpcionesEditarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuModificarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuReportes.resources

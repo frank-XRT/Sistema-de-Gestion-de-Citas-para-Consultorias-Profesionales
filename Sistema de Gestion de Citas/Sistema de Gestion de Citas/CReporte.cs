@@ -42,6 +42,9 @@ namespace Sistema_de_Gestion_de_Citas
             return "Otras Areas";
         }
 
+        // ===========================================================================
+        // SECCION: REPORTES DEL ADMINISTRADOR - Estadisticas globales por area
+        // ===========================================================================
         public List<object> CitasPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
             // Inicializamos el diccionario con las 4 areas en 0 para asegurar que siempre aparezcan
@@ -140,6 +143,9 @@ namespace Sistema_de_Gestion_de_Citas
             }).ToList();
         }
 
+        // ===========================================================================
+        // SECCION: REPORTES DEL CONSULTOR - Estadisticas individuales por consultor
+        // ===========================================================================
         public List<object> IngresosMensualesPorTrimestre(int codigoConsultor, int trimestre)
         {
             int mesInicio = (trimestre - 1) * 3 + 1;
@@ -210,6 +216,9 @@ namespace Sistema_de_Gestion_de_Citas
             };
         }
 
+        // ===========================================================================
+        // SECCION: METODOS PRIVADOS AUXILIARES (utilidades internas)
+        // ===========================================================================
         private string ObtenerNombreCliente(int codigoCliente)
         {
             CCliente cliente = CControlador.ListaClientes
@@ -240,6 +249,9 @@ namespace Sistema_de_Gestion_de_Citas
             return "";
         }
 
+        // ===========================================================================
+        // SECCION: REPORTES DEL ADMINISTRADOR - Estadisticas de estados por area
+        // ===========================================================================
         public dynamic EstadisticasPorArea(string areaNombre, DateTime inicio, DateTime fin)
         {
             int asistidas = 0;

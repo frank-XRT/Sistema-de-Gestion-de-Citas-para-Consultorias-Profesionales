@@ -102,6 +102,12 @@ namespace Sistema_de_Gestion_de_Citas
             form.ShowDialog();
         }
 
+        private void btnModificarContrasena_Click(object sender, EventArgs e)
+        {
+            frmModificarContrasena form = new frmModificarContrasena(consultorActual);
+            form.ShowDialog();
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             frmLogin form = new frmLogin();

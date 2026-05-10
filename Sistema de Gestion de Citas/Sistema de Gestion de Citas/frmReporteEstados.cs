@@ -24,7 +24,7 @@ namespace Sistema_de_Gestion_de_Citas
         {
             if (cmbArea.SelectedItem == null)
             {
-                MessageBox.Show("Por favor, seleccione un area de servicio.");
+                MessageBox.Show("Por favor, seleccione un area.");
                 return;
             }
 

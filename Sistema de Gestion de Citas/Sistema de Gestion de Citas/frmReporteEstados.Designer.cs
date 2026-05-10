@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmReporteEstados
     {
@@ -94,7 +94,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Area de servicio";
+            this.label5.Text = "Area";
             // 
             // label6
             // 

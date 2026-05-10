@@ -3,8 +3,76 @@
   "WorkspaceRootPath": "M:\\Funda\\Sistema de Gestion de Citas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|M:\\Funda\\Sistema de Gestion de Citas\\sistema de gestion de citas\\ccontrolador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\ccontrolador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmbuscarprofesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmbuscarprofesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmadmineditarcontrasena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmadmineditarcontrasena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmsubmenureportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmsubmenureportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmsubmenumodificarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmsubmenumodificarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmreporteestados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmreporteestados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmreportecitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmreportecitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmregistrocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmregistrocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmopcioneseditarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmopcioneseditarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|M:\\Funda\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmmodificarcontrasena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmodificarcontrasena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenuconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenuconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmeliminarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmeliminarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|M:\\Funda\\Sistema de Gestion de Citas\\sistema de gestion de citas\\frmeditarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmeditarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|m:\\funda\\sistema de gestion de citas\\sistema de gestion de citas\\frmconsultarcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AB3848F-1649-40F7-B3AE-718B59CE4896}|Sistema de Gestion de Citas\\Sistema de Gestion de Citas.csproj|solutionrelative:sistema de gestion de citas\\frmconsultarcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,15 +91,218 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CControlador.cs",
-              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\CControlador.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\CControlador.cs",
-              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\CControlador.cs",
-              "RelativeToolTip": "Sistema de Gestion de Citas\\CControlador.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCIAAAAMAAAAAAAAAA==",
+              "Title": "frmBuscarProfesional.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmBuscarProfesional.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmBuscarProfesional.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmBuscarProfesional.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T18:05:22.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T22:38:37.194Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmSubmenuReportes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmSubmenuReportes.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmSubmenuReportes.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmSubmenuReportes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmSubmenuReportes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:31.392Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmSubmenuModificarConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmSubmenuModificarConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmSubmenuModificarConsultor.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmSubmenuModificarConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmSubmenuModificarConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:30.108Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmReporteEstados.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmReporteEstados.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmReporteEstados.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmReporteEstados.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmReporteEstados.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:29.402Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmReporteCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmReporteCitas.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmReporteCitas.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmReporteCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmReporteCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:28.55Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmRegistroCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistroCliente.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmRegistroCliente.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistroCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmRegistroCliente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:26.208Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmRegistrarConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistrarConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmRegistrarConsultor.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmRegistrarConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmRegistrarConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:24.987Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmMisCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMisCitas.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMisCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMisCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:22.309Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "frmMenuAdministrador.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuAdministrador.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuAdministrador.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:19.073Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "frmLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmLogin.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:18.432Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "frmEliminarConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEliminarConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmEliminarConsultor.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEliminarConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmEliminarConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:17.141Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "frmConsultarCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmConsultarCitas.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmConsultarCitas.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmConsultarCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmConsultarCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:06.237Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmMenuCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuCliente.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuCliente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:03.12Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmMenuConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmMenuConsultor.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmMenuConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmMenuConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:38:02.193Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmAdminEditarContrasena.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmAdminEditarContrasena.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmAdminEditarContrasena.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmAdminEditarContrasena.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmAdminEditarContrasena.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:37:53.858Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmOpcionesEditarConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmOpcionesEditarConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmOpcionesEditarConsultor.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmOpcionesEditarConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmOpcionesEditarConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:15:28.232Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmModificarContrasena.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmModificarContrasena.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmModificarContrasena.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmModificarContrasena.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmModificarContrasena.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:15:26.009Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmEditarConsultor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEditarConsultor.cs",
+              "RelativeDocumentMoniker": "Sistema de Gestion de Citas\\frmEditarConsultor.cs",
+              "ToolTip": "M:\\Funda\\Sistema de Gestion de Citas\\Sistema de Gestion de Citas\\frmEditarConsultor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema de Gestion de Citas\\frmEditarConsultor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T22:15:23.951Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
