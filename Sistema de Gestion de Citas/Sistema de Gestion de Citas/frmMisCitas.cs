@@ -28,6 +28,10 @@ namespace Sistema_de_Gestion_de_Citas
         {
             dgvMisCitas.DataSource = null;
             dgvMisCitas.DataSource = controlador.ListarCitasDetalladasPorCliente(clienteActual.Codigo);
+            if (dgvMisCitas.Columns["Codigo"] != null)
+            {
+                dgvMisCitas.Columns["Codigo"].Visible = false;
+            }
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -39,6 +43,40 @@ namespace Sistema_de_Gestion_de_Citas
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (dgvMisCitas.SelectedRows.Count > 0)
+            {
+                int codigoCita = Convert.ToInt32(dgvMisCitas.SelectedRows[0].Cells["Codigo"].Value);
+                string estadoCita = dgvMisCitas.SelectedRows[0].Cells["Estado"].Value.ToString();
+                
+                if (estadoCita == "Pendiente")
+                {
+                    DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea cancelar esta cita?", "Confirmar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        if (controlador.CancelarCita(codigoCita))
+                        {
+                            MessageBox.Show("Cita cancelada correctamente.");
+                            MostrarMisCitas();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al cancelar la cita.");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Solo se pueden cancelar citas en estado 'Pendiente'.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione la fila de la cita que desea cancelar.");
+            }
         }
     }
 }

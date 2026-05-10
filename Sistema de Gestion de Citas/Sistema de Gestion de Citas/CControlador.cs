@@ -376,6 +376,7 @@ namespace Sistema_de_Gestion_de_Citas
                           where cita.CodigoCliente == codigoCliente
                           select new
                           {
+                              Codigo = cita.Codigo,
                               Fecha = horario.FechaHoraInicio,
                               Consultor = consultor.Nombre,
                               Monto = cita.Monto,

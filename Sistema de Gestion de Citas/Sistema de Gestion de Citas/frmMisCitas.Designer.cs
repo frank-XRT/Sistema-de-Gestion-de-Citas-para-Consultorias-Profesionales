@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmMisCitas
     {
@@ -30,6 +30,7 @@
         {
             this.dgvMisCitas = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisCitas)).BeginInit();
             this.SuspendLayout();
@@ -42,13 +43,14 @@
             this.dgvMisCitas.Name = "dgvMisCitas";
             this.dgvMisCitas.RowHeadersWidth = 51;
             this.dgvMisCitas.RowTemplate.Height = 24;
+            this.dgvMisCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMisCitas.Size = new System.Drawing.Size(578, 228);
             this.dgvMisCitas.TabIndex = 0;
             // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(252, 313);
+            this.btnVolver.Location = new System.Drawing.Point(150, 313);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(76, 31);
@@ -56,6 +58,18 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(350, 313);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(120, 31);
+            this.btnCancelar.TabIndex = 39;
+            this.btnCancelar.Text = "Cancelar cita";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label1
             // 
@@ -75,6 +89,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvMisCitas);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMisCitas";
@@ -89,6 +104,7 @@
 
         private System.Windows.Forms.DataGridView dgvMisCitas;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
     }
 }

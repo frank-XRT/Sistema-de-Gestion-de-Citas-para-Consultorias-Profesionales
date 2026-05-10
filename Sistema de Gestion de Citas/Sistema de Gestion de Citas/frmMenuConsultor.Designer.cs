@@ -30,9 +30,7 @@ namespace Sistema_de_Gestion_de_Citas
         {
             this.label2 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnReporteClientesFrecuentes = new System.Windows.Forms.Button();
-            this.btnReporteIngresos = new System.Windows.Forms.Button();
-            this.btnReporteCitas = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.btnConsultarCitas = new System.Windows.Forms.Button();
             this.btnModificarContrasena = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -51,7 +49,7 @@ namespace Sistema_de_Gestion_de_Citas
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(144, 293);
+            this.btnSalir.Location = new System.Drawing.Point(144, 224);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(274, 31);
@@ -60,41 +58,17 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnReporteClientesFrecuentes
+            // btnReportes
             // 
-            this.btnReporteClientesFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteClientesFrecuentes.Location = new System.Drawing.Point(144, 221);
-            this.btnReporteClientesFrecuentes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnReporteClientesFrecuentes.Name = "btnReporteClientesFrecuentes";
-            this.btnReporteClientesFrecuentes.Size = new System.Drawing.Size(274, 31);
-            this.btnReporteClientesFrecuentes.TabIndex = 16;
-            this.btnReporteClientesFrecuentes.Text = "Reporte de Clientes Frecuentes";
-            this.btnReporteClientesFrecuentes.UseVisualStyleBackColor = true;
-            this.btnReporteClientesFrecuentes.Click += new System.EventHandler(this.btnReporteClientesFrecuentes_Click);
-            // 
-            // btnReporteIngresos
-            // 
-            this.btnReporteIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteIngresos.Location = new System.Drawing.Point(144, 184);
-            this.btnReporteIngresos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnReporteIngresos.Name = "btnReporteIngresos";
-            this.btnReporteIngresos.Size = new System.Drawing.Size(274, 32);
-            this.btnReporteIngresos.TabIndex = 15;
-            this.btnReporteIngresos.Text = "Reporte de Ingresos";
-            this.btnReporteIngresos.UseVisualStyleBackColor = true;
-            this.btnReporteIngresos.Click += new System.EventHandler(this.btnReporteIngresos_Click);
-            // 
-            // btnReporteCitas
-            // 
-            this.btnReporteCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteCitas.Location = new System.Drawing.Point(144, 150);
-            this.btnReporteCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnReporteCitas.Name = "btnReporteCitas";
-            this.btnReporteCitas.Size = new System.Drawing.Size(274, 31);
-            this.btnReporteCitas.TabIndex = 14;
-            this.btnReporteCitas.Text = "Reporte de Citas";
-            this.btnReporteCitas.UseVisualStyleBackColor = true;
-            this.btnReporteCitas.Click += new System.EventHandler(this.btnReporteCitas_Click);
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Location = new System.Drawing.Point(144, 150);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(274, 31);
+            this.btnReportes.TabIndex = 14;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnConsultarCitas
             // 
@@ -111,7 +85,7 @@ namespace Sistema_de_Gestion_de_Citas
             // btnModificarContrasena
             // 
             this.btnModificarContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarContrasena.Location = new System.Drawing.Point(144, 257);
+            this.btnModificarContrasena.Location = new System.Drawing.Point(144, 187);
             this.btnModificarContrasena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarContrasena.Name = "btnModificarContrasena";
             this.btnModificarContrasena.Size = new System.Drawing.Size(274, 31);
@@ -128,9 +102,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnModificarContrasena);
-            this.Controls.Add(this.btnReporteClientesFrecuentes);
-            this.Controls.Add(this.btnReporteIngresos);
-            this.Controls.Add(this.btnReporteCitas);
+            this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnConsultarCitas);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMenuConsultor";
@@ -144,9 +116,7 @@ namespace Sistema_de_Gestion_de_Citas
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnReporteClientesFrecuentes;
-        private System.Windows.Forms.Button btnReporteIngresos;
-        private System.Windows.Forms.Button btnReporteCitas;
+        private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnConsultarCitas;
         private System.Windows.Forms.Button btnModificarContrasena;
     }

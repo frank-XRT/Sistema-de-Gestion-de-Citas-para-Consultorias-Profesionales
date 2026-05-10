@@ -70,5 +70,10 @@ namespace Sistema_de_Gestion_de_Citas
             form.Show();
             this.Hide();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
