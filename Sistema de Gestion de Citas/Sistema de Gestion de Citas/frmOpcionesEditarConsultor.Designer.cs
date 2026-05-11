@@ -1,4 +1,4 @@
-namespace Sistema_de_Gestion_de_Citas
+﻿namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmOpcionesEditarConsultor
     {
@@ -25,9 +25,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(50, 30);
@@ -35,9 +32,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.lblTitulo.Size = new System.Drawing.Size(255, 24);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Opciones Editar Consultor";
-            // 
-            // lblDni
-            // 
             this.lblDni.AutoSize = true;
             this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDni.Location = new System.Drawing.Point(50, 80);
@@ -45,17 +39,11 @@ namespace Sistema_de_Gestion_de_Citas
             this.lblDni.Size = new System.Drawing.Size(41, 20);
             this.lblDni.TabIndex = 1;
             this.lblDni.Text = "DNI:";
-            // 
-            // txtDniBuscar
-            // 
             this.txtDniBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDniBuscar.Location = new System.Drawing.Point(100, 77);
             this.txtDniBuscar.Name = "txtDniBuscar";
             this.txtDniBuscar.Size = new System.Drawing.Size(150, 26);
             this.txtDniBuscar.TabIndex = 2;
-            // 
-            // btnBuscar
-            // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(270, 75);
             this.btnBuscar.Name = "btnBuscar";
@@ -63,9 +51,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // lblConsultorEncontrado
-            // 
             this.lblConsultorEncontrado.AutoSize = true;
             this.lblConsultorEncontrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConsultorEncontrado.Location = new System.Drawing.Point(137, 135);
@@ -73,19 +58,13 @@ namespace Sistema_de_Gestion_de_Citas
             this.lblConsultorEncontrado.Size = new System.Drawing.Size(15, 20);
             this.lblConsultorEncontrado.TabIndex = 4;
             this.lblConsultorEncontrado.Text = "-";
-            // 
-            // btnEditarContrasena
-            // 
             this.btnEditarContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarContrasena.Location = new System.Drawing.Point(50, 180);
             this.btnEditarContrasena.Name = "btnEditarContrasena";
             this.btnEditarContrasena.Size = new System.Drawing.Size(320, 35);
             this.btnEditarContrasena.TabIndex = 5;
-            this.btnEditarContrasena.Text = "Editar solo Contraseña";
+            this.btnEditarContrasena.Text = "Editar solo Contrasena";
             this.btnEditarContrasena.Click += new System.EventHandler(this.btnEditarContrasena_Click);
-            // 
-            // btnEditarOtrosCampos
-            // 
             this.btnEditarOtrosCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarOtrosCampos.Location = new System.Drawing.Point(50, 230);
             this.btnEditarOtrosCampos.Name = "btnEditarOtrosCampos";
@@ -93,9 +72,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnEditarOtrosCampos.TabIndex = 6;
             this.btnEditarOtrosCampos.Text = "Editar otros campos";
             this.btnEditarOtrosCampos.Click += new System.EventHandler(this.btnEditarOtrosCampos_Click);
-            // 
-            // btnVolver
-            // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(50, 280);
             this.btnVolver.Name = "btnVolver";
@@ -103,9 +79,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // label1
-            // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(50, 135);
@@ -113,9 +86,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Consultor:";
-            // 
-            // frmOpcionesEditarConsultor
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 350);

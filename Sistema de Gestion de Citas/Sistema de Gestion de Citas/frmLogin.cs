@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,25 +18,25 @@ namespace Sistema_de_Gestion_de_Citas
             InitializeComponent();
 
             this.StartPosition = FormStartPosition.CenterScreen;
-            txtContrasenia.UseSystemPasswordChar = true;
+            txtContrasena.UseSystemPasswordChar = true;
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string dni = txtUsuario.Text.Trim();
-            string contraseña = txtContrasenia.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
 
-            if (dni == "" || contraseña == "")
+            if (dni == "" || contrasena == "")
             {
-                MessageBox.Show("Ingrese usuario y contraseña");
+                MessageBox.Show("Ingrese usuario y contrasena");
                 return;
             }
 
-            object usuario = controlador.Login(dni, contraseña);
+            object usuario = controlador.Login(dni, contrasena);
 
             if (usuario == null)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                MessageBox.Show("Usuario o contrasena incorrectos");
                 return;
             }
 

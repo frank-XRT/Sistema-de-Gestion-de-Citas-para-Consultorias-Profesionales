@@ -12,7 +12,6 @@ namespace Sistema_de_Gestion_de_Citas
 {
     public partial class frmReporteCitas : Form
     {
-        // Constructor requerido por el diseñador de Visual Studio
         public frmReporteCitas() 
         { 
             InitializeComponent(); 
@@ -22,7 +21,6 @@ namespace Sistema_de_Gestion_de_Citas
         {
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            // Asignar los valores a los labels si hay datos
             if (resumen != null)
             {
                 lblCitasHoy.Text = resumen.Hoy.ToString();

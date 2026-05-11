@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +14,6 @@ namespace Sistema_de_Gestion_de_Citas
     {
         private CCliente clienteActual;
         CControlador controlador = new CControlador();
-        // Constructor requerido por el diseñador de Visual Studio
         public frmBuscarProfesional() { InitializeComponent(); }
 
         public frmBuscarProfesional(CCliente cliente)
@@ -29,7 +28,6 @@ namespace Sistema_de_Gestion_de_Citas
             dgvHorarios.DataSource = null;
             dgvHorarios.DataSource = datos;
 
-            // Ocultar columnas internas
             if (dgvHorarios.Columns["id"] != null) dgvHorarios.Columns["id"].Visible = false;
             if (dgvHorarios.Columns["IDConsultor"] != null) dgvHorarios.Columns["IDConsultor"].Visible = false;
             if (dgvHorarios.Columns["Cita"] != null) dgvHorarios.Columns["Cita"].Visible = false;
@@ -49,11 +47,10 @@ namespace Sistema_de_Gestion_de_Citas
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = controlador.BuscarConsultoresPorRubro(rubro);
 
-            // Ocultar columnas no deseadas
             if (dgvConsultores.Columns["id"] != null) dgvConsultores.Columns["id"].Visible = false;
             if (dgvConsultores.Columns["Dni"] != null) dgvConsultores.Columns["Dni"].Visible = false;
             if (dgvConsultores.Columns["Sexo"] != null) dgvConsultores.Columns["Sexo"].Visible = false;
-            if (dgvConsultores.Columns["Contraseña"] != null) dgvConsultores.Columns["Contraseña"].Visible = false;
+            if (dgvConsultores.Columns["Contrasena"] != null) dgvConsultores.Columns["Contrasena"].Visible = false;
         }
 
         private void dgvConsultores_CellClick(object sender, DataGridViewCellEventArgs e)

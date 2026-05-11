@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,13 +36,13 @@ namespace Sistema_de_Gestion_de_Citas
 
             if (txtNuevaContrasena.Text.Trim() != txtConfirmarContrasena.Text.Trim())
             {
-                MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Las contrasenas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            consultorAEditar.Contraseña = txtNuevaContrasena.Text.Trim();
+            consultorAEditar.Contrasena = txtNuevaContrasena.Text.Trim();
             
-            MessageBox.Show("Contraseña actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("contrasena actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

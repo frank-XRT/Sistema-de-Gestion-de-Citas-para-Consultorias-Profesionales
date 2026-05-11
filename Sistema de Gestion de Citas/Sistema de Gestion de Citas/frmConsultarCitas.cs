@@ -14,7 +14,6 @@ namespace Sistema_de_Gestion_de_Citas
     {
         private CConsultor consultorActual;
         CControlador controlador = new CControlador();
-        // Constructor requerido por el diseñador de Visual Studio
         public frmConsultarCitas()
         {
             InitializeComponent();
@@ -63,7 +62,6 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
-            // Al usar un objeto anonimo, obtenemos el id para buscar la cita real
             int idCita = (int)dgvCitas.CurrentRow.Cells["id"].Value;
 
             bool atendida = controlador.MarcarCitaComoAtendida(idCita);
@@ -71,7 +69,7 @@ namespace Sistema_de_Gestion_de_Citas
             if (atendida)
             {
                 MessageBox.Show("Cita marcada como atendida");
-                btnBuscar_Click(null, null); // Refrescar la busqueda actual
+                btnBuscar_Click(null, null); 
             }
             else
             {

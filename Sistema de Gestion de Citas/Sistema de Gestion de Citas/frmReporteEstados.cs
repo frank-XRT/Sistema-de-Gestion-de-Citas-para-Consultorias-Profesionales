@@ -16,7 +16,6 @@ namespace Sistema_de_Gestion_de_Citas
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            // Seleccionar la primera opcion del combo por defecto si tiene items
             if (cmbRubro.Items.Count > 0) cmbRubro.SelectedIndex = 0;
         }
 
@@ -35,7 +34,6 @@ namespace Sistema_de_Gestion_de_Citas
             CReporte reporte = new CReporte();
             var resultados = reporte.EstadisticasPorRubro(rubroSeleccionada, inicio, fin);
 
-            // Mostrar los resultados en los labels
             lblAsistidas.Text = resultados.Asistidas.ToString();
             lblCanceladas.Text = resultados.Canceladas.ToString();
             lblNoAsistidas.Text = resultados.NoAsistidas.ToString();

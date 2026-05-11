@@ -8,11 +8,6 @@ namespace Sistema_de_Gestion_de_Citas
 {
     public class CReporte
     {
-
-
-        // ===========================================================================
-        // SECCION: REPORTES DEL ADMINISTRADOR - Estadisticas globales por rubro
-        // ===========================================================================
         public List<object> CitasPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
             var totalesPorRubro = new Dictionary<string, int>();

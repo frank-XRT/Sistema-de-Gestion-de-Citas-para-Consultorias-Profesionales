@@ -22,7 +22,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            // btnReporteCitasServicio
             this.btnReporteCitasServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteCitasServicio.Location = new System.Drawing.Point(50, 40);
             this.btnReporteCitasServicio.Name = "btnReporteCitasServicio";
@@ -31,7 +30,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteCitasServicio.Text = "Reporte de citas por rubro";
             this.btnReporteCitasServicio.Click += new System.EventHandler(this.btnReporteCitasServicio_Click);
 
-            // btnReporteIngresosRubro
             this.btnReporteIngresosRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteIngresosRubro.Location = new System.Drawing.Point(50, 90);
             this.btnReporteIngresosRubro.Name = "btnReporteIngresosRubro";
@@ -40,7 +38,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteIngresosRubro.Text = "Reporte de ingresos por rubro";
             this.btnReporteIngresosRubro.Click += new System.EventHandler(this.btnReporteIngresosRubro_Click);
 
-            // btnReporteEstadosPorArea
             this.btnReporteEstadosPorArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteEstadosPorArea.Location = new System.Drawing.Point(50, 140);
             this.btnReporteEstadosPorArea.Name = "btnReporteEstadosPorArea";
@@ -49,7 +46,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteEstadosPorArea.Text = "Reporte de estados por rubro";
             this.btnReporteEstadosPorArea.Click += new System.EventHandler(this.btnReporteEstadosPorArea_Click);
 
-            // btnReporteConsultoresRubro
             this.btnReporteConsultoresRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteConsultoresRubro.Location = new System.Drawing.Point(50, 190);
             this.btnReporteConsultoresRubro.Name = "btnReporteConsultoresRubro";
@@ -58,7 +54,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteConsultoresRubro.Text = "Reporte consultores por rubro";
             this.btnReporteConsultoresRubro.Click += new System.EventHandler(this.btnReporteConsultoresRubro_Click);
 
-            // btnVolver
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(50, 240);
             this.btnVolver.Name = "btnVolver";
@@ -67,7 +62,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnVolver.Text = "Volver";
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
 
-            // frmSubmenuReportes
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 320);

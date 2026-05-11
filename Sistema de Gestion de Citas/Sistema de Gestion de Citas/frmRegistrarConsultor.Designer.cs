@@ -1,4 +1,4 @@
-namespace Sistema_de_Gestion_de_Citas
+﻿namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmRegistrarConsultor
     {
@@ -35,9 +35,9 @@ namespace Sistema_de_Gestion_de_Citas
             this.label8 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
+            this.txtConfirmarContrasena = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -129,16 +129,16 @@ namespace Sistema_de_Gestion_de_Citas
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 20);
             this.label6.TabIndex = 36;
-            this.label6.Text = "Confirmar Contraseña";
+            this.label6.Text = "Confirmar contrasena";
             // 
-            // txtConfirmarContraseña
+            // txtConfirmarContrasena
             // 
-            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarContraseña.Location = new System.Drawing.Point(256, 340);
-            this.txtConfirmarContraseña.Margin = new System.Windows.Forms.Padding(2);
-            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
-            this.txtConfirmarContraseña.Size = new System.Drawing.Size(181, 26);
-            this.txtConfirmarContraseña.TabIndex = 35;
+            this.txtConfirmarContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContrasena.Location = new System.Drawing.Point(256, 340);
+            this.txtConfirmarContrasena.Margin = new System.Windows.Forms.Padding(2);
+            this.txtConfirmarContrasena.Name = "txtConfirmarContrasena";
+            this.txtConfirmarContrasena.Size = new System.Drawing.Size(181, 26);
+            this.txtConfirmarContrasena.TabIndex = 35;
             // 
             // label4
             // 
@@ -149,17 +149,17 @@ namespace Sistema_de_Gestion_de_Citas
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 20);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Contraseña";
+            this.label4.Text = "contrasena";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // txtContraseña
+            // txtContrasena
             // 
-            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(256, 373);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(181, 26);
-            this.txtContraseña.TabIndex = 33;
+            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Location = new System.Drawing.Point(256, 373);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(181, 26);
+            this.txtContrasena.TabIndex = 33;
             // 
             // label5
             // 
@@ -346,9 +346,9 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtConfirmarContraseña);
+            this.Controls.Add(this.txtConfirmarContrasena);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.txtNombre);
@@ -375,9 +375,9 @@ namespace Sistema_de_Gestion_de_Citas
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtConfirmarContraseña;
+        private System.Windows.Forms.TextBox txtConfirmarContrasena;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.TextBox txtNombre;

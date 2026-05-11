@@ -1,4 +1,4 @@
-namespace Sistema_de_Gestion_de_Citas
+﻿namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmAdminEditarContrasena
     {
@@ -31,7 +31,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.lblTitulo.Location = new System.Drawing.Point(50, 30);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(260, 24);
-            this.lblTitulo.Text = "Cambiar Contraseña";
+            this.lblTitulo.Text = "Cambiar contrasena";
 
             // lblConsultorNombre
             this.lblConsultorNombre.AutoSize = true;
@@ -47,7 +47,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.lblNuevaContrasena.Location = new System.Drawing.Point(50, 120);
             this.lblNuevaContrasena.Name = "lblNuevaContrasena";
             this.lblNuevaContrasena.Size = new System.Drawing.Size(145, 20);
-            this.lblNuevaContrasena.Text = "Nueva Contraseña:";
+            this.lblNuevaContrasena.Text = "Nueva contrasena:";
 
             // txtNuevaContrasena
             this.txtNuevaContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,7 +61,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.lblConfirmarContrasena.Location = new System.Drawing.Point(50, 170);
             this.lblConfirmarContrasena.Name = "lblConfirmarContrasena";
             this.lblConfirmarContrasena.Size = new System.Drawing.Size(169, 20);
-            this.lblConfirmarContrasena.Text = "Confirmar Contraseña:";
+            this.lblConfirmarContrasena.Text = "Confirmar contrasena:";
 
             // txtConfirmarContrasena
             this.txtConfirmarContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,7 +98,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Name = "frmAdminEditarContrasena";
-            this.Text = "Cambiar Contraseña";
+            this.Text = "Cambiar contrasena";
             this.Load += new System.EventHandler(this.frmAdminEditarContrasena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -21,9 +21,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteCitas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnVolver
-            // 
+            
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(163, 219);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
@@ -33,9 +31,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnReporteClientesFrecuentes
-            // 
+            
             this.btnReporteClientesFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteClientesFrecuentes.Location = new System.Drawing.Point(163, 169);
             this.btnReporteClientesFrecuentes.Margin = new System.Windows.Forms.Padding(2);
@@ -45,9 +41,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteClientesFrecuentes.Text = "Reporte de Clientes Frecuentes";
             this.btnReporteClientesFrecuentes.UseVisualStyleBackColor = true;
             this.btnReporteClientesFrecuentes.Click += new System.EventHandler(this.btnReporteClientesFrecuentes_Click);
-            // 
-            // btnReporteIngresos
-            // 
+           
             this.btnReporteIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteIngresos.Location = new System.Drawing.Point(163, 118);
             this.btnReporteIngresos.Margin = new System.Windows.Forms.Padding(2);
@@ -57,9 +51,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteIngresos.Text = "Reporte de Ingresos";
             this.btnReporteIngresos.UseVisualStyleBackColor = true;
             this.btnReporteIngresos.Click += new System.EventHandler(this.btnReporteIngresos_Click);
-            // 
-            // btnReporteCitas
-            // 
+          
             this.btnReporteCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteCitas.Location = new System.Drawing.Point(163, 68);
             this.btnReporteCitas.Margin = new System.Windows.Forms.Padding(2);
@@ -69,9 +61,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteCitas.Text = "Reporte de Citas";
             this.btnReporteCitas.UseVisualStyleBackColor = true;
             this.btnReporteCitas.Click += new System.EventHandler(this.btnReporteCitas_Click);
-            // 
-            // label1
-            // 
+           
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(215, 20);
@@ -79,9 +69,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.label1.Size = new System.Drawing.Size(193, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Reportes de Consultor";
-            // 
-            // frmSubmenuReportesConsultor
-            // 
+            
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);

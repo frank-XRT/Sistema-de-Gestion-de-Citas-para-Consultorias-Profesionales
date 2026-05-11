@@ -20,7 +20,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            // btnEditarConsultor
             this.btnEditarConsultor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarConsultor.Location = new System.Drawing.Point(50, 40);
             this.btnEditarConsultor.Name = "btnEditarConsultor";
@@ -29,7 +28,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnEditarConsultor.Text = "Editar Consultor";
             this.btnEditarConsultor.Click += new System.EventHandler(this.btnEditarConsultor_Click);
 
-            // btnEliminarConsultor
             this.btnEliminarConsultor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarConsultor.Location = new System.Drawing.Point(50, 90);
             this.btnEliminarConsultor.Name = "btnEliminarConsultor";
@@ -38,7 +36,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnEliminarConsultor.Text = "Habilitar y eliminar consultor";
             this.btnEliminarConsultor.Click += new System.EventHandler(this.btnEliminarConsultor_Click);
 
-            // btnVolver
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(50, 140);
             this.btnVolver.Name = "btnVolver";
@@ -47,7 +44,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnVolver.Text = "Volver";
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
 
-            // frmSubmenuModificarConsultor
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 230);

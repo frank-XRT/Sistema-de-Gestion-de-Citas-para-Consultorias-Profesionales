@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +13,8 @@ namespace Sistema_de_Gestion_de_Citas
         }
 
         public CAdministrador(int id, string nombre, string dni, string sexo,
-                              string telefono, string correo, string contraseña)
-            : base(id, nombre, dni, sexo, telefono, correo, contraseña)
+                              string telefono, string correo, string Contrasena)
+            : base(id, nombre, dni, sexo, telefono, correo, Contrasena)
         {
         }
     }

@@ -14,7 +14,6 @@ namespace Sistema_de_Gestion_de_Citas
     {
         private CCliente clienteActual;
         CControlador controlador = new CControlador();
-        // Constructor requerido por el diseñador de Visual Studio
         public frmMisCitas() { InitializeComponent(); }
 
         public frmMisCitas(CCliente cliente)

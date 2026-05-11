@@ -66,7 +66,6 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
-            // Validar que el nuevo DNI no exista en otro consultor
             string nuevoDni = txtEditarDni.Text.Trim();
             if (nuevoDni != consultorAEditar.Dni)
             {
@@ -78,7 +77,6 @@ namespace Sistema_de_Gestion_de_Citas
                 }
             }
 
-            // Actualizar datos
             consultorAEditar.Nombre = txtEditarNombre.Text.Trim();
             consultorAEditar.Dni = nuevoDni;
             consultorAEditar.Sexo = cboxEditarSexo.Text.Trim();

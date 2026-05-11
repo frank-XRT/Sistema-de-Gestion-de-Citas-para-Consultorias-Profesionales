@@ -12,7 +12,6 @@ namespace Sistema_de_Gestion_de_Citas
 {
     public partial class frmClientesFrecuentes : Form
     {
-        // Constructor requerido por el diseñador
         public frmClientesFrecuentes()
         {
             InitializeComponent();
@@ -25,7 +24,6 @@ namespace Sistema_de_Gestion_de_Citas
             CReporte reporte = new CReporte();
             var datos = reporte.ClientesMasFrecuentes(IDConsultor);
 
-            // Llenar la tabla con los datos
             dgvClientes.Rows.Clear();
             foreach (dynamic item in datos)
             {

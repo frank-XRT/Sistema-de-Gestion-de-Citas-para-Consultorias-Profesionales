@@ -1,4 +1,4 @@
-namespace Sistema_de_Gestion_de_Citas
+ï»¿namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmLogin
     {
@@ -29,7 +29,7 @@ namespace Sistema_de_Gestion_de_Citas
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtContrasenia = new System.Windows.Forms.TextBox();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,14 +49,14 @@ namespace Sistema_de_Gestion_de_Citas
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
-            // txtContrasenia
+            // txtContrasena
             // 
-            this.txtContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenia.Location = new System.Drawing.Point(164, 170);
-            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2);
-            this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(150, 26);
-            this.txtContrasenia.TabIndex = 1;
+            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Location = new System.Drawing.Point(164, 170);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(150, 26);
+            this.txtContrasena.TabIndex = 1;
             // 
             // txtUsuario
             // 
@@ -76,7 +76,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Contraseña";
+            this.label3.Text = "contrasena";
             // 
             // btnIniciarSesion
             // 
@@ -125,7 +125,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtContrasenia);
+            this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
@@ -138,7 +138,7 @@ namespace Sistema_de_Gestion_de_Citas
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtContrasenia;
+        private System.Windows.Forms.TextBox txtContrasena;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label3;

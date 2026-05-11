@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +34,7 @@ namespace Sistema_de_Gestion_de_Citas
                 cboxRubro.Text.Trim() == "" ||
                 txtDescripcion.Text.Trim() == "" ||
                 txtMonto.Text.Trim() == "" ||
-                txtContraseña.Text.Trim() == "")
+                txtContrasena.Text.Trim() == "")
             {
                 MessageBox.Show("Complete todos los campos");
                 return;
@@ -50,7 +50,7 @@ namespace Sistema_de_Gestion_de_Citas
             consultor.Rubro = cboxRubro.Text.Trim();
             consultor.Descripcion = txtDescripcion.Text.Trim();
             consultor.Monto = decimal.Parse(txtMonto.Text.Trim());
-            consultor.Contraseña = txtContraseña.Text.Trim();
+            consultor.Contrasena = txtContrasena.Text.Trim();
 
             bool registrado = controlador.RegistrarConsultor(consultor);
 
@@ -86,7 +86,7 @@ namespace Sistema_de_Gestion_de_Citas
             cboxRubro.SelectedIndex = -1;
             txtDescripcion.Clear();
             txtMonto.Clear();
-            txtContraseña.Clear();
+            txtContrasena.Clear();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
