@@ -27,7 +27,7 @@ namespace Sistema_de_Gestion_de_Citas
         private void btnReporteCitas_Click(object sender, EventArgs e)
         {
             CReporte reporte = new CReporte();
-            var resumen = reporte.ObtenerResumenCitas(consultorActual.Codigo);
+            var resumen = reporte.ObtenerResumenCitas(consultorActual.ID);
             frmReporteCitas form = new frmReporteCitas(resumen);
             form.ShowDialog();
         }
@@ -36,8 +36,8 @@ namespace Sistema_de_Gestion_de_Citas
         {
             CReporte reporte = new CReporte();
 
-            var datosT1 = reporte.IngresosMensualesPorTrimestre(consultorActual.Codigo, 1);
-            var datosT2 = reporte.IngresosMensualesPorTrimestre(consultorActual.Codigo, 2);
+            var datosT1 = reporte.IngresosMensualesPorTrimestre(consultorActual.ID, 1);
+            var datosT2 = reporte.IngresosMensualesPorTrimestre(consultorActual.ID, 2);
 
             decimal totalT1 = 0;
             foreach (dynamic item in datosT1) totalT1 += item.Ingreso;
@@ -82,7 +82,7 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnReporteClientesFrecuentes_Click(object sender, EventArgs e)
         {
-            frmClientesFrecuentes form = new frmClientesFrecuentes(consultorActual.Codigo);
+            frmClientesFrecuentes form = new frmClientesFrecuentes(consultorActual.ID);
             form.ShowDialog();
         }
 

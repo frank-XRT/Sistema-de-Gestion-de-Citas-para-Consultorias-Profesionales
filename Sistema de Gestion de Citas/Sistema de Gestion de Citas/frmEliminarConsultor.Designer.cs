@@ -31,7 +31,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.dgvConsultores = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnHabilitar = new System.Windows.Forms.Button();
@@ -73,14 +73,14 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtCodigo
+            // txtid
             // 
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(148, 70);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(258, 26);
-            this.txtCodigo.TabIndex = 33;
+            this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtid.Location = new System.Drawing.Point(148, 70);
+            this.txtid.Margin = new System.Windows.Forms.Padding(2);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(258, 26);
+            this.txtid.TabIndex = 33;
             // 
             // dgvConsultores
             // 
@@ -138,7 +138,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvConsultores);
-            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtid);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -156,7 +156,7 @@ namespace Sistema_de_Gestion_de_Citas
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.DataGridView dgvConsultores;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnHabilitar;

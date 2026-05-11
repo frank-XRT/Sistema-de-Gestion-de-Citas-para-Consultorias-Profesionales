@@ -6,23 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_Gestion_de_Citas
 {
-    public class CAdministrador
+    public class CAdministrador : CUsuario
     {
-        public int Codigo { get; set; }
-        public string Nombre { get; set; }
-        public string Dni { get; set; }
-        public string Contraseña { get; set; }
-
-        public CAdministrador()
+        public CAdministrador() : base()
         {
         }
 
-        public CAdministrador(int codigo, string nombre, string dni, string contraseña)
+        public CAdministrador(int id, string nombre, string dni, string sexo,
+                              string telefono, string correo, string contraseña)
+            : base(id, nombre, dni, sexo, telefono, correo, contraseña)
         {
-            Codigo = codigo;
-            Nombre = nombre;
-            Dni = dni;
-            Contraseña = contraseña;
         }
     }
 }

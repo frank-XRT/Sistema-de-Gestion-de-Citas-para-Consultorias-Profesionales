@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmRegistroCliente
     {
@@ -35,10 +35,10 @@
             this.txtDni = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtContrase�a = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
+            this.txtConfirmarContrase�a = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -112,15 +112,15 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 25);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Contraseña";
+            this.label4.Text = "Contrase�a";
             // 
-            // txtContraseña
+            // txtContrase�a
             // 
-            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(383, 287);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(240, 30);
-            this.txtContraseña.TabIndex = 15;
+            this.txtContrase�a.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrase�a.Location = new System.Drawing.Point(383, 287);
+            this.txtContrase�a.Name = "txtContrase�a";
+            this.txtContrase�a.Size = new System.Drawing.Size(240, 30);
+            this.txtContrase�a.TabIndex = 15;
             // 
             // label5
             // 
@@ -140,15 +140,15 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(224, 25);
             this.label6.TabIndex = 19;
-            this.label6.Text = "Confirmar Contraseña";
+            this.label6.Text = "Confirmar Contrase�a";
             // 
-            // txtConfirmarContraseña
+            // txtConfirmarContrase�a
             // 
-            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarContraseña.Location = new System.Drawing.Point(383, 332);
-            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
-            this.txtConfirmarContraseña.Size = new System.Drawing.Size(240, 30);
-            this.txtConfirmarContraseña.TabIndex = 18;
+            this.txtConfirmarContrase�a.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContrase�a.Location = new System.Drawing.Point(383, 332);
+            this.txtConfirmarContrase�a.Name = "txtConfirmarContrase�a";
+            this.txtConfirmarContrase�a.Size = new System.Drawing.Size(240, 30);
+            this.txtConfirmarContrase�a.TabIndex = 18;
             // 
             // label7
             // 
@@ -220,9 +220,9 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtConfirmarContraseña);
+            this.Controls.Add(this.txtConfirmarContrase�a);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtContrase�a);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.txtNombre);
@@ -246,10 +246,10 @@
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtContrase�a;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtConfirmarContraseña;
+        private System.Windows.Forms.TextBox txtConfirmarContrase�a;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label8;

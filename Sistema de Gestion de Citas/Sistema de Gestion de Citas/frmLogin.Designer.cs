@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_Gestion_de_Citas
+namespace Sistema_de_Gestion_de_Citas
 {
     partial class frmLogin
     {
@@ -76,7 +76,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Contraseña";
+            this.label3.Text = "Contrase�a";
             // 
             // btnIniciarSesion
             // 

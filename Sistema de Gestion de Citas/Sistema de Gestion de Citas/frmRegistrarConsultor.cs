@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +34,7 @@ namespace Sistema_de_Gestion_de_Citas
                 cboxRubro.Text.Trim() == "" ||
                 txtDescripcion.Text.Trim() == "" ||
                 txtMonto.Text.Trim() == "" ||
-                txtContraseÃ±a.Text.Trim() == "")
+                txtContraseña.Text.Trim() == "")
             {
                 MessageBox.Show("Complete todos los campos");
                 return;
@@ -50,7 +50,7 @@ namespace Sistema_de_Gestion_de_Citas
             consultor.Rubro = cboxRubro.Text.Trim();
             consultor.Descripcion = txtDescripcion.Text.Trim();
             consultor.Monto = decimal.Parse(txtMonto.Text.Trim());
-            consultor.ContraseÃ±a = txtContraseÃ±a.Text.Trim();
+            consultor.Contraseña = txtContraseña.Text.Trim();
 
             bool registrado = controlador.RegistrarConsultor(consultor);
 
@@ -58,7 +58,7 @@ namespace Sistema_de_Gestion_de_Citas
             {
                 MessageBox.Show("Consultor registrado correctamente");
 
-                controlador.GenerarHorarios(consultor.Codigo, DateTime.Today);
+                controlador.GenerarHorarios(consultor.ID, DateTime.Today);
 
                 Limpiar();
                 MostrarConsultores();
@@ -73,7 +73,7 @@ namespace Sistema_de_Gestion_de_Citas
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = CControlador.ListaConsultores;
 
-            if (dgvConsultores.Columns["Codigo"] != null) dgvConsultores.Columns["Codigo"].Visible = false;
+            if (dgvConsultores.Columns["id"] != null) dgvConsultores.Columns["id"].Visible = false;
         }
 
         private void Limpiar()
@@ -86,7 +86,7 @@ namespace Sistema_de_Gestion_de_Citas
             cboxRubro.SelectedIndex = -1;
             txtDescripcion.Clear();
             txtMonto.Clear();
-            txtContraseÃ±a.Clear();
+            txtContraseña.Clear();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

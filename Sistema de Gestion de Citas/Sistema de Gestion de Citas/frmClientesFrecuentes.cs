@@ -18,12 +18,12 @@ namespace Sistema_de_Gestion_de_Citas
             InitializeComponent();
         }
 
-        public frmClientesFrecuentes(int codigoConsultor) : this()
+        public frmClientesFrecuentes(int IDConsultor) : this()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
 
             CReporte reporte = new CReporte();
-            var datos = reporte.ClientesMasFrecuentes(codigoConsultor);
+            var datos = reporte.ClientesMasFrecuentes(IDConsultor);
 
             // Llenar la tabla con los datos
             dgvClientes.Rows.Clear();

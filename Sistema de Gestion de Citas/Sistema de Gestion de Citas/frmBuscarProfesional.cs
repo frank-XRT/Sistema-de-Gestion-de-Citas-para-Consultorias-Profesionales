@@ -30,8 +30,8 @@ namespace Sistema_de_Gestion_de_Citas
             dgvHorarios.DataSource = datos;
 
             // Ocultar columnas internas
-            if (dgvHorarios.Columns["Codigo"] != null) dgvHorarios.Columns["Codigo"].Visible = false;
-            if (dgvHorarios.Columns["CodigoConsultor"] != null) dgvHorarios.Columns["CodigoConsultor"].Visible = false;
+            if (dgvHorarios.Columns["id"] != null) dgvHorarios.Columns["id"].Visible = false;
+            if (dgvHorarios.Columns["IDConsultor"] != null) dgvHorarios.Columns["IDConsultor"].Visible = false;
             if (dgvHorarios.Columns["Cita"] != null) dgvHorarios.Columns["Cita"].Visible = false;
             if (dgvHorarios.Columns["Cliente"] != null) dgvHorarios.Columns["Cliente"].Visible = false;
         }
@@ -50,7 +50,7 @@ namespace Sistema_de_Gestion_de_Citas
             dgvConsultores.DataSource = controlador.BuscarConsultoresPorRubro(rubro);
 
             // Ocultar columnas no deseadas
-            if (dgvConsultores.Columns["Codigo"] != null) dgvConsultores.Columns["Codigo"].Visible = false;
+            if (dgvConsultores.Columns["id"] != null) dgvConsultores.Columns["id"].Visible = false;
             if (dgvConsultores.Columns["Dni"] != null) dgvConsultores.Columns["Dni"].Visible = false;
             if (dgvConsultores.Columns["Sexo"] != null) dgvConsultores.Columns["Sexo"].Visible = false;
             if (dgvConsultores.Columns["Contraseña"] != null) dgvConsultores.Columns["Contraseña"].Visible = false;
@@ -64,7 +64,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             CConsultor consultor = (CConsultor)dgvConsultores.CurrentRow.DataBoundItem;
-            MostrarHorarios(controlador.ListarTodosLosHorarios(consultor.Codigo, DateTime.Today));
+            MostrarHorarios(controlador.ListarTodosLosHorarios(consultor.ID, DateTime.Today));
         }
 
         private void btnReservar_Click(object sender, EventArgs e)
@@ -85,8 +85,8 @@ namespace Sistema_de_Gestion_de_Citas
             CHorarioConsultor horario = (CHorarioConsultor)dgvHorarios.CurrentRow.DataBoundItem;
 
             CCita cita = new CCita();
-            cita.CodigoCliente = clienteActual.Codigo;
-            cita.CodigoHorario = horario.Codigo;
+            cita.IDCliente = clienteActual.ID;
+            cita.IDHorario = horario.ID;
             cita.Monto = consultor.Monto;
             cita.Descripcion = txtDescripcion.Text.Trim();
 
@@ -95,7 +95,7 @@ namespace Sistema_de_Gestion_de_Citas
             if (reservado)
             {
                 MessageBox.Show("Cita reservada correctamente");
-                MostrarHorarios(controlador.ListarTodosLosHorarios(horario.CodigoConsultor, dtpFecha.Value));
+                MostrarHorarios(controlador.ListarTodosLosHorarios(horario.IDConsultor, dtpFecha.Value));
             }
             else
             {
@@ -120,7 +120,7 @@ namespace Sistema_de_Gestion_de_Citas
 
             CConsultor consultor = (CConsultor)dgvConsultores.CurrentRow.DataBoundItem;
             DateTime fecha = dtpFecha.Value;
-            MostrarHorarios(controlador.ListarTodosLosHorarios(consultor.Codigo, fecha));
+            MostrarHorarios(controlador.ListarTodosLosHorarios(consultor.ID, fecha));
         }
     }
 }

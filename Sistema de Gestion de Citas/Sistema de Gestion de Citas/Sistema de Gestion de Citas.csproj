@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CUsuario.cs" />
     <Compile Include="CAdministrador.cs" />
     <Compile Include="CCita.cs" />
     <Compile Include="Ccliente.cs" />

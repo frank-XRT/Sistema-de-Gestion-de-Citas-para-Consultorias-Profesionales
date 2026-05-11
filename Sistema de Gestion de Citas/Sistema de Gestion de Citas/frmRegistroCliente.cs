@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,16 +27,16 @@ namespace Sistema_de_Gestion_de_Citas
                 cboxSexo.Text.Trim() == "" ||
                 txtTelefono.Text.Trim() == "" ||
                 txtCorreo.Text.Trim() == "" ||
-                txtContraseña.Text.Trim() == "" ||
-                txtConfirmarContraseña.Text.Trim() == "")
+                txtContrase�a.Text.Trim() == "" ||
+                txtConfirmarContrase�a.Text.Trim() == "")
             {
                 MessageBox.Show("Complete todos los campos");
                 return;
             }
 
-            if (txtContraseña.Text != txtConfirmarContraseña.Text)
+            if (txtContrase�a.Text != txtConfirmarContrase�a.Text)
             {
-                MessageBox.Show("Las contraseñas no coinciden");
+                MessageBox.Show("Las contrase�as no coinciden");
                 return;
             }
 
@@ -47,7 +47,7 @@ namespace Sistema_de_Gestion_de_Citas
             cliente.Sexo = cboxSexo.Text.Trim();
             cliente.Telefono = txtTelefono.Text.Trim();
             cliente.Correo = txtCorreo.Text.Trim();
-            cliente.Contraseña = txtContraseña.Text.Trim();
+            cliente.Contrase�a = txtContrase�a.Text.Trim();
 
             bool registrado = controlador.RegistrarCliente(cliente);
 

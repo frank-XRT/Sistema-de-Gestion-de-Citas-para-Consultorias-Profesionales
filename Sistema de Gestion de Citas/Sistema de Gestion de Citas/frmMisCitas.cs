@@ -27,10 +27,10 @@ namespace Sistema_de_Gestion_de_Citas
         private void MostrarMisCitas()
         {
             dgvMisCitas.DataSource = null;
-            dgvMisCitas.DataSource = controlador.ListarCitasDetalladasPorCliente(clienteActual.Codigo);
-            if (dgvMisCitas.Columns["Codigo"] != null)
+            dgvMisCitas.DataSource = controlador.ListarCitasDetalladasPorCliente(clienteActual.ID);
+            if (dgvMisCitas.Columns["id"] != null)
             {
-                dgvMisCitas.Columns["Codigo"].Visible = false;
+                dgvMisCitas.Columns["id"].Visible = false;
             }
         }
         private void btnVolver_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace Sistema_de_Gestion_de_Citas
         {
             if (dgvMisCitas.SelectedRows.Count > 0)
             {
-                int codigoCita = Convert.ToInt32(dgvMisCitas.SelectedRows[0].Cells["Codigo"].Value);
+                int idCita = Convert.ToInt32(dgvMisCitas.SelectedRows[0].Cells["id"].Value);
                 string estadoCita = dgvMisCitas.SelectedRows[0].Cells["Estado"].Value.ToString();
                 
                 if (estadoCita == "Pendiente")
@@ -57,7 +57,7 @@ namespace Sistema_de_Gestion_de_Citas
                     DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea cancelar esta cita?", "Confirmar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        if (controlador.CancelarCita(codigoCita))
+                        if (controlador.CancelarCita(idCita))
                         {
                             MessageBox.Show("Cita cancelada correctamente.");
                             MostrarMisCitas();

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +14,7 @@ namespace Sistema_de_Gestion_de_Citas
     {
         private CConsultor consultorActual;
         CControlador controlador = new CControlador();
-        // Constructor requerido por el diseñador de Visual Studio
+        // Constructor requerido por el dise�ador de Visual Studio
         public frmConsultarCitas()
         {
             InitializeComponent();
@@ -35,13 +35,13 @@ namespace Sistema_de_Gestion_de_Citas
         {
             DateTime fecha = dtpFecha.Value.Date;
 
-            var citas = (from c in controlador.ListarCitasPorConsultor(consultorActual.Codigo)
-                        join cl in CControlador.ListaClientes on c.CodigoCliente equals cl.Codigo
-                        join h in CControlador.ListaHorarios on c.CodigoHorario equals h.Codigo
+            var citas = (from c in controlador.ListarCitasPorConsultor(consultorActual.ID)
+                        join cl in CControlador.ListaClientes on c.IDCliente equals cl.ID
+                        join h in CControlador.ListaHorarios on c.IDHorario equals h.ID
                         where h.FechaHoraInicio.Date == fecha
                         select new
                         {
-                            Codigo = c.Codigo,
+                            ID = c.ID,
                             Cliente = cl.Nombre,
                             Fecha = h.FechaHoraInicio.ToString("dd/MM/yyyy"),
                             Hora = h.FechaHoraInicio.ToString("HH:mm") + " - " + h.FechaHoraFin.ToString("HH:mm"),
@@ -52,7 +52,7 @@ namespace Sistema_de_Gestion_de_Citas
 
             dgvCitas.DataSource = null;
             dgvCitas.DataSource = citas;
-            if (dgvCitas.Columns["Codigo"] != null) dgvCitas.Columns["Codigo"].Visible = false;
+            if (dgvCitas.Columns["id"] != null) dgvCitas.Columns["id"].Visible = false;
         }
 
         private void btnAtender_Click(object sender, EventArgs e)
@@ -63,10 +63,10 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
-            // Al usar un objeto anonimo, obtenemos el codigo para buscar la cita real
-            int codigoCita = (int)dgvCitas.CurrentRow.Cells["Codigo"].Value;
+            // Al usar un objeto anonimo, obtenemos el id para buscar la cita real
+            int idCita = (int)dgvCitas.CurrentRow.Cells["id"].Value;
 
-            bool atendida = controlador.MarcarCitaComoAtendida(codigoCita);
+            bool atendida = controlador.MarcarCitaComoAtendida(idCita);
 
             if (atendida)
             {

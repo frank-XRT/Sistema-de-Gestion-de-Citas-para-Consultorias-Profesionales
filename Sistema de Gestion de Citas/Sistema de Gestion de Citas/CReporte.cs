@@ -88,12 +88,12 @@ namespace Sistema_de_Gestion_de_Citas
         // ===========================================================================
         // SECCION: REPORTES DEL CONSULTOR - Estadisticas individuales por consultor
         // ===========================================================================
-        public List<object> IngresosMensualesPorTrimestre(int codigoConsultor, int trimestre)
+        public List<object> IngresosMensualesPorTrimestre(int IDConsultor, int trimestre)
         {
             int mesInicio = (trimestre - 1) * 3 + 1;
             int mesFin = mesInicio + 2;
 
-            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.ID == IDConsultor);
             if (consultor == null) return new List<object>();
 
             // MULTILISTA: Navegamos Consultor -> Horarios -> Citas
@@ -113,9 +113,9 @@ namespace Sistema_de_Gestion_de_Citas
             return reporte.Cast<object>().ToList();
         }
 
-        public List<object> ClientesMasFrecuentes(int codigoConsultor)
+        public List<object> ClientesMasFrecuentes(int IDConsultor)
         {
-            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.ID == IDConsultor);
             if (consultor == null) return new List<object>();
 
             // MULTILISTA: Navegamos Consultor -> Horarios -> Cliente (via Cita o directo)
@@ -132,13 +132,13 @@ namespace Sistema_de_Gestion_de_Citas
             return reporte.Cast<object>().ToList();
         }
 
-        public dynamic ObtenerResumenCitas(int codigoConsultor)
+        public dynamic ObtenerResumenCitas(int IDConsultor)
         {
             var hoy = DateTime.Today;
             var esteMes = hoy.Month;
             var esteAño = hoy.Year;
 
-            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.Codigo == codigoConsultor);
+            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.ID == IDConsultor);
             if (consultor == null) return new { Hoy = 0, Mes = 0, Total = 0 };
 
             // MULTILISTA: Navegamos directamente por los horarios del consultor
@@ -161,10 +161,10 @@ namespace Sistema_de_Gestion_de_Citas
         // ===========================================================================
         // SECCION: METODOS PRIVADOS AUXILIARES (utilidades internas)
         // ===========================================================================
-        private string ObtenerNombreCliente(int codigoCliente)
+        private string ObtenerNombreCliente(int IDCliente)
         {
             CCliente cliente = CControlador.ListaClientes
-                .Find(c => c.Codigo == codigoCliente);
+                .Find(c => c.ID == IDCliente);
 
             if (cliente == null)
             {
