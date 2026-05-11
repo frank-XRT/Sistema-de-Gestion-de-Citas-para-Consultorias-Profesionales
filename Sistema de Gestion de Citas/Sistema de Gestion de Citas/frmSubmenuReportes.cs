@@ -35,7 +35,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             Form form = new Form();
-            form.Text = "Reporte de citas por area";
+            form.Text = "Reporte de citas por rubro";
             form.Width = 800;
             form.Height = 500;
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -49,7 +49,7 @@ namespace Sistema_de_Gestion_de_Citas
             Legend leyenda = new Legend("Leyenda1");
             chart.Legends.Add(leyenda);
 
-            Series serie = new Series("CitasPorArea");
+            Series serie = new Series("CitasPorRubro");
             serie.ChartType = SeriesChartType.Pie;
             serie.IsValueShownAsLabel = true;
             serie.Label = "#PERCENT{P0}";
@@ -61,7 +61,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             chart.Series.Add(serie);
-            chart.Titles.Add("Distribucion de citas por Area");
+            chart.Titles.Add("Distribucion de citas por Rubro");
 
             form.Controls.Add(chart);
             form.ShowDialog();
@@ -80,7 +80,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             Form form = new Form();
-            form.Text = "Reporte de consultores por area";
+            form.Text = "Reporte de consultores por rubro";
             form.Width = 800;
             form.Height = 500;
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -89,7 +89,7 @@ namespace Sistema_de_Gestion_de_Citas
             chart.Dock = DockStyle.Fill;
 
             ChartArea area = new ChartArea("Area1");
-            area.AxisX.Title = "Area";
+            area.AxisX.Title = "Rubro";
             area.AxisY.Title = "Numero de consultores";
             area.AxisX.Interval = 1;
             chart.ChartAreas.Add(area);
@@ -97,7 +97,7 @@ namespace Sistema_de_Gestion_de_Citas
             Legend leyenda = new Legend("Leyenda1");
             chart.Legends.Add(leyenda);
 
-            Series serie = new Series("ConsultoresPorArea");
+            Series serie = new Series("ConsultoresPorRubro");
             serie.ChartType = SeriesChartType.Column; // grafico de barras verticales
             serie.IsValueShownAsLabel = true;
             serie.LegendText = "Consultores";
@@ -108,7 +108,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             chart.Series.Add(serie);
-            chart.Titles.Add("Reporte de consultores por area");
+            chart.Titles.Add("Reporte de consultores por rubro");
 
             form.Controls.Add(chart);
             form.ShowDialog();
@@ -130,7 +130,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             Form form = new Form();
-            form.Text = "Reporte de ingresos por area";
+            form.Text = "Reporte de ingresos por rubro";
             form.Width = 800;
             form.Height = 500;
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -139,12 +139,12 @@ namespace Sistema_de_Gestion_de_Citas
             chart.Dock = DockStyle.Fill;
 
             ChartArea area = new ChartArea("Area1");
-            area.AxisX.Title = "Area";
+            area.AxisX.Title = "Rubro";
             area.AxisY.Title = "Total Ingresos (S/)";
             area.AxisX.Interval = 1;
             chart.ChartAreas.Add(area);
 
-            Series serie = new Series("IngresosPorArea");
+            Series serie = new Series("IngresosPorRubro");
             serie.ChartType = SeriesChartType.Column;
             serie.IsValueShownAsLabel = true;
             serie.Label = "S/ #VALY";
@@ -155,7 +155,7 @@ namespace Sistema_de_Gestion_de_Citas
             }
 
             chart.Series.Add(serie);
-            chart.Titles.Add("Distribucion de ingresos por area");
+            chart.Titles.Add("Distribucion de ingresos por rubro");
 
             form.Controls.Add(chart);
             form.ShowDialog();

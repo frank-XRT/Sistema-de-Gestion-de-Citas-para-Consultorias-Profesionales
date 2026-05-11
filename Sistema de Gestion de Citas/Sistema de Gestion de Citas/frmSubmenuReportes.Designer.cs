@@ -28,7 +28,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteCitasServicio.Name = "btnReporteCitasServicio";
             this.btnReporteCitasServicio.Size = new System.Drawing.Size(250, 35);
             this.btnReporteCitasServicio.TabIndex = 0;
-            this.btnReporteCitasServicio.Text = "Reporte de citas por area";
+            this.btnReporteCitasServicio.Text = "Reporte de citas por rubro";
             this.btnReporteCitasServicio.Click += new System.EventHandler(this.btnReporteCitasServicio_Click);
 
             // btnReporteIngresosRubro
@@ -37,7 +37,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteIngresosRubro.Name = "btnReporteIngresosRubro";
             this.btnReporteIngresosRubro.Size = new System.Drawing.Size(250, 35);
             this.btnReporteIngresosRubro.TabIndex = 1;
-            this.btnReporteIngresosRubro.Text = "Reporte de ingresos por area";
+            this.btnReporteIngresosRubro.Text = "Reporte de ingresos por rubro";
             this.btnReporteIngresosRubro.Click += new System.EventHandler(this.btnReporteIngresosRubro_Click);
 
             // btnReporteEstadosPorArea
@@ -46,7 +46,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteEstadosPorArea.Name = "btnReporteEstadosPorArea";
             this.btnReporteEstadosPorArea.Size = new System.Drawing.Size(250, 35);
             this.btnReporteEstadosPorArea.TabIndex = 2;
-            this.btnReporteEstadosPorArea.Text = "Reporte de estados por area";
+            this.btnReporteEstadosPorArea.Text = "Reporte de estados por rubro";
             this.btnReporteEstadosPorArea.Click += new System.EventHandler(this.btnReporteEstadosPorArea_Click);
 
             // btnReporteConsultoresRubro
@@ -55,7 +55,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnReporteConsultoresRubro.Name = "btnReporteConsultoresRubro";
             this.btnReporteConsultoresRubro.Size = new System.Drawing.Size(250, 35);
             this.btnReporteConsultoresRubro.TabIndex = 3;
-            this.btnReporteConsultoresRubro.Text = "Reporte consultores por area";
+            this.btnReporteConsultoresRubro.Text = "Reporte consultores por rubro";
             this.btnReporteConsultoresRubro.Click += new System.EventHandler(this.btnReporteConsultoresRubro_Click);
 
             // btnVolver

@@ -17,23 +17,23 @@ namespace Sistema_de_Gestion_de_Citas
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             // Seleccionar la primera opcion del combo por defecto si tiene items
-            if (cmbArea.Items.Count > 0) cmbArea.SelectedIndex = 0;
+            if (cmbRubro.Items.Count > 0) cmbRubro.SelectedIndex = 0;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cmbArea.SelectedItem == null)
+            if (cmbRubro.SelectedItem == null)
             {
-                MessageBox.Show("Por favor, seleccione un area.");
+                MessageBox.Show("Por favor, seleccione un rubro.");
                 return;
             }
 
-            string areaSeleccionada = cmbArea.SelectedItem.ToString();
+            string rubroSeleccionada = cmbRubro.SelectedItem.ToString();
             DateTime inicio = dtpFechaInicial.Value;
             DateTime fin = dtpFechaFinal.Value;
 
             CReporte reporte = new CReporte();
-            var resultados = reporte.EstadisticasPorArea(areaSeleccionada, inicio, fin);
+            var resultados = reporte.EstadisticasPorRubro(rubroSeleccionada, inicio, fin);
 
             // Mostrar los resultados en los labels
             lblAsistidas.Text = resultados.Asistidas.ToString();

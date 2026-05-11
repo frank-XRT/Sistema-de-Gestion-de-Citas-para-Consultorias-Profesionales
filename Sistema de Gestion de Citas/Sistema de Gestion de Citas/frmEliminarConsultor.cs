@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,6 +72,38 @@ namespace Sistema_de_Gestion_de_Citas
             else
             {
                 MessageBox.Show("No se pudo eliminar el consultor");
+            }
+        }
+
+        private void btnHabilitar_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el DNI del consultor");
+                return;
+            }
+
+            string dni = txtCodigo.Text.Trim();
+
+            var consultor = CControlador.ListaConsultores.FirstOrDefault(c => c.Dni == dni);
+
+            if (consultor == null)
+            {
+                MessageBox.Show("No se encontro el consultor con ese DNI");
+                return;
+            }
+
+            bool habilitado = controlador.HabilitarConsultor(consultor.Codigo);
+
+            if (habilitado)
+            {
+                MessageBox.Show("Consultor habilitado correctamente");
+                txtCodigo.Clear();
+                MostrarConsultores();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo habilitar el consultor");
             }
         }
         private void MostrarConsultores()

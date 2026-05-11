@@ -21,6 +21,7 @@ namespace Sistema_de_Gestion_de_Citas
         public string Descripcion { get; set; }
         public string Contraseña { get; set; }
         public decimal Monto { get; set; }
+        public string Estado { get; set; } = "Activo";
         public List<CHorarioConsultor> ListaHorarios { get; set; }
 
         // ===========================================================================

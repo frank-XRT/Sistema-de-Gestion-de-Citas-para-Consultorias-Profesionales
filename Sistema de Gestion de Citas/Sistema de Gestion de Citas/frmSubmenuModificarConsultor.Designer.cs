@@ -35,7 +35,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnEliminarConsultor.Name = "btnEliminarConsultor";
             this.btnEliminarConsultor.Size = new System.Drawing.Size(250, 35);
             this.btnEliminarConsultor.TabIndex = 1;
-            this.btnEliminarConsultor.Text = "Eliminar Consultor";
+            this.btnEliminarConsultor.Text = "Habilitar y eliminar consultor";
             this.btnEliminarConsultor.Click += new System.EventHandler(this.btnEliminarConsultor_Click);
 
             // btnVolver
@@ -55,7 +55,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.btnEliminarConsultor);
             this.Controls.Add(this.btnVolver);
             this.Name = "frmSubmenuModificarConsultor";
-            this.Text = "Editar y Eliminar Consultor";
+            this.Text = "Habilitar y eliminar consultor";
             this.ResumeLayout(false);
         }
 

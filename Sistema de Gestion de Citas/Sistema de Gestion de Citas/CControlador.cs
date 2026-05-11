@@ -244,16 +244,21 @@ namespace Sistema_de_Gestion_de_Citas
                 return false;
             }
 
-            ListaConsultores.Remove(consultor);
+            consultor.Estado = "Eliminado";
 
-            // MULTILISTA: Eliminar del rubro
-            CRubro rubro = ListaRubros.Find(r => r.Nombre == consultor.Rubro);
-            if (rubro != null)
+            return true;
+        }
+
+        public bool HabilitarConsultor(int codigo)
+        {
+            CConsultor consultor = ListaConsultores.Find(c => c.Codigo == codigo);
+
+            if (consultor == null)
             {
-                rubro.ListaConsultores.Remove(consultor);
+                return false;
             }
 
-            ListaHorarios.RemoveAll(h => h.CodigoConsultor == codigo);
+            consultor.Estado = "Activo";
 
             return true;
         }

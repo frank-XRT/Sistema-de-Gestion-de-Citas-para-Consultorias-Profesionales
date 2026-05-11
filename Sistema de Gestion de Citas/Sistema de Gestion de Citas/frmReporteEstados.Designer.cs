@@ -36,7 +36,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.label6 = new System.Windows.Forms.Label();
             this.dtpFechaInicial = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
-            this.cmbArea = new System.Windows.Forms.ComboBox();
+            this.cmbRubro = new System.Windows.Forms.ComboBox();
             this.lblAsistidas = new System.Windows.Forms.Label();
             this.lblCanceladas = new System.Windows.Forms.Label();
             this.lblNoAsistidas = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Area";
+            this.label5.Text = "Rubro";
             // 
             // label6
             // 
@@ -122,19 +122,22 @@ namespace Sistema_de_Gestion_de_Citas
             this.dtpFechaFinal.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaFinal.TabIndex = 7;
             // 
-            // cmbArea
+            // cmbRubro
             // 
-            this.cmbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbArea.FormattingEnabled = true;
-            this.cmbArea.Items.AddRange(new object[] {
-            "Area de Salud",
-            "Area de Negocios y Leyes",
-            "Area de Tecnologia y Diseno",
-            "Area de Educacion y Sociedad"});
-            this.cmbArea.Location = new System.Drawing.Point(151, 118);
-            this.cmbArea.Name = "cmbArea";
-            this.cmbArea.Size = new System.Drawing.Size(237, 28);
-            this.cmbArea.TabIndex = 8;
+            this.cmbRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRubro.FormattingEnabled = true;
+            this.cmbRubro.Items.AddRange(new object[] {
+            "Legal",
+            "Contable",
+            "Psicologia",
+            "Empresarial",
+            "Tecnologico",
+            "Salud",
+            "Educacion"});
+            this.cmbRubro.Location = new System.Drawing.Point(151, 118);
+            this.cmbRubro.Name = "cmbRubro";
+            this.cmbRubro.Size = new System.Drawing.Size(237, 28);
+            this.cmbRubro.TabIndex = 8;
             // 
             // lblAsistidas
             // 
@@ -197,7 +200,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.lblNoAsistidas);
             this.Controls.Add(this.lblCanceladas);
             this.Controls.Add(this.lblAsistidas);
-            this.Controls.Add(this.cmbArea);
+            this.Controls.Add(this.cmbRubro);
             this.Controls.Add(this.dtpFechaFinal);
             this.Controls.Add(this.dtpFechaInicial);
             this.Controls.Add(this.label6);
@@ -223,7 +226,7 @@ namespace Sistema_de_Gestion_de_Citas
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpFechaInicial;
         private System.Windows.Forms.DateTimePicker dtpFechaFinal;
-        private System.Windows.Forms.ComboBox cmbArea;
+        private System.Windows.Forms.ComboBox cmbRubro;
         private System.Windows.Forms.Label lblAsistidas;
         private System.Windows.Forms.Label lblCanceladas;
         private System.Windows.Forms.Label lblNoAsistidas;

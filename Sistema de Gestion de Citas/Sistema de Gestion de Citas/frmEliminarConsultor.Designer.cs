@@ -34,6 +34,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.dgvConsultores = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnHabilitar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultores)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +48,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 20);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Eliminar Consultor";
+            this.label2.Text = "Habilitar y eliminar consultor";
             // 
             // label1
             // 
@@ -104,6 +105,18 @@ namespace Sistema_de_Gestion_de_Citas
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnHabilitar
+            // 
+            this.btnHabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabilitar.Location = new System.Drawing.Point(93, 217);
+            this.btnHabilitar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHabilitar.Name = "btnHabilitar";
+            this.btnHabilitar.Size = new System.Drawing.Size(76, 31);
+            this.btnHabilitar.TabIndex = 37;
+            this.btnHabilitar.Text = "Habilitar";
+            this.btnHabilitar.UseVisualStyleBackColor = true;
+            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
+            // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +135,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 259);
             this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvConsultores);
             this.Controls.Add(this.txtCodigo);
@@ -130,7 +144,7 @@ namespace Sistema_de_Gestion_de_Citas
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEliminarConsultor";
-            this.Text = "frmEliminarConsultor";
+            this.Text = "Habilitar y eliminar consultor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,6 +159,7 @@ namespace Sistema_de_Gestion_de_Citas
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.DataGridView dgvConsultores;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnHabilitar;
         private System.Windows.Forms.Button btnVolver;
     }
 }
