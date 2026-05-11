@@ -18,6 +18,24 @@ namespace Sistema_de_Gestion_de_Citas
 
     public class CControlador
     {
+        public static bool ValidarDni(string dni)
+        {
+            if (dni.Length < 8)
+            {
+                return false;
+            }
+
+            foreach (char c in dni)
+            {
+                if (c < '0' || c > '9')
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public static List<CAdministrador> ListaAdministradores = new List<CAdministrador>();
         public static List<CConsultor> ListaConsultores = new List<CConsultor>();
         public static List<CCliente> ListaClientes = new List<CCliente>();

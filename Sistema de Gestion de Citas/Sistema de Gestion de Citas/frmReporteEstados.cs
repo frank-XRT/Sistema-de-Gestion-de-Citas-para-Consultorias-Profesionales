@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Gestion_de_Citas
 {
-    public partial class frmReporteEstados : Form
+    public partial class frmReporteEstados : System.Windows.Forms.Form
     {
         public frmReporteEstados()
         {

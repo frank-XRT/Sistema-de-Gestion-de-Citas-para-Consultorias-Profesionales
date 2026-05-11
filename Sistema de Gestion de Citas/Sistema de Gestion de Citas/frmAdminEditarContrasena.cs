@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Gestion_de_Citas
 {
-    public partial class frmAdminEditarContrasena : Form
+    public partial class frmAdminEditarContrasena : System.Windows.Forms.Form
     {
         private CConsultor consultorAEditar;
 

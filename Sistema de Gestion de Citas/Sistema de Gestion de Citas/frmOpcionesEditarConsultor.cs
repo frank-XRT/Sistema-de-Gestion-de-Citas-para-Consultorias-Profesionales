@@ -28,6 +28,12 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
+            if (!CControlador.ValidarDni(dniBuscar))
+            {
+                MessageBox.Show("El DNI debe tener al menos 8 dígitos y contener solo números", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             consultorEncontrado = null;
             foreach (CConsultor c in CControlador.ListaConsultores)
             {

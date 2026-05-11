@@ -65,6 +65,12 @@ namespace Sistema_de_Gestion_de_Citas
                 return;
             }
 
+            if (!CControlador.ValidarDni(txtEditarDni.Text))
+            {
+                MessageBox.Show("El DNI debe tener al menos 8 dígitos y contener solo números", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string nuevoDni = txtEditarDni.Text;
             if (nuevoDni != consultorAEditar.Dni)
             {

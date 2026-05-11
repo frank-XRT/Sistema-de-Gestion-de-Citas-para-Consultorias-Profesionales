@@ -16,7 +16,6 @@ namespace Sistema_de_Gestion_de_Citas
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            txtDni.UseSystemPasswordChar = true;
         }
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
@@ -30,6 +29,12 @@ namespace Sistema_de_Gestion_de_Citas
                 txtConfirmarContrasena.Text == "")
             {
                 MessageBox.Show("Complete todos los campos");
+                return;
+            }
+
+            if (!CControlador.ValidarDni(txtDni.Text))
+            {
+                MessageBox.Show("El DNI debe tener al menos 8 dígitos y contener solo números");
                 return;
             }
 

@@ -170,6 +170,30 @@
     <Compile Include="frmReporteEstados.Designer.cs">
       <DependentUpon>frmReporteEstados.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDiagramaCitasServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiagramaCitasServicio.Designer.cs">
+      <DependentUpon>frmDiagramaCitasServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiagramaConsultoresRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiagramaConsultoresRubro.Designer.cs">
+      <DependentUpon>frmDiagramaConsultoresRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiagramaIngresosRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiagramaIngresosRubro.Designer.cs">
+      <DependentUpon>frmDiagramaIngresosRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiagramaIngresosConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiagramaIngresosConsultor.Designer.cs">
+      <DependentUpon>frmDiagramaIngresosConsultor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModificarContrasena.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +255,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteEstados.resx">
       <DependentUpon>frmReporteEstados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiagramaCitasServicio.resx">
+      <DependentUpon>frmDiagramaCitasServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiagramaConsultoresRubro.resx">
+      <DependentUpon>frmDiagramaConsultoresRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiagramaIngresosRubro.resx">
+      <DependentUpon>frmDiagramaIngresosRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiagramaIngresosConsultor.resx">
+      <DependentUpon>frmDiagramaIngresosConsultor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarContrasena.resx">
       <DependentUpon>frmModificarContrasena.cs</DependentUpon>
