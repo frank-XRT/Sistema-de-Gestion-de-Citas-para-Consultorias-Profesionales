@@ -68,7 +68,9 @@
     <Compile Include="frmClientesFrecuentes.Designer.cs">
       <DependentUpon>frmClientesFrecuentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultarCitas.cs" />
+    <Compile Include="frmConsultarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSubmenuModificarConsultor.cs">
       <SubType>Form</SubType>
     </Compile>

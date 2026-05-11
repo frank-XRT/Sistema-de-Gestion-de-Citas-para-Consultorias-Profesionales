@@ -9,16 +9,7 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Gestion_de_Citas
 {
-    public class CResumenCitaConsultor
-    {
-        public int ID { get; set; }
-        public string Cliente { get; set; }
-        public string Fecha { get; set; }
-        public string Hora { get; set; }
-        public decimal Monto { get; set; }
-        public string Descripcion { get; set; }
-        public string Estado { get; set; }
-    }
+
 
     public partial class frmConsultarCitas : Form
     {
@@ -44,7 +35,19 @@ namespace Sistema_de_Gestion_de_Citas
         {
             DateTime fecha = dtpFecha.Value.Date;
 
-            List<CResumenCitaConsultor> citasFiltradas = new List<CResumenCitaConsultor>();
+            dgvCitas.DataSource = null;
+            dgvCitas.Rows.Clear();
+            dgvCitas.Columns.Clear();
+
+            dgvCitas.Columns.Add("id", "ID");
+            dgvCitas.Columns.Add("Cliente", "Cliente");
+            dgvCitas.Columns.Add("Fecha", "Fecha");
+            dgvCitas.Columns.Add("Hora", "Hora");
+            dgvCitas.Columns.Add("Monto", "Monto");
+            dgvCitas.Columns.Add("Descripcion", "Descripción");
+            dgvCitas.Columns.Add("Estado", "Estado");
+
+            dgvCitas.Columns["id"].Visible = false;
 
             List<CCita> listaCitasConsultor = controlador.ListarCitasPorConsultor(consultorActual.ID);
 
@@ -76,26 +79,13 @@ namespace Sistema_de_Gestion_de_Citas
 
                         if (clienteEncontrado != null)
                         {
-                            CResumenCitaConsultor item = new CResumenCitaConsultor();
-                            item.ID = c.ID;
-                            item.Cliente = clienteEncontrado.Nombre;
-                            item.Fecha = horarioEncontrado.FechaHoraInicio.ToString("dd/MM/yyyy");
-                            item.Hora = horarioEncontrado.FechaHoraInicio.ToString("HH:mm") + " - " + horarioEncontrado.FechaHoraFin.ToString("HH:mm");
-                            item.Monto = c.Monto;
-                            item.Descripcion = c.Descripcion;
-                            item.Estado = c.Estado;
+                            string fechaStr = horarioEncontrado.FechaHoraInicio.ToString("dd/MM/yyyy");
+                            string horaStr = horarioEncontrado.FechaHoraInicio.ToString("HH:mm") + " - " + horarioEncontrado.FechaHoraFin.ToString("HH:mm");
 
-                            citasFiltradas.Add(item);
+                            dgvCitas.Rows.Add(c.ID, clienteEncontrado.Nombre, fechaStr, horaStr, c.Monto, c.Descripcion, c.Estado);
                         }
                     }
                 }
-            }
-
-            dgvCitas.DataSource = null;
-            dgvCitas.DataSource = citasFiltradas;
-            if (dgvCitas.Columns["id"] != null)
-            {
-                dgvCitas.Columns["id"].Visible = false;
             }
         }
 
@@ -134,5 +124,6 @@ namespace Sistema_de_Gestion_de_Citas
             this.Hide();
         }
     }
+
 }
 
