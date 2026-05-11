@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,15 +25,15 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text.Trim() == "" ||
-                txtDni.Text.Trim() == "" ||
-                cboxSexo.Text.Trim() == "" ||
-                txtTelefono.Text.Trim() == "" ||
-                txtCorreo.Text.Trim() == "" ||
-                cboxRubro.Text.Trim() == "" ||
-                txtDescripcion.Text.Trim() == "" ||
-                txtMonto.Text.Trim() == "" ||
-                txtContrasena.Text.Trim() == "")
+            if (txtNombre.Text == "" ||
+                txtDni.Text == "" ||
+                cboxSexo.Text == "" ||
+                txtTelefono.Text == "" ||
+                txtCorreo.Text == "" ||
+                cboxRubro.Text == "" ||
+                txtDescripcion.Text == "" ||
+                txtMonto.Text == "" ||
+                txtContrasena.Text == "")
             {
                 MessageBox.Show("Complete todos los campos");
                 return;
@@ -42,15 +41,15 @@ namespace Sistema_de_Gestion_de_Citas
 
             CConsultor consultor = new CConsultor();
 
-            consultor.Nombre = txtNombre.Text.Trim();
-            consultor.Dni = txtDni.Text.Trim();
-            consultor.Sexo = cboxSexo.Text.Trim();
-            consultor.Telefono = txtTelefono.Text.Trim();
-            consultor.Correo = txtCorreo.Text.Trim();
-            consultor.Rubro = cboxRubro.Text.Trim();
-            consultor.Descripcion = txtDescripcion.Text.Trim();
-            consultor.Monto = decimal.Parse(txtMonto.Text.Trim());
-            consultor.Contrasena = txtContrasena.Text.Trim();
+            consultor.Nombre = txtNombre.Text;
+            consultor.Dni = txtDni.Text;
+            consultor.Sexo = cboxSexo.Text;
+            consultor.Telefono = txtTelefono.Text;
+            consultor.Correo = txtCorreo.Text;
+            consultor.Rubro = cboxRubro.Text;
+            consultor.Descripcion = txtDescripcion.Text;
+            consultor.Monto = decimal.Parse(txtMonto.Text);
+            consultor.Contrasena = txtContrasena.Text;
 
             bool registrado = controlador.RegistrarConsultor(consultor);
 
@@ -73,7 +72,10 @@ namespace Sistema_de_Gestion_de_Citas
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = CControlador.ListaConsultores;
 
-            if (dgvConsultores.Columns["id"] != null) dgvConsultores.Columns["id"].Visible = false;
+            if (dgvConsultores.Columns["id"] != null)
+            {
+                dgvConsultores.Columns["id"].Visible = false;
+            }
         }
 
         private void Limpiar()

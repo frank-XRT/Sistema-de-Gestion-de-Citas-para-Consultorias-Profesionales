@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,8 +22,8 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            string dni = txtUsuario.Text.Trim();
-            string contrasena = txtContrasena.Text.Trim();
+            string dni = txtUsuario.Text;
+            string contrasena = txtContrasena.Text;
 
             if (dni == "" || contrasena == "")
             {

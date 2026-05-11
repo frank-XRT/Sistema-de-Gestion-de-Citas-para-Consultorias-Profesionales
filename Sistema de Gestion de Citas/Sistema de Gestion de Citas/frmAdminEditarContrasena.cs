@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,19 +27,19 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNuevaContrasena.Text.Trim() == "" || txtConfirmarContrasena.Text.Trim() == "")
+            if (txtNuevaContrasena.Text == "" || txtConfirmarContrasena.Text == "")
             {
                 MessageBox.Show("Debe completar ambos campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (txtNuevaContrasena.Text.Trim() != txtConfirmarContrasena.Text.Trim())
+            if (txtNuevaContrasena.Text != txtConfirmarContrasena.Text)
             {
                 MessageBox.Show("Las contrasenas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            consultorAEditar.Contrasena = txtNuevaContrasena.Text.Trim();
+            consultorAEditar.Contrasena = txtNuevaContrasena.Text;
             
             MessageBox.Show("contrasena actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();

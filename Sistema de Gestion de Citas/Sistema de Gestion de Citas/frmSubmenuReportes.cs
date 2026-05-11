@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +22,7 @@ namespace Sistema_de_Gestion_de_Citas
         {
             CReporte reporte = new CReporte();
 
-            var datos = reporte.CitasPorServicio(
+            List<object> datos = reporte.CitasPorServicio(
                 DateTime.Today.AddMonths(-1),
                 DateTime.Today
             );
@@ -55,8 +54,9 @@ namespace Sistema_de_Gestion_de_Citas
             serie.Label = "#PERCENT{P0}";
             serie.LegendText = "#VALX";
 
-            foreach (dynamic item in datos)
+            foreach (object itemObj in datos)
             {
+                CCitaPorRubro item = (CCitaPorRubro)itemObj;
                 serie.Points.AddXY(item.Rubro, item.CantidadCitas);
             }
 
@@ -71,7 +71,7 @@ namespace Sistema_de_Gestion_de_Citas
         {
             CReporte reporte = new CReporte();
 
-            var datos = reporte.ConsultoresPorRubro();
+            List<object> datos = reporte.ConsultoresPorRubro();
 
             if (datos.Count == 0)
             {
@@ -102,8 +102,9 @@ namespace Sistema_de_Gestion_de_Citas
             serie.IsValueShownAsLabel = true;
             serie.LegendText = "Consultores";
 
-            foreach (dynamic item in datos)
+            foreach (object itemObj in datos)
             {
+                CConsultorPorRubro item = (CConsultorPorRubro)itemObj;
                 serie.Points.AddXY(item.Rubro, item.CantidadConsultores);
             }
 
@@ -118,7 +119,7 @@ namespace Sistema_de_Gestion_de_Citas
         {
             CReporte reporte = new CReporte();
 
-            var datos = reporte.IngresosPorServicio(
+            List<object> datos = reporte.IngresosPorServicio(
                 DateTime.Today.AddMonths(-1),
                 DateTime.Today
             );
@@ -149,8 +150,9 @@ namespace Sistema_de_Gestion_de_Citas
             serie.IsValueShownAsLabel = true;
             serie.Label = "S/ #VALY";
 
-            foreach (dynamic item in datos)
+            foreach (object itemObj in datos)
             {
+                CIngresoPorRubro item = (CIngresoPorRubro)itemObj;
                 serie.Points.AddXY(item.Rubro, item.TotalIngresos);
             }
 

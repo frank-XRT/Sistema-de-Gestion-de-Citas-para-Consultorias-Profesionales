@@ -32,7 +32,6 @@ M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestio
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.AssemblyReference.cache
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmBuscarProfesional.resources
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmClientesFrecuentes.resources
-M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmConsultarCitas.resources
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuModificarConsultor.resources
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuReportes.resources
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmAdminEditarContrasena.resources
@@ -54,3 +53,4 @@ M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestio
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.CoreCompileInputs.cache
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.exe
 M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.pdb
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.CResumenCitaConsultor.resources

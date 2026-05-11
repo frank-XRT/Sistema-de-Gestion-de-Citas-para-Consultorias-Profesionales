@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +31,7 @@ namespace Sistema_de_Gestion_de_Citas
             DateTime fin = dtpFechaFinal.Value;
 
             CReporte reporte = new CReporte();
-            var resultados = reporte.EstadisticasPorRubro(rubroSeleccionada, inicio, fin);
+            CEstadisticasRubro resultados = reporte.EstadisticasPorRubro(rubroSeleccionada, inicio, fin);
 
             lblAsistidas.Text = resultados.Asistidas.ToString();
             lblCanceladas.Text = resultados.Canceladas.ToString();

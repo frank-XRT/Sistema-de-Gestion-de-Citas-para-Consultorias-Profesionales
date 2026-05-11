@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,14 +21,22 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string dniBuscar = txtDniBuscar.Text.Trim();
-            if (string.IsNullOrEmpty(dniBuscar))
+            string dniBuscar = txtDniBuscar.Text;
+            if (dniBuscar == "")
             {
                 MessageBox.Show("Ingrese un DNI para buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            consultorEncontrado = CControlador.ListaConsultores.FirstOrDefault(c => c.Dni == dniBuscar);
+            consultorEncontrado = null;
+            foreach (CConsultor c in CControlador.ListaConsultores)
+            {
+                if (c.Dni == dniBuscar)
+                {
+                    consultorEncontrado = c;
+                    break;
+                }
+            }
 
             if (consultorEncontrado != null)
             {

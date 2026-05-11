@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +28,7 @@ namespace Sistema_de_Gestion_de_Citas
             ListaHorarios = new List<CHorarioConsultor>();
         }
 
-        public void GenerarHorarios(DateTime fecha, ref int ultimoIDHorario)
+        public int GenerarHorarios(DateTime fecha, int ultimoIDHorario)
         {
             DateTime[] inicios = {
                 new DateTime(fecha.Year, fecha.Month, fecha.Day, 8, 0, 0),
@@ -49,33 +48,80 @@ namespace Sistema_de_Gestion_de_Citas
 
             for (int i = 0; i < inicios.Length; i++)
             {
-                AgregarHorarioSiNoExiste(ultimoIDHorario++, inicios[i], fines[i]);
+                bool agregado = AgregarHorarioSiNoExiste(ultimoIDHorario, inicios[i], fines[i]);
+                if (agregado)
+                {
+                    ultimoIDHorario = ultimoIDHorario + 1;
+                }
             }
+
+            return ultimoIDHorario;
         }
 
-        private void AgregarHorarioSiNoExiste(int id, DateTime inicio, DateTime fin)
+        private bool AgregarHorarioSiNoExiste(int id, DateTime inicio, DateTime fin)
         {
-            bool existe = ListaHorarios.Any(h => h.FechaHoraInicio == inicio && h.FechaHoraFin == fin);
+            bool existe = false;
+            foreach (CHorarioConsultor h in ListaHorarios)
+            {
+                if (h.FechaHoraInicio == inicio)
+                {
+                    if (h.FechaHoraFin == fin)
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+            }
             
-            if (!existe)
+            if (existe == false)
             {
                 ListaHorarios.Add(new CHorarioConsultor(id, this.ID, inicio, fin, "Libre"));
+                return true;
             }
+
+            return false;
         }
 
         public List<CHorarioConsultor> ListarHorariosLibres()
         {
-            return ListaHorarios.Where(h => h.Estado == "Libre").ToList();
+            List<CHorarioConsultor> libres = new List<CHorarioConsultor>();
+            foreach (CHorarioConsultor h in ListaHorarios)
+            {
+                if (h.Estado == "Libre")
+                {
+                    libres.Add(h);
+                }
+            }
+            return libres;
         }
 
         public List<CHorarioConsultor> ListarHorariosLibres(DateTime fecha)
         {
-            return ListaHorarios.Where(h => h.Estado == "Libre" && h.FechaHoraInicio.Date == fecha.Date).ToList();
+            List<CHorarioConsultor> libres = new List<CHorarioConsultor>();
+            foreach (CHorarioConsultor h in ListaHorarios)
+            {
+                if (h.Estado == "Libre")
+                {
+                    if (h.FechaHoraInicio.Date == fecha.Date)
+                    {
+                        libres.Add(h);
+                    }
+                }
+            }
+            return libres;
         }
 
         public List<CCita> ListarCitas()
         {
-            return ListaHorarios.Where(h => h.Cita != null).Select(h => h.Cita).ToList();
+            List<CCita> citas = new List<CCita>();
+            foreach (CHorarioConsultor h in ListaHorarios)
+            {
+                if (h.Cita != null)
+                {
+                    citas.Add(h.Cita);
+                }
+            }
+            return citas;
         }
     }
 }

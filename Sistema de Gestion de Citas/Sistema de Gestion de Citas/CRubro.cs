@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sistema_de_Gestion_de_Citas
 {
@@ -24,7 +21,17 @@ namespace Sistema_de_Gestion_de_Citas
 
         public void AgregarConsultor(CConsultor consultor)
         {
-            if (!ListaConsultores.Contains(consultor))
+            bool existe = false;
+            foreach (CConsultor c in ListaConsultores)
+            {
+                if (c == consultor)
+                {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (existe == false)
             {
                 ListaConsultores.Add(consultor);
             }
@@ -37,9 +44,21 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CConsultor> BuscarConsultores(string filtro)
         {
-            return ListaConsultores
-                .Where(c => c.Nombre.ToLower().Contains(filtro.ToLower()))
-                .ToList();
+            List<CConsultor> resultados = new List<CConsultor>();
+
+            string filtroBuscado = filtro.ToLower();
+
+            foreach (CConsultor c in ListaConsultores)
+            {
+                string nombreConsultor = c.Nombre.ToLower();
+
+                if (nombreConsultor.Contains(filtroBuscado))
+                {
+                    resultados.Add(c);
+                }
+            }
+
+            return resultados;
         }
     }
 }

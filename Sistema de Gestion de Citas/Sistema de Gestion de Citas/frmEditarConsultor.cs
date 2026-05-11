@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,23 +52,32 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (txtEditarNombre.Text.Trim() == "" ||
-                txtEditarDni.Text.Trim() == "" ||
-                cboxEditarSexo.Text.Trim() == "" ||
-                txtEditarTelefono.Text.Trim() == "" ||
-                txtEditarCorreo.Text.Trim() == "" ||
-                cboxEditarRubro.Text.Trim() == "" ||
-                txtEditarDescripcion.Text.Trim() == "" ||
-                txtEditarMonto.Text.Trim() == "")
+            if (txtEditarNombre.Text == "" ||
+                txtEditarDni.Text == "" ||
+                cboxEditarSexo.Text == "" ||
+                txtEditarTelefono.Text == "" ||
+                txtEditarCorreo.Text == "" ||
+                cboxEditarRubro.Text == "" ||
+                txtEditarDescripcion.Text == "" ||
+                txtEditarMonto.Text == "")
             {
                 MessageBox.Show("Complete todos los campos de edición.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string nuevoDni = txtEditarDni.Text.Trim();
+            string nuevoDni = txtEditarDni.Text;
             if (nuevoDni != consultorAEditar.Dni)
             {
-                bool existe = CControlador.ListaConsultores.Any(c => c.Dni == nuevoDni);
+                bool existe = false;
+                foreach (CConsultor c in CControlador.ListaConsultores)
+                {
+                    if (c.Dni == nuevoDni)
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+
                 if (existe)
                 {
                     MessageBox.Show("El DNI ingresado ya está registrado para otro consultor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -77,14 +85,14 @@ namespace Sistema_de_Gestion_de_Citas
                 }
             }
 
-            consultorAEditar.Nombre = txtEditarNombre.Text.Trim();
+            consultorAEditar.Nombre = txtEditarNombre.Text;
             consultorAEditar.Dni = nuevoDni;
-            consultorAEditar.Sexo = cboxEditarSexo.Text.Trim();
-            consultorAEditar.Telefono = txtEditarTelefono.Text.Trim();
-            consultorAEditar.Correo = txtEditarCorreo.Text.Trim();
-            consultorAEditar.Rubro = cboxEditarRubro.Text.Trim();
-            consultorAEditar.Descripcion = txtEditarDescripcion.Text.Trim();
-            consultorAEditar.Monto = decimal.Parse(txtEditarMonto.Text.Trim());
+            consultorAEditar.Sexo = cboxEditarSexo.Text;
+            consultorAEditar.Telefono = txtEditarTelefono.Text;
+            consultorAEditar.Correo = txtEditarCorreo.Text;
+            consultorAEditar.Rubro = cboxEditarRubro.Text;
+            consultorAEditar.Descripcion = txtEditarDescripcion.Text;
+            consultorAEditar.Monto = decimal.Parse(txtEditarMonto.Text);
 
             MessageBox.Show("Consultor actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             

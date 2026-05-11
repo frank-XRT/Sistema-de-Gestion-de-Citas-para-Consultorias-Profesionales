@@ -6,160 +6,317 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_Gestion_de_Citas
 {
+    public class CCitaPorRubro
+    {
+        public string Rubro { get; set; }
+        public int CantidadCitas { get; set; }
+    }
+
+    public class CIngresoPorRubro
+    {
+        public string Rubro { get; set; }
+        public decimal TotalIngresos { get; set; }
+    }
+
+    public class CConsultorPorRubro
+    {
+        public string Rubro { get; set; }
+        public int CantidadConsultores { get; set; }
+    }
+
+    public class CIngresoTrimestral
+    {
+        public string Mes { get; set; }
+        public decimal Ingreso { get; set; }
+    }
+
+    public class CClienteFrecuente
+    {
+        public string NombreCliente { get; set; }
+        public int NumeroCitas { get; set; }
+    }
+
+    public class CResumenCitas
+    {
+        public int Hoy { get; set; }
+        public int Mes { get; set; }
+        public int Total { get; set; }
+    }
+
+    public class CEstadisticasRubro
+    {
+        public int Asistidas { get; set; }
+        public int Canceladas { get; set; }
+        public int NoAsistidas { get; set; }
+    }
+
     public class CReporte
     {
         public List<object> CitasPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
-            var totalesPorRubro = new Dictionary<string, int>();
+            List<object> reporte = new List<object>();
 
-            // Inicializar para todos los rubros en 0
-            foreach (var rubro in CControlador.ListaRubros)
+            foreach (CRubro rubro in CControlador.ListaRubros)
             {
-                totalesPorRubro[rubro.Nombre] = 0;
+                int citas = 0;
+
+                foreach (CConsultor con in rubro.ListaConsultores)
+                {
+                    foreach (CHorarioConsultor h in con.ListaHorarios)
+                    {
+                        if (h.Cita != null)
+                        {
+                            if (h.FechaHoraInicio.Date >= fechaInicio.Date)
+                            {
+                                if (h.FechaHoraInicio.Date <= fechaFin.Date)
+                                {
+                                    citas = citas + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                CCitaPorRubro item = new CCitaPorRubro();
+                item.Rubro = rubro.Nombre;
+                item.CantidadCitas = citas;
+                reporte.Add(item);
             }
 
-            foreach (var rubro in CControlador.ListaRubros)
-            {
-                int citas = rubro.ListaConsultores.Sum(con =>
-                    con.ListaHorarios.Count(h => h.Cita != null
-                        && h.FechaHoraInicio.Date >= fechaInicio.Date
-                        && h.FechaHoraInicio.Date <= fechaFin.Date));
-                
-                totalesPorRubro[rubro.Nombre] += citas;
-            }
-
-            return totalesPorRubro.Select(kvp => (object)new
-            {
-                Rubro = kvp.Key,
-                CantidadCitas = kvp.Value
-            }).ToList();
+            return reporte;
         }
 
         public List<object> IngresosPorServicio(DateTime fechaInicio, DateTime fechaFin)
         {
-            var totalesPorRubro = new Dictionary<string, decimal>();
+            List<object> reporte = new List<object>();
 
-            // Inicializamos todos los rubros con 0
-            foreach (var rubro in CControlador.ListaRubros)
+            foreach (CRubro rubro in CControlador.ListaRubros)
             {
-                totalesPorRubro[rubro.Nombre] = 0;
+                decimal ingresos = 0;
+
+                foreach (CConsultor con in rubro.ListaConsultores)
+                {
+                    foreach (CHorarioConsultor h in con.ListaHorarios)
+                    {
+                        if (h.Cita != null)
+                        {
+                            if (h.FechaHoraInicio.Date >= fechaInicio.Date)
+                            {
+                                if (h.FechaHoraInicio.Date <= fechaFin.Date)
+                                {
+                                    ingresos = ingresos + h.Cita.Monto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                CIngresoPorRubro item = new CIngresoPorRubro();
+                item.Rubro = rubro.Nombre;
+                item.TotalIngresos = ingresos;
+                reporte.Add(item);
             }
 
-            foreach (var rubro in CControlador.ListaRubros)
-            {
-                decimal ingresos = rubro.ListaConsultores.Sum(con =>
-                    con.ListaHorarios
-                        .Where(h => h.Cita != null
-                            && h.FechaHoraInicio.Date >= fechaInicio.Date
-                            && h.FechaHoraInicio.Date <= fechaFin.Date)
-                        .Sum(h => h.Cita.Monto));
-
-                totalesPorRubro[rubro.Nombre] += ingresos;
-            }
-
-            return totalesPorRubro.Select(kvp => (object)new
-            {
-                Rubro = kvp.Key,
-                TotalIngresos = kvp.Value
-            }).ToList();
+            return reporte;
         }
 
         public List<object> ConsultoresPorRubro()
         {
-            var totalesPorRubro = new Dictionary<string, int>();
+            List<object> reporte = new List<object>();
 
-            foreach (var rubro in CControlador.ListaRubros)
+            foreach (CRubro rubro in CControlador.ListaRubros)
             {
-                totalesPorRubro[rubro.Nombre] = rubro.ListaConsultores.Count;
+                CConsultorPorRubro item = new CConsultorPorRubro();
+                item.Rubro = rubro.Nombre;
+                item.CantidadConsultores = rubro.ListaConsultores.Count;
+                reporte.Add(item);
             }
 
-            return totalesPorRubro.Select(kvp => (object)new
-            {
-                Rubro = kvp.Key,
-                CantidadConsultores = kvp.Value
-            }).ToList();
+            return reporte;
         }
 
-        // ===========================================================================
-        // SECCION: REPORTES DEL CONSULTOR - Estadisticas individuales por consultor
-        // ===========================================================================
         public List<object> IngresosMensualesPorTrimestre(int IDConsultor, int trimestre)
         {
             int mesInicio = (trimestre - 1) * 3 + 1;
             int mesFin = mesInicio + 2;
 
-            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.ID == IDConsultor);
-            if (consultor == null) return new List<object>();
+            CConsultor consultor = CControlador.ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
 
-            // MULTILISTA: Navegamos Consultor -> Horarios -> Citas
-            var reporte = from horario in consultor.ListaHorarios
-                          where horario.Cita != null
-                                && horario.Cita.Estado == "Atendido"
-                                && horario.FechaHoraInicio.Month >= mesInicio
-                                && horario.FechaHoraInicio.Month <= mesFin
-                          group horario.Cita by horario.FechaHoraInicio.Month into grupo
-                          orderby grupo.Key
-                          select new
-                          {
-                              Mes = NombreMes(grupo.Key),
-                              Ingreso = grupo.Sum(c => c.Monto)
-                          };
+            List<object> reporteFinal = new List<object>();
 
-            return reporte.Cast<object>().ToList();
+            if (consultor == null)
+            {
+                return reporteFinal;
+            }
+
+
+            for (int mesActual = mesInicio; mesActual <= mesFin; mesActual++)
+            {
+                decimal ingresoMensual = 0;
+
+                foreach (CHorarioConsultor horario in consultor.ListaHorarios)
+                {
+                    if (horario.Cita != null)
+                    {
+                        if (horario.Cita.Estado == "Atendido")
+                        {
+                            if (horario.FechaHoraInicio.Month == mesActual)
+                            {
+                                ingresoMensual = ingresoMensual + horario.Cita.Monto;
+                            }
+                        }
+                    }
+                }
+
+                if (ingresoMensual > 0)
+                {
+                    CIngresoTrimestral item = new CIngresoTrimestral();
+                    item.Mes = NombreMes(mesActual);
+                    item.Ingreso = ingresoMensual;
+                    reporteFinal.Add(item);
+                }
+            }
+
+            return reporteFinal;
         }
 
         public List<object> ClientesMasFrecuentes(int IDConsultor)
         {
-            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.ID == IDConsultor);
-            if (consultor == null) return new List<object>();
-
-            // MULTILISTA: Navegamos Consultor -> Horarios -> Cliente (via Cita o directo)
-            var reporte = from horario in consultor.ListaHorarios
-                          where horario.Cita != null && horario.Cliente != null
-                          group horario by horario.Cliente into grupo
-                          orderby grupo.Count() descending
-                          select new
-                          {
-                              NombreCliente = grupo.Key.Nombre,
-                              NumeroCitas = grupo.Count()
-                          };
-
-            return reporte.Cast<object>().ToList();
-        }
-
-        public dynamic ObtenerResumenCitas(int IDConsultor)
-        {
-            var hoy = DateTime.Today;
-            var esteMes = hoy.Month;
-            var esteAño = hoy.Year;
-
-            CConsultor consultor = CControlador.ListaConsultores.Find(c => c.ID == IDConsultor);
-            if (consultor == null) return new { Hoy = 0, Mes = 0, Total = 0 };
-
-            // MULTILISTA: Navegamos directamente por los horarios del consultor
-            int hoyCount = consultor.ListaHorarios.Count(h => h.Cita != null 
-                && h.Cita.Estado == "Atendido" && h.FechaHoraInicio.Date == hoy);
-
-            int mesCount = consultor.ListaHorarios.Count(h => h.Cita != null 
-                && h.Cita.Estado == "Atendido" && h.FechaHoraInicio.Month == esteMes && h.FechaHoraInicio.Year == esteAño);
-
-            int totalCount = consultor.ListaHorarios.Count(h => h.Cita != null && h.Cita.Estado == "Atendido");
-
-            return new
+            CConsultor consultor = CControlador.ListaConsultores.Find(delegate (CConsultor c)
             {
-                Hoy = hoyCount,
-                Mes = mesCount,
-                Total = totalCount
-            };
+                return c.ID == IDConsultor;
+            });
+
+            List<object> reporteFinal = new List<object>();
+
+            if (consultor == null)
+            {
+                return reporteFinal;
+            }
+
+            List<CCliente> clientesUnicos = new List<CCliente>();
+            List<int> conteoCitas = new List<int>();
+
+            foreach (CHorarioConsultor horario in consultor.ListaHorarios)
+            {
+                if (horario.Cita != null)
+                {
+                    if (horario.Cliente != null)
+                    {
+                        bool encontrado = false;
+                        for (int i = 0; i < clientesUnicos.Count; i++)
+                        {
+                            if (clientesUnicos[i].ID == horario.Cliente.ID)
+                            {
+                                conteoCitas[i] = conteoCitas[i] + 1;
+                                encontrado = true;
+                                break;
+                            }
+                        }
+
+                        if (encontrado == false)
+                        {
+                            clientesUnicos.Add(horario.Cliente);
+                            conteoCitas.Add(1);
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < clientesUnicos.Count - 1; i++)
+            {
+                for (int j = 0; j < clientesUnicos.Count - 1 - i; j++)
+                {
+                    if (conteoCitas[j] < conteoCitas[j + 1])
+                    {
+                        int tempConteo = conteoCitas[j];
+                        conteoCitas[j] = conteoCitas[j + 1];
+                        conteoCitas[j + 1] = tempConteo;
+
+                        CCliente tempCliente = clientesUnicos[j];
+                        clientesUnicos[j] = clientesUnicos[j + 1];
+                        clientesUnicos[j + 1] = tempCliente;
+                    }
+                }
+            }
+
+            for (int i = 0; i < clientesUnicos.Count; i++)
+            {
+                CClienteFrecuente item = new CClienteFrecuente();
+                item.NombreCliente = clientesUnicos[i].Nombre;
+                item.NumeroCitas = conteoCitas[i];
+                reporteFinal.Add(item);
+            }
+
+            return reporteFinal;
         }
 
-        // ===========================================================================
-        // SECCION: METODOS PRIVADOS AUXILIARES (utilidades internas)
-        // ===========================================================================
+        public CResumenCitas ObtenerResumenCitas(int IDConsultor)
+        {
+            DateTime hoy = DateTime.Today;
+            int esteMes = hoy.Month;
+            int esteAño = hoy.Year;
+
+            CConsultor consultor = CControlador.ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
+
+            CResumenCitas resumen = new CResumenCitas();
+            resumen.Hoy = 0;
+            resumen.Mes = 0;
+            resumen.Total = 0;
+
+            if (consultor == null)
+            {
+                return resumen;
+            }
+
+            int hoyCount = 0;
+            int mesCount = 0;
+            int totalCount = 0;
+
+            foreach (CHorarioConsultor h in consultor.ListaHorarios)
+            {
+                if (h.Cita != null)
+                {
+                    if (h.Cita.Estado == "Atendido")
+                    {
+                        totalCount = totalCount + 1;
+
+                        if (h.FechaHoraInicio.Date == hoy)
+                        {
+                            hoyCount = hoyCount + 1;
+                        }
+
+                        if (h.FechaHoraInicio.Month == esteMes)
+                        {
+                            if (h.FechaHoraInicio.Year == esteAño)
+                            {
+                                mesCount = mesCount + 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            resumen.Hoy = hoyCount;
+            resumen.Mes = mesCount;
+            resumen.Total = totalCount;
+
+            return resumen;
+        }
+
+
         private string ObtenerNombreCliente(int IDCliente)
         {
-            CCliente cliente = CControlador.ListaClientes
-                .Find(c => c.ID == IDCliente);
+            CCliente cliente = CControlador.ListaClientes.Find(delegate (CCliente c)
+            {
+                return c.ID == IDCliente;
+            });
 
             if (cliente == null)
             {
@@ -168,6 +325,7 @@ namespace Sistema_de_Gestion_de_Citas
 
             return cliente.Nombre;
         }
+
         private string NombreMes(int mes)
         {
             if (mes == 1) return "Enero";
@@ -186,37 +344,52 @@ namespace Sistema_de_Gestion_de_Citas
             return "";
         }
 
-        // ===========================================================================
-        // SECCION: REPORTES DEL ADMINISTRADOR - Estadisticas de estados por rubro
-        // ===========================================================================
-        public dynamic EstadisticasPorRubro(string rubroNombre, DateTime inicio, DateTime fin)
+        public CEstadisticasRubro EstadisticasPorRubro(string rubroNombre, DateTime inicio, DateTime fin)
         {
             int asistidas = 0;
             int canceladas = 0;
             int noAsistidas = 0;
 
-            foreach (var rubro in CControlador.ListaRubros)
+            foreach (CRubro rubro in CControlador.ListaRubros)
             {
                 if (rubro.Nombre == rubroNombre)
                 {
-                    foreach (var con in rubro.ListaConsultores)
+                    foreach (CConsultor con in rubro.ListaConsultores)
                     {
-                        var horariosEnRango = con.ListaHorarios.Where(h => 
-                            h.FechaHoraInicio.Date >= inicio.Date && 
-                            h.FechaHoraInicio.Date <= fin.Date && 
-                            h.Cita != null);
-
-                        foreach (var h in horariosEnRango)
+                        foreach (CHorarioConsultor h in con.ListaHorarios)
                         {
-                            if (h.Cita.Estado == "Atendido") asistidas++;
-                            else if (h.Cita.Estado == "Cancelado") canceladas++;
-                            else noAsistidas++;
+                            if (h.FechaHoraInicio.Date >= inicio.Date)
+                            {
+                                if (h.FechaHoraInicio.Date <= fin.Date)
+                                {
+                                    if (h.Cita != null)
+                                    {
+                                        if (h.Cita.Estado == "Atendido")
+                                        {
+                                            asistidas = asistidas + 1;
+                                        }
+                                        else if (h.Cita.Estado == "Cancelado")
+                                        {
+                                            canceladas = canceladas + 1;
+                                        }
+                                        else
+                                        {
+                                            noAsistidas = noAsistidas + 1;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
 
-            return new { Asistidas = asistidas, Canceladas = canceladas, NoAsistidas = noAsistidas };
+            CEstadisticasRubro estadisticas = new CEstadisticasRubro();
+            estadisticas.Asistidas = asistidas;
+            estadisticas.Canceladas = canceladas;
+            estadisticas.NoAsistidas = noAsistidas;
+
+            return estadisticas;
         }
     }
 }

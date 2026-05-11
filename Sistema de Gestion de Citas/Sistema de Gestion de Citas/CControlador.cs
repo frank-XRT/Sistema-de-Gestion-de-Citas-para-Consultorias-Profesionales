@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_Gestion_de_Citas
 {
+    public class CCitaDetallada
+    {
+        public int ID { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Consultor { get; set; }
+        public decimal Monto { get; set; }
+        public string Descripcion { get; set; }
+        public string Estado { get; set; }
+    }
+
     public class CControlador
     {
         public static List<CAdministrador> ListaAdministradores = new List<CAdministrador>();
@@ -14,7 +24,6 @@ namespace Sistema_de_Gestion_de_Citas
         public static List<CHorarioConsultor> ListaHorarios = new List<CHorarioConsultor>();
         public static List<CCita> ListaCitas = new List<CCita>();
         public static List<CRubro> ListaRubros = new List<CRubro>();
-
 
         public CControlador()
         {
@@ -60,15 +69,18 @@ namespace Sistema_de_Gestion_de_Citas
                 {
                     for (int i = 0; i < 30; i++)
                     {
-                        consultor.GenerarHorarios(DateTime.Today.AddDays(i), ref ultimoID);
+                        ultimoID = consultor.GenerarHorarios(DateTime.Today.AddDays(i), ultimoID);
                     }
                     
-                    consultor.GenerarHorarios(DateTime.Today.AddDays(-1), ref ultimoID);
-                    consultor.GenerarHorarios(DateTime.Today.AddDays(-2), ref ultimoID);
+                    ultimoID = consultor.GenerarHorarios(DateTime.Today.AddDays(-1), ultimoID);
+                    ultimoID = consultor.GenerarHorarios(DateTime.Today.AddDays(-2), ultimoID);
 
-                    foreach (var h in consultor.ListaHorarios)
+                    foreach (CHorarioConsultor h in consultor.ListaHorarios)
                     {
-                        if (!ListaHorarios.Contains(h)) ListaHorarios.Add(h);
+                        if (ListaHorarios.Contains(h) == false)
+                        {
+                            ListaHorarios.Add(h);
+                        }
                     }
                 }
             }
@@ -99,9 +111,25 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void AgregarCitaHistorica(int IDCliente, int IDConsultor, decimal monto, string descripcion, DateTime fecha)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
-            CCliente cliente = ListaClientes.Find(c => c.ID == IDCliente);
-            if (consultor == null || cliente == null) return;
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
+
+            CCliente cliente = ListaClientes.Find(delegate (CCliente c)
+            {
+                return c.ID == IDCliente;
+            });
+
+            if (consultor == null)
+            {
+                return;
+            }
+
+            if (cliente == null)
+            {
+                return;
+            }
 
             int idHorario = GenerarIDHorario();
             CHorarioConsultor horario = new CHorarioConsultor(idHorario, IDConsultor, fecha, fecha.AddHours(1), "Ocupado");
@@ -124,15 +152,20 @@ namespace Sistema_de_Gestion_de_Citas
         private void ActualizarListaRubros()
         {
             ListaRubros.Clear();
-            foreach (var consultor in ListaConsultores)
+            foreach (CConsultor consultor in ListaConsultores)
             {
-                CRubro rubro = ListaRubros.Find(r => r.Nombre == consultor.Rubro);
+                CRubro rubro = ListaRubros.Find(delegate (CRubro r)
+                {
+                    return r.Nombre == consultor.Rubro;
+                });
+
                 if (rubro == null)
                 {
                     rubro = new CRubro(consultor.Rubro);
                     ListaRubros.Add(rubro);
                 }
-                if (!rubro.ListaConsultores.Contains(consultor))
+                
+                if (rubro.ListaConsultores.Contains(consultor) == false)
                 {
                     rubro.ListaConsultores.Add(consultor);
                 }
@@ -141,24 +174,30 @@ namespace Sistema_de_Gestion_de_Citas
 
         public object Login(string dni, string contrasena)
         {
-            CAdministrador admin = ListaAdministradores.Find(a =>
-                a.Dni == dni && a.Contrasena == contrasena);
+            CAdministrador admin = ListaAdministradores.Find(delegate (CAdministrador a)
+            {
+                return a.Dni == dni && a.Contrasena == contrasena;
+            });
 
             if (admin != null)
             {
                 return admin;
             }
 
-            CConsultor consultor = ListaConsultores.Find(c =>
-                c.Dni == dni && c.Contrasena == contrasena);
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.Dni == dni && c.Contrasena == contrasena;
+            });
 
             if (consultor != null)
             {
                 return consultor;
             }
 
-            CCliente cliente = ListaClientes.Find(c =>
-                c.Dni == dni && c.Contrasena == contrasena);
+            CCliente cliente = ListaClientes.Find(delegate (CCliente c)
+            {
+                return c.Dni == dni && c.Contrasena == contrasena;
+            });
 
             if (cliente != null)
             {
@@ -190,7 +229,11 @@ namespace Sistema_de_Gestion_de_Citas
             consultor.ID = GenerarIDConsultor();
             ListaConsultores.Add(consultor);
 
-            CRubro rubro = ListaRubros.Find(r => r.Nombre == consultor.Rubro);
+            CRubro rubro = ListaRubros.Find(delegate (CRubro r)
+            {
+                return r.Nombre == consultor.Rubro;
+            });
+
             if (rubro == null)
             {
                 rubro = new CRubro(consultor.Rubro);
@@ -203,7 +246,10 @@ namespace Sistema_de_Gestion_de_Citas
 
         public bool EliminarConsultor(int id)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == id);
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == id;
+            });
 
             if (consultor == null)
             {
@@ -217,7 +263,10 @@ namespace Sistema_de_Gestion_de_Citas
 
         public bool HabilitarConsultor(int id)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == id);
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == id;
+            });
 
             if (consultor == null)
             {
@@ -231,28 +280,52 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CConsultor> BuscarConsultoresPorRubro(string nombreRubro)
         {
-            CRubro rubro = ListaRubros.Find(r => r.Nombre.ToLower().Contains(nombreRubro.ToLower()));
-            return rubro != null ? rubro.ListaConsultores : new List<CConsultor>();
+            CRubro rubro = ListaRubros.Find(delegate (CRubro r)
+            {
+
+                string nombreR = r.Nombre.ToLower();
+                string nombreB = nombreRubro.ToLower();
+                return nombreR.Contains(nombreB);
+            });
+
+            if (rubro != null)
+            {
+                return rubro.ListaConsultores;
+            }
+            else
+            {
+                return new List<CConsultor>();
+            }
         }
 
         public void GenerarHorarios(int IDConsultor, DateTime fecha)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
+
             if (consultor != null)
             {
                 int ultimoID = GenerarIDHorario();
-                consultor.GenerarHorarios(fecha, ref ultimoID);
+                ultimoID = consultor.GenerarHorarios(fecha, ultimoID);
                 
-                foreach (var h in consultor.ListaHorarios)
+                foreach (CHorarioConsultor h in consultor.ListaHorarios)
                 {
-                    if (!ListaHorarios.Contains(h)) ListaHorarios.Add(h);
+                    if (ListaHorarios.Contains(h) == false)
+                    {
+                        ListaHorarios.Add(h);
+                    }
                 }
             }
         }
 
         public bool ReservarCita(CCita cita)
         {
-            CHorarioConsultor horario = ListaHorarios.Find(h => h.ID == cita.IDHorario);
+            CHorarioConsultor horario = ListaHorarios.Find(delegate (CHorarioConsultor h)
+            {
+                return h.ID == cita.IDHorario;
+            });
 
             if (horario == null)
             {
@@ -269,7 +342,11 @@ namespace Sistema_de_Gestion_de_Citas
 
             ListaCitas.Add(cita);
 
-            CCliente cliente = ListaClientes.Find(c => c.ID == cita.IDCliente);
+            CCliente cliente = ListaClientes.Find(delegate (CCliente c)
+            {
+                return c.ID == cita.IDCliente;
+            });
+
             if (cliente != null)
             {
                 cliente.AgregarCita(cita);
@@ -281,7 +358,10 @@ namespace Sistema_de_Gestion_de_Citas
 
         public bool MarcarCitaComoAtendida(int idCita)
         {
-            CCita cita = ListaCitas.Find(c => c.ID == idCita);
+            CCita cita = ListaCitas.Find(delegate (CCita c)
+            {
+                return c.ID == idCita;
+            });
 
             if (cita == null)
             {
@@ -294,7 +374,10 @@ namespace Sistema_de_Gestion_de_Citas
 
         public bool CancelarCita(int idCita)
         {
-            CCita cita = ListaCitas.Find(c => c.ID == idCita);
+            CCita cita = ListaCitas.Find(delegate (CCita c)
+            {
+                return c.ID == idCita;
+            });
 
             if (cita == null)
             {
@@ -303,7 +386,10 @@ namespace Sistema_de_Gestion_de_Citas
 
             cita.Cancelar();
 
-            CHorarioConsultor horario = ListaHorarios.Find(h => h.ID == cita.IDHorario);
+            CHorarioConsultor horario = ListaHorarios.Find(delegate (CHorarioConsultor h)
+            {
+                return h.ID == cita.IDHorario;
+            });
 
             if (horario != null)
             {
@@ -315,73 +401,195 @@ namespace Sistema_de_Gestion_de_Citas
 
         public List<CCita> ListarCitasPorCliente(int IDCliente)
         {
-            CCliente cliente = ListaClientes.Find(c => c.ID == IDCliente);
-            return cliente != null ? cliente.ListarCitas() : new List<CCita>();
+            CCliente cliente = ListaClientes.Find(delegate (CCliente c)
+            {
+                return c.ID == IDCliente;
+            });
+
+            if (cliente != null)
+            {
+                return cliente.ListarCitas();
+            }
+            else
+            {
+                return new List<CCita>();
+            }
         }
 
         public List<object> ListarCitasDetalladasPorCliente(int IDCliente)
         {
-            var reporte = from cita in ListaCitas
-                          join horario in ListaHorarios
-                          on cita.IDHorario equals horario.ID
-                          join consultor in ListaConsultores
-                          on horario.IDConsultor equals consultor.ID
-                          where cita.IDCliente == IDCliente
-                          select new
-                          {
-                              ID = cita.ID,
-                              Fecha = horario.FechaHoraInicio,
-                              Consultor = consultor.Nombre,
-                              Monto = cita.Monto,
-                              Descripcion = cita.Descripcion,
-                              Estado = cita.Estado
-                          };
+            List<object> reporte = new List<object>();
 
-            return reporte.Cast<object>().ToList();
+            foreach (CCita cita in ListaCitas)
+            {
+                if (cita.IDCliente == IDCliente)
+                {
+                   
+                    CHorarioConsultor horarioEncontrado = null;
+                    foreach (CHorarioConsultor horario in ListaHorarios)
+                    {
+                        if (horario.ID == cita.IDHorario)
+                        {
+                            horarioEncontrado = horario;
+                            break;
+                        }
+                    }
+
+                    if (horarioEncontrado != null)
+                    {
+                        
+                        CConsultor consultorEncontrado = null;
+                        foreach (CConsultor consultor in ListaConsultores)
+                        {
+                            if (consultor.ID == horarioEncontrado.IDConsultor)
+                            {
+                                consultorEncontrado = consultor;
+                                break;
+                            }
+                        }
+
+                        if (consultorEncontrado != null)
+                        {
+                            CCitaDetallada item = new CCitaDetallada();
+                            item.ID = cita.ID;
+                            item.Fecha = horarioEncontrado.FechaHoraInicio;
+                            item.Consultor = consultorEncontrado.Nombre;
+                            item.Monto = cita.Monto;
+                            item.Descripcion = cita.Descripcion;
+                            item.Estado = cita.Estado;
+
+                            reporte.Add(item);
+                        }
+                    }
+                }
+            }
+
+            return reporte;
         }
 
         public List<CCita> ListarCitasPorConsultor(int IDConsultor)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
-            return consultor != null ? consultor.ListarCitas() : new List<CCita>();
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
+
+            if (consultor != null)
+            {
+                return consultor.ListarCitas();
+            }
+            else
+            {
+                return new List<CCita>();
+            }
         }
 
         public List<CHorarioConsultor> ListarHorariosLibres(int IDConsultor)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
-            return consultor != null ? consultor.ListarHorariosLibres() : new List<CHorarioConsultor>();
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
+
+            if (consultor != null)
+            {
+                return consultor.ListarHorariosLibres();
+            }
+            else
+            {
+                return new List<CHorarioConsultor>();
+            }
         }
 
 
         public List<CHorarioConsultor> ListarHorariosLibres(int IDConsultor, DateTime fecha)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
-            return consultor != null ? consultor.ListarHorariosLibres(fecha) : new List<CHorarioConsultor>();
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
+
+            if (consultor != null)
+            {
+                return consultor.ListarHorariosLibres(fecha);
+            }
+            else
+            {
+                return new List<CHorarioConsultor>();
+            }
         }
 
         public List<CHorarioConsultor> ListarTodosLosHorarios(int IDConsultor)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
-            return consultor != null ? consultor.ListaHorarios : new List<CHorarioConsultor>();
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
+
+            if (consultor != null)
+            {
+                return consultor.ListaHorarios;
+            }
+            else
+            {
+                return new List<CHorarioConsultor>();
+            }
         }
 
         public List<CHorarioConsultor> ListarTodosLosHorarios(int IDConsultor, DateTime fecha)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
-            if (consultor == null) return new List<CHorarioConsultor>();
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
 
-            return consultor.ListaHorarios
-                .Where(h => h.FechaHoraInicio.Date == fecha.Date)
-                .ToList();
+            List<CHorarioConsultor> listaFiltrada = new List<CHorarioConsultor>();
+
+            if (consultor == null)
+            {
+                return listaFiltrada;
+            }
+
+            foreach (CHorarioConsultor h in consultor.ListaHorarios)
+            {
+                if (h.FechaHoraInicio.Date == fecha.Date)
+                {
+                    listaFiltrada.Add(h);
+                }
+            }
+
+            return listaFiltrada;
         }
 
         private bool ExisteDni(string dni)
         {
-            bool existeAdmin = ListaAdministradores.Any(a => a.Dni == dni);
-            bool existeConsultor = ListaConsultores.Any(c => c.Dni == dni);
-            bool existeCliente = ListaClientes.Any(c => c.Dni == dni);
+            bool existe = false;
 
-            return existeAdmin || existeConsultor || existeCliente;
+            foreach (CAdministrador a in ListaAdministradores)
+            {
+                if (a.Dni == dni)
+                {
+                    existe = true;
+                }
+            }
+
+            foreach (CConsultor c in ListaConsultores)
+            {
+                if (c.Dni == dni)
+                {
+                    existe = true;
+                }
+            }
+
+            foreach (CCliente c in ListaClientes)
+            {
+                if (c.Dni == dni)
+                {
+                    existe = true;
+                }
+            }
+
+            return existe;
         }
 
         private int GenerarIDCliente()
@@ -391,7 +599,16 @@ namespace Sistema_de_Gestion_de_Citas
                 return 1;
             }
 
-            return ListaClientes.Max(c => c.ID) + 1;
+            int maxID = 0;
+            foreach (CCliente c in ListaClientes)
+            {
+                if (c.ID > maxID)
+                {
+                    maxID = c.ID;
+                }
+            }
+
+            return maxID + 1;
         }
 
         private int GenerarIDConsultor()
@@ -401,7 +618,16 @@ namespace Sistema_de_Gestion_de_Citas
                 return 1;
             }
 
-            return ListaConsultores.Max(c => c.ID) + 1;
+            int maxID = 0;
+            foreach (CConsultor c in ListaConsultores)
+            {
+                if (c.ID > maxID)
+                {
+                    maxID = c.ID;
+                }
+            }
+
+            return maxID + 1;
         }
 
         private int GenerarIDHorario()
@@ -411,7 +637,16 @@ namespace Sistema_de_Gestion_de_Citas
                 return 1;
             }
 
-            return ListaHorarios.Max(h => h.ID) + 1;
+            int maxID = 0;
+            foreach (CHorarioConsultor h in ListaHorarios)
+            {
+                if (h.ID > maxID)
+                {
+                    maxID = h.ID;
+                }
+            }
+
+            return maxID + 1;
         }
 
         private int GenerarIDCita()
@@ -421,41 +656,69 @@ namespace Sistema_de_Gestion_de_Citas
                 return 1;
             }
 
-            return ListaCitas.Max(c => c.ID) + 1;
+            int maxID = 0;
+            foreach (CCita c in ListaCitas)
+            {
+                if (c.ID > maxID)
+                {
+                    maxID = c.ID;
+                }
+            }
+
+            return maxID + 1;
         }
+        
         private void AgregarCitaFicticiaPorConsultor(int IDCliente, int IDConsultor, decimal monto, string descripcion, string estado)
         {
-            CConsultor consultor = ListaConsultores.Find(c => c.ID == IDConsultor);
-            if (consultor == null) return;
+            CConsultor consultor = ListaConsultores.Find(delegate (CConsultor c)
+            {
+                return c.ID == IDConsultor;
+            });
 
-            CHorarioConsultor horario = ListaHorarios.FirstOrDefault(h =>
-                h.IDConsultor == IDConsultor &&
-                h.Estado == "Libre");
-
-            if (horario == null)
+            if (consultor == null)
             {
                 return;
             }
 
+            CHorarioConsultor horarioEncontrado = null;
+            foreach (CHorarioConsultor h in ListaHorarios)
+            {
+                if (h.IDConsultor == IDConsultor)
+                {
+                    if (h.Estado == "Libre")
+                    {
+                        horarioEncontrado = h;
+                        break;
+                    }
+                }
+            }
+
+            if (horarioEncontrado == null)
+            {
+                return;
+            }
 
             CCita cita = new CCita();
 
             cita.ID = GenerarIDCita();
             cita.IDCliente = IDCliente;
-            cita.IDHorario = horario.ID;
+            cita.IDHorario = horarioEncontrado.ID;
             cita.Monto = consultor.Monto; 
             cita.Descripcion = descripcion;
             cita.Estado = estado;
 
             ListaCitas.Add(cita);
 
-            CCliente cliente = ListaClientes.Find(c => c.ID == IDCliente);
+            CCliente cliente = ListaClientes.Find(delegate (CCliente c)
+            {
+                return c.ID == IDCliente;
+            });
+
             if (cliente != null)
             {
                 cliente.AgregarCita(cita);
-                horario.Reservar(cita, cliente);
+                horarioEncontrado.Reservar(cita, cliente);
             }
         }
     }
 }
-

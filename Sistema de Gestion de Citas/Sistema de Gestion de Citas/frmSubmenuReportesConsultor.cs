@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,7 +26,7 @@ namespace Sistema_de_Gestion_de_Citas
         private void btnReporteCitas_Click(object sender, EventArgs e)
         {
             CReporte reporte = new CReporte();
-            var resumen = reporte.ObtenerResumenCitas(consultorActual.ID);
+            CResumenCitas resumen = reporte.ObtenerResumenCitas(consultorActual.ID);
             frmReporteCitas form = new frmReporteCitas(resumen);
             form.ShowDialog();
         }
@@ -36,14 +35,22 @@ namespace Sistema_de_Gestion_de_Citas
         {
             CReporte reporte = new CReporte();
 
-            var datosT1 = reporte.IngresosMensualesPorTrimestre(consultorActual.ID, 1);
-            var datosT2 = reporte.IngresosMensualesPorTrimestre(consultorActual.ID, 2);
+            List<object> datosT1 = reporte.IngresosMensualesPorTrimestre(consultorActual.ID, 1);
+            List<object> datosT2 = reporte.IngresosMensualesPorTrimestre(consultorActual.ID, 2);
 
             decimal totalT1 = 0;
-            foreach (dynamic item in datosT1) totalT1 += item.Ingreso;
+            foreach (object itemObj in datosT1)
+            {
+                CIngresoTrimestral item = (CIngresoTrimestral)itemObj;
+                totalT1 += item.Ingreso;
+            }
 
             decimal totalT2 = 0;
-            foreach (dynamic item in datosT2) totalT2 += item.Ingreso;
+            foreach (object itemObj in datosT2)
+            {
+                CIngresoTrimestral item = (CIngresoTrimestral)itemObj;
+                totalT2 += item.Ingreso;
+            }
 
             if (totalT1 == 0 && totalT2 == 0)
             {   

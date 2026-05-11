@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,38 +21,57 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtid.Text.Trim() == "")
+            if (txtid.Text == "")
             {
                 MessageBox.Show("Ingrese el DNI del consultor");
                 return;
             }
 
-            string dni = txtid.Text.Trim();
+            string dni = txtid.Text;
 
-            var resultado = CControlador.ListaConsultores
-                .Where(c => c.Dni == dni)
-                .ToList();
+            List<CConsultor> resultado = new List<CConsultor>();
+
+            foreach (CConsultor c in CControlador.ListaConsultores)
+            {
+                if (c.Dni == dni)
+                {
+                    resultado.Add(c);
+                }
+            }
 
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = resultado;
 
-            if (dgvConsultores.Columns["id"] != null) dgvConsultores.Columns["id"].Visible = false;
+            if (dgvConsultores.Columns["id"] != null)
+            {
+                dgvConsultores.Columns["id"].Visible = false;
+            }
 
             if (resultado.Count == 0)
+            {
                 MessageBox.Show("No se encontro ningun consultor con ese DNI");
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtid.Text.Trim() == "")
+            if (txtid.Text == "")
             {
                 MessageBox.Show("Ingrese el DNI del consultor");
                 return;
             }
 
-            string dni = txtid.Text.Trim();
+            string dni = txtid.Text;
 
-            var consultor = CControlador.ListaConsultores.FirstOrDefault(c => c.Dni == dni);
+            CConsultor consultor = null;
+            foreach (CConsultor c in CControlador.ListaConsultores)
+            {
+                if (c.Dni == dni)
+                {
+                    consultor = c;
+                    break;
+                }
+            }
 
             if (consultor == null)
             {
@@ -77,15 +95,23 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnHabilitar_Click(object sender, EventArgs e)
         {
-            if (txtid.Text.Trim() == "")
+            if (txtid.Text == "")
             {
                 MessageBox.Show("Ingrese el DNI del consultor");
                 return;
             }
 
-            string dni = txtid.Text.Trim();
+            string dni = txtid.Text;
 
-            var consultor = CControlador.ListaConsultores.FirstOrDefault(c => c.Dni == dni);
+            CConsultor consultor = null;
+            foreach (CConsultor c in CControlador.ListaConsultores)
+            {
+                if (c.Dni == dni)
+                {
+                    consultor = c;
+                    break;
+                }
+            }
 
             if (consultor == null)
             {
@@ -106,12 +132,16 @@ namespace Sistema_de_Gestion_de_Citas
                 MessageBox.Show("No se pudo habilitar el consultor");
             }
         }
+        
         private void MostrarConsultores()
         {
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = CControlador.ListaConsultores;
 
-            if (dgvConsultores.Columns["id"] != null) dgvConsultores.Columns["id"].Visible = false;
+            if (dgvConsultores.Columns["id"] != null)
+            {
+                dgvConsultores.Columns["id"].Visible = false;
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,11 +27,11 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            string actual = txtContrasenaActual.Text.Trim();
-            string nueva = txtContrasenaNueva.Text.Trim();
-            string verificar = txtVerificarContrasena.Text.Trim();
+            string actual = txtContrasenaActual.Text;
+            string nueva = txtContrasenaNueva.Text;
+            string verificar = txtVerificarContrasena.Text;
 
-            if (string.IsNullOrEmpty(actual) || string.IsNullOrEmpty(nueva) || string.IsNullOrEmpty(verificar))
+            if (actual == "" || nueva == "" || verificar == "")
             {
                 MessageBox.Show("Todos los campos son obligatorios.", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);

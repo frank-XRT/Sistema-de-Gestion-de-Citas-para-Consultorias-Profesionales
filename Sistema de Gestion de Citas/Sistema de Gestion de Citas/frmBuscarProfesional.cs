@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,7 +35,7 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string rubro = cboxRubro.Text.Trim();
+            string rubro = cboxRubro.Text;
 
             if (rubro == "")
             {
@@ -47,45 +46,57 @@ namespace Sistema_de_Gestion_de_Citas
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = controlador.BuscarConsultoresPorRubro(rubro);
 
-            if (dgvConsultores.Columns["id"] != null) dgvConsultores.Columns["id"].Visible = false;
-            if (dgvConsultores.Columns["Dni"] != null) dgvConsultores.Columns["Dni"].Visible = false;
-            if (dgvConsultores.Columns["Sexo"] != null) dgvConsultores.Columns["Sexo"].Visible = false;
-            if (dgvConsultores.Columns["Contrasena"] != null) dgvConsultores.Columns["Contrasena"].Visible = false;
+            if (dgvConsultores.Columns["id"] != null)
+            {
+                dgvConsultores.Columns["id"].Visible = false;
+            }
+            if (dgvConsultores.Columns["Dni"] != null)
+            {
+                dgvConsultores.Columns["Dni"].Visible = false;
+            }
+            if (dgvConsultores.Columns["Sexo"] != null)
+            {
+                dgvConsultores.Columns["Sexo"].Visible = false;
+            }
+            if (dgvConsultores.Columns["Contrasena"] != null)
+            {
+                dgvConsultores.Columns["Contrasena"].Visible = false;
+            }
         }
 
         private void dgvConsultores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvConsultores.CurrentRow == null)
+            if (dgvConsultores.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            CConsultor consultor = (CConsultor)dgvConsultores.CurrentRow.DataBoundItem;
+            CConsultor consultor = (CConsultor)dgvConsultores.SelectedRows[0].DataBoundItem;
             MostrarHorarios(controlador.ListarTodosLosHorarios(consultor.ID, DateTime.Today));
         }
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            if (dgvHorarios.CurrentRow == null)
+            if (dgvHorarios.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccione un horario");
                 return;
             }
 
-            if (dgvConsultores.CurrentRow == null)
+            if (dgvConsultores.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccione un consultor");
                 return;
             }
 
-            CConsultor consultor = (CConsultor)dgvConsultores.CurrentRow.DataBoundItem;
-            CHorarioConsultor horario = (CHorarioConsultor)dgvHorarios.CurrentRow.DataBoundItem;
+            CConsultor consultor = (CConsultor)dgvConsultores.SelectedRows[0].DataBoundItem;
+            CHorarioConsultor horario = (CHorarioConsultor)dgvHorarios.SelectedRows[0].DataBoundItem;
 
             CCita cita = new CCita();
             cita.IDCliente = clienteActual.ID;
             cita.IDHorario = horario.ID;
             cita.Monto = consultor.Monto;
-            cita.Descripcion = txtDescripcion.Text.Trim();
+            cita.Descripcion = txtDescripcion.Text;
 
             bool reservado = controlador.ReservarCita(cita);
 
@@ -109,13 +120,13 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnFiltrarFecha_Click(object sender, EventArgs e)
         {
-            if (dgvConsultores.CurrentRow == null)
+            if (dgvConsultores.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccione un consultor primero");
                 return;
             }
 
-            CConsultor consultor = (CConsultor)dgvConsultores.CurrentRow.DataBoundItem;
+            CConsultor consultor = (CConsultor)dgvConsultores.SelectedRows[0].DataBoundItem;
             DateTime fecha = dtpFecha.Value;
             MostrarHorarios(controlador.ListarTodosLosHorarios(consultor.ID, fecha));
         }

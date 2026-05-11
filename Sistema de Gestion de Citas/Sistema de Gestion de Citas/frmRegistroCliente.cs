@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,13 +21,13 @@ namespace Sistema_de_Gestion_de_Citas
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text.Trim() == "" ||
-                txtDni.Text.Trim() == "" ||
-                cboxSexo.Text.Trim() == "" ||
-                txtTelefono.Text.Trim() == "" ||
-                txtCorreo.Text.Trim() == "" ||
-                txtContrasena.Text.Trim() == "" ||
-                txtConfirmarContrasena.Text.Trim() == "")
+            if (txtNombre.Text == "" ||
+                txtDni.Text == "" ||
+                cboxSexo.Text == "" ||
+                txtTelefono.Text == "" ||
+                txtCorreo.Text == "" ||
+                txtContrasena.Text == "" ||
+                txtConfirmarContrasena.Text == "")
             {
                 MessageBox.Show("Complete todos los campos");
                 return;
@@ -42,12 +41,12 @@ namespace Sistema_de_Gestion_de_Citas
 
             CCliente cliente = new CCliente();
 
-            cliente.Nombre = txtNombre.Text.Trim();
-            cliente.Dni = txtDni.Text.Trim();
-            cliente.Sexo = cboxSexo.Text.Trim();
-            cliente.Telefono = txtTelefono.Text.Trim();
-            cliente.Correo = txtCorreo.Text.Trim();
-            cliente.Contrasena = txtContrasena.Text.Trim();
+            cliente.Nombre = txtNombre.Text;
+            cliente.Dni = txtDni.Text;
+            cliente.Sexo = cboxSexo.Text;
+            cliente.Telefono = txtTelefono.Text;
+            cliente.Correo = txtCorreo.Text;
+            cliente.Contrasena = txtContrasena.Text;
 
             bool registrado = controlador.RegistrarCliente(cliente);
 
