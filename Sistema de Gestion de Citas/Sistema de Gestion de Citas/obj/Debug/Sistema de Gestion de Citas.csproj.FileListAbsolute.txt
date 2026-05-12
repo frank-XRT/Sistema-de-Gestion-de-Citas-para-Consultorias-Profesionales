@@ -1,0 +1,99 @@
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.exe.config
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.exe
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.pdb
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.AssemblyReference.cache
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmBuscarProfesional.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmConsultarCitas.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmEliminarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmLogin.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuAdministrador.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuCliente.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMisCitas.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmRegistrarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmRegistroCliente.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmReporteCitas.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.Properties.Resources.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.GenerateResource.cache
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.CoreCompileInputs.cache
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.exe
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.pdb
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmClientesFrecuentes.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmReporteEstados.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmModificarContrasena.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmEditarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmAdminEditarContrasena.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmOpcionesEditarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuModificarConsultor.resources
+M:\Funda\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuReportes.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.exe.config
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.exe
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.pdb
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.AssemblyReference.cache
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmBuscarProfesional.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmClientesFrecuentes.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmConsultarCitas.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuModificarConsultor.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuReportes.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmAdminEditarContrasena.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmOpcionesEditarConsultor.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmEditarConsultor.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmEliminarConsultor.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmLogin.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuAdministrador.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuCliente.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuConsultor.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMisCitas.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmRegistrarConsultor.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmRegistroCliente.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmReporteCitas.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmReporteEstados.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaCitasServicio.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaConsultoresRubro.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaIngresosRubro.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaIngresosConsultor.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmModificarContrasena.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.Properties.Resources.resources
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.GenerateResource.cache
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.CoreCompileInputs.cache
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.exe
+M:\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.pdb
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.AssemblyReference.cache
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmBuscarProfesional.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmClientesFrecuentes.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmConsultarCitas.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuModificarConsultor.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmSubmenuReportes.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmAdminEditarContrasena.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmOpcionesEditarConsultor.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmEditarConsultor.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmEliminarConsultor.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmLogin.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuAdministrador.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuCliente.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMenuConsultor.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmMisCitas.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmRegistrarConsultor.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmRegistroCliente.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmReporteCitas.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmReporteEstados.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaCitasServicio.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaConsultoresRubro.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaIngresosRubro.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmDiagramaIngresosConsultor.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.frmModificarContrasena.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema_de_Gestion_de_Citas.Properties.Resources.resources
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.GenerateResource.cache
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.CoreCompileInputs.cache
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.exe
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.pdb
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.exe.config
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.exe.manifest
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.application
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.exe
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\bin\Debug\Sistema de Gestion de Citas.pdb
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.exe.manifest
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.application
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.csproj.AssemblyReference.cache
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.exe
+C:\Users\Personal\OneDrive - Universidad Peruana de Ciencias\Escritorio\Sistema-de-Gestion-de-Citas-para-Consultorias-Profesionales\Sistema de Gestion de Citas\Sistema de Gestion de Citas\obj\Debug\Sistema de Gestion de Citas.pdb
